@@ -23,26 +23,26 @@ public class Milestone extends AbstractEntity {
 	@Mandatory
 	//@ValidHeader 
 	@Column
-	public String				title;
+	private String				title;
 
 	@Mandatory
 	//@ValidText
 	@Column
-	public String				achievements;
+	private String				achievements;
 
 	@Mandatory
 	@ValidNumber(min = 0)
 	@Column
-	public Double				effort;
+	private Double				effort;
 
 	@Mandatory
 	@Valid
 	@Column
-	public MilestoneKind		kind;
+	private MilestoneKind		kind;
 
 	//Relationships ------------------------------------------------
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	public Campaign				campaign;
+	private Campaign			campaign;
 }

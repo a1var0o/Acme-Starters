@@ -20,16 +20,16 @@ public class Spokesperson extends AbstractRole {
 	@Mandatory
 	//@ValidText
 	@Column
-	public String				cv;
+	private String				cv;
 
 	@Mandatory
 	//@ValidText
 	@Column
-	public String				achievements;
+	private String				achievements;
 
 	@Mandatory
 	@Valid
 	@Column
-	public Boolean				licensed;
+	private Boolean				licensed;
 
 }

@@ -4,8 +4,6 @@ package acme.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -29,37 +27,37 @@ public class Campaign extends AbstractEntity {
 	@Mandatory
 	//@ValidTicker 
 	@Column(unique = true)
-	public String				ticker;
+	private String				ticker;
 
 	@Mandatory
 	//@ValidHeader
 	@Column
-	public String				name;
+	private String				name;
 
 	@Mandatory
 	//@ValidText
 	@Column
-	public String				description;
+	private String				description;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	@Temporal(TemporalType.TIMESTAMP)
-	public Moment				startMoment;
+	//@Temporal(TemporalType.TIMESTAMP)
+	private Moment				startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	@Temporal(TemporalType.TIMESTAMP)
-	public Moment				endMoment;
+	//@Temporal(TemporalType.TIMESTAMP)
+	private Moment				endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	public String				moreInfo;
+	private String				moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	public Boolean				draftMode;
+	private Boolean				draftMode;
 
 	//Derived attributes
 
@@ -82,5 +80,5 @@ public class Campaign extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	public Spokesperson			spokesperson;
+	private Spokesperson		spokesperson;
 }
