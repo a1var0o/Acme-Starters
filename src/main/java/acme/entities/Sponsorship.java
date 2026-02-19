@@ -1,20 +1,28 @@
 
 package acme.entities;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
 import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
@@ -50,15 +58,13 @@ public class Sponsorship extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	// TODO: @Temporal should only be set on a java.util.Date or java.util.Calendar property
-	// @Temporal(TemporalType.TIMESTAMP)
-	private Moment				startMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	// TODO: @Temporal should only be set on a java.util.Date or java.util.Calendar property
-	// @Temporal(TemporalType.TIMESTAMP)
-	private Moment				endMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endMoment;
 
 	@Optional
 	@ValidUrl
@@ -73,29 +79,46 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	// TODO: raises error
+	// TODO: raises error, annotation disallowed for this location
 	// @Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		// TODO: implement calculation
-		return null;
+		Double result = null;
+
+		// TODO: we should test if this actually works
+		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+		result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
+
+		return result;
 	}
 
-	// TODO: raises error
+
+	@Autowired
+	@Transient
+	private SponsorshipRepository repository;
+
+
+	// TODO: raises error, annotation disallowed for this location
 	// @Mandatory
 	// @ValidMoney
 	@Transient
 	private Money totalMoney() {
-		// TODO: implement calculation
-		return null;
+		Money result = new Money();
+
+		Double totalDonations = this.repository.getTotalDonations(this.getId());
+		result.setAmount(totalDonations == null ? 0 : totalDonations);
+		result.setCurrency("EUR");
+
+		return result;
 	}
+
 	// Relationships ----------------------------------------------------------
 
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Sponsor sponsor;
 
 }
