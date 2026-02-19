@@ -13,6 +13,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidText;
 import acme.realms.Fundraiser;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,7 +39,7 @@ public class Strategy extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				description;
 

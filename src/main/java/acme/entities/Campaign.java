@@ -21,6 +21,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
+import acme.constraints.ValidText;
 import acme.realms.Spokesperson;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,7 +44,7 @@ public class Campaign extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				description;
 
