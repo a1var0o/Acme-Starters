@@ -16,6 +16,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidTicker;
+import acme.constraints.ValidText;
 import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,7 +45,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Mandatory
 	// TODO: implement validator
-	// @ValidText
+	@ValidText
 	@Column
 	private String				description;
 
