@@ -1,3 +1,6 @@
+# MacOS
+**/.DS_Store
+
 logs/
 target/
 !.mvn/wrapper/maven-wrapper.jar
