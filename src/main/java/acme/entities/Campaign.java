@@ -22,9 +22,9 @@ import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidTicker;
+import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.realms.Spokesperson;
-import constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 

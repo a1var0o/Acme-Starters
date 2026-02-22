@@ -9,9 +9,9 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidScore;
+import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.datatypes.TacticKind;
-import constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 
