@@ -1,0 +1,1 @@
+acme.validation.ticker.message		= The ticker must have exactly two capital letters and two digits, a dash, and between five or ten numbers, letters or underscores. Example: AB12-EX_Tick12

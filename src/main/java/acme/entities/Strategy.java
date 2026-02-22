@@ -13,6 +13,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidTicker;
 import acme.constraints.ValidText;
 import acme.realms.Fundraiser;
 import lombok.Getter;
@@ -29,7 +30,7 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	//@ValidTicker
+	@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 

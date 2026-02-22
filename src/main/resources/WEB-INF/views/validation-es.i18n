@@ -1,0 +1,1 @@
+acme.validation.ticker.message		= La referencia debe tener dos letras mayúsculas, seguidas de dos números, un guion y luego entre 5 y 10 letras, números o guiones bajos. Ejemplo: AB12-REF_Test12

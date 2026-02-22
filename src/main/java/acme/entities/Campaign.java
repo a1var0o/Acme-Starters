@@ -21,6 +21,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
+import acme.constraints.ValidTicker;
 import acme.constraints.ValidText;
 import acme.realms.Spokesperson;
 import lombok.Getter;
@@ -34,7 +35,7 @@ public class Campaign extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	//@ValidTicker 
+	@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
