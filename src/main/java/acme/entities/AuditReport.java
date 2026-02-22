@@ -31,7 +31,11 @@ import lombok.Setter;
 @Setter
 public class AuditReport extends AbstractEntity {
 
+	// Serialisation version --------------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes -------------------------------------------------------------
 
 	@Mandatory
 	//@ValidTicker 
@@ -63,6 +67,13 @@ public class AuditReport extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
+	@Mandatory
+	@Valid
+	@Column
+	private Boolean				draftMode;
+
+	// Derived attributes -----------------------------------------------------
+
 
 	//@Mandatory
 	@Valid
@@ -87,14 +98,11 @@ public class AuditReport extends AbstractEntity {
 		return this.repository.getTotalHours(this.getId());
 	}
 
+	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@Column
-	private Boolean	draftMode;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Auditor	auditor;
+	private Auditor auditor;
 }

@@ -18,7 +18,11 @@ import lombok.Setter;
 @Setter
 public class AuditSection extends AbstractEntity {
 
+	// Serialisation version --------------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes -------------------------------------------------------------
 
 	@Mandatory
 	// @ValidHeader
@@ -39,6 +43,10 @@ public class AuditSection extends AbstractEntity {
 	@Valid
 	@Column
 	private SectionKind			kind;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
