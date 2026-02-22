@@ -22,17 +22,15 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
-import acme.constraints.ValidTicker;
-import acme.constraints.ValidHeader;
-import acme.constraints.ValidText;
-import acme.realms.Fundraiser;
+import acme.realms.Auditor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Strategy extends AbstractEntity {
+public class AuditReport extends AbstractEntity {
+
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -40,17 +38,17 @@ public class Strategy extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidTicker
+	//@ValidTicker 
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	@ValidHeader
+	//@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	@ValidText
+	//@ValidText
 	@Column
 	private String				description;
 
@@ -69,34 +67,42 @@ public class Strategy extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
-	@Autowired
-	@Transient
-	private StrategyRepository	repository;
+	@Mandatory
+	@Valid
+	@Column
+	private Boolean				draftMode;
+
+	// Derived attributes -----------------------------------------------------
 
 
 	//@Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		Duration d = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		return Double.valueOf(d.get(ChronoUnit.MONTHS));
-	};
+		Double result = null;
+		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+		result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
+		return result;
+	}
+
+
+	@Autowired
+	@Transient
+	private AuditReportRepository repository;
+
 
 	//@Mandatory
-	//@ValidScore
+	//@ValidNumber
 	@Transient
-	private Double expectedPercentage() {
-		return this.repository.getSumExpectedPercentage(this.getId());
-	};
+	private Integer totalHours() {
+		return this.repository.getTotalHours(this.getId());
+	}
+
+	// Relationships ----------------------------------------------------------
 
 
 	@Mandatory
 	@Valid
-	@Column
-	private Boolean		draftMode;
-
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private Fundraiser	fundraiser;
+	@ManyToOne(optional = false)
+	private Auditor auditor;
 }

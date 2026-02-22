@@ -1,18 +1,29 @@
 
 package acme.entities;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
+import acme.constraints.ValidTicker;
+import acme.constraints.ValidHeader;
+import acme.constraints.ValidText;
 import acme.realms.Spokesperson;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,29 +36,29 @@ public class Campaign extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	//@ValidTicker 
+	@ValidTicker
 	@Column(unique = true)
 	private String				ticker;
 
 	@Mandatory
-	//@ValidHeader
+	@ValidHeader
 	@Column
 	private String				name;
 
 	@Mandatory
-	//@ValidText
+	@ValidText
 	@Column
 	private String				description;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	//@Temporal(TemporalType.TIMESTAMP)
-	private Moment				startMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				startMoment;
 
 	@Mandatory
 	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
-	//@Temporal(TemporalType.TIMESTAMP)
-	private Moment				endMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endMoment;
 
 	@Optional
 	@ValidUrl
@@ -61,24 +72,29 @@ public class Campaign extends AbstractEntity {
 
 	//Derived attributes
 
-	/*
-	 * we will learn this in the next class
-	 * 
-	 * @Transient
-	 * public double monthsActive() {
-	 * return 0;
-	 * }
-	 * 
-	 * @Transient
-	 * public double effort() {
-	 * return 0;
-	 * }
-	 */
+	@Autowired
+	@Transient
+	private CampaignRepository	repository;
 
+
+	//@Mandatory
+	@Valid
+	@Transient
+	private Double monthsActive() {
+		return Double.valueOf(MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS));
+	}
+
+	//@Mandatory
+	//@ValidNumber(min = 0)
+	@Transient
+	private Double effort() {
+		return this.repository.totalEffort(this.getId());
+	}
 	//Relationships ------------------------------------------------
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Spokesperson		spokesperson;
+	private Spokesperson spokesperson;
 }

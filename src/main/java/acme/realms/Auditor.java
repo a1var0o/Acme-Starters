@@ -7,30 +7,29 @@ import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.validation.Mandatory;
-import acme.constraints.ValidText;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Spokesperson extends AbstractRole {
+public class Auditor extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidText
+	//@ValidHeader
 	@Column
-	private String				cv;
+	private String				firm;
 
 	@Mandatory
-	@ValidText
+	//@ValidHeader
 	@Column
-	private String				achievements;
+	private String				highlights;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				licensed;
+	private Boolean				solicitor;
 
 }
