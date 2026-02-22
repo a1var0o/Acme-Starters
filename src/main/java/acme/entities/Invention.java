@@ -21,10 +21,10 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
-import acme.constraints.ValidTicker;
+import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.client.helpers.MomentHelper;
+import acme.constraints.ValidTicker;
 import acme.realms.Inventor;
 import lombok.Getter;
 import lombok.Setter;
@@ -74,6 +74,7 @@ public class Invention extends AbstractEntity {
 	@Column
 	private String				moreInfo;
 
+
 	//	@Mandatory
 	@Valid
 	@Transient
@@ -85,7 +86,10 @@ public class Invention extends AbstractEntity {
 	// @ValidMoney
 	@Transient
 	public Money cost() {
-		return this.inventionRepository.computeTotalCost(this.getId());
+		Money res = new Money();
+		res.setCurrency("EUR");
+		res.setAmount(this.inventionRepository.computeTotalCost(this.getId()));
+		return res;
 	}
 
 
