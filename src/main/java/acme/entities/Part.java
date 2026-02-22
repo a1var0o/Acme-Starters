@@ -10,9 +10,9 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoney;
+import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.datatypes.PartKind;
-import constraints.ValidHeader;
 import lombok.Getter;
 import lombok.Setter;
 
