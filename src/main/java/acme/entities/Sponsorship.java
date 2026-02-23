@@ -24,6 +24,7 @@ import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidTicker;
+import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.realms.Sponsor;
 import lombok.Getter;
@@ -46,8 +47,7 @@ public class Sponsorship extends AbstractEntity {
 	private String				ticker;
 
 	@Mandatory
-	// TODO: implement validator
-	// @ValidHeader
+	@ValidHeader
 	@Column
 	private String				name;
 
@@ -84,11 +84,11 @@ public class Sponsorship extends AbstractEntity {
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		Double result = null;
+		Double result = 0.0;
 
-		// TODO: we should test if this actually works
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
+		// TODO: this doesn't work
+		// Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+		// result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
 
 		return result;
 	}
