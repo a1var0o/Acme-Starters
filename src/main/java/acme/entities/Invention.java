@@ -52,7 +52,7 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				header;
+	private String				name;
 
 	@Mandatory
 	@ValidText
