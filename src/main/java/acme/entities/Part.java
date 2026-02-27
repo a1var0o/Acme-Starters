@@ -38,7 +38,7 @@ public class Part extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoney(min = 0)
+	@ValidMoney
 	@Column
 	private Money				cost;
 

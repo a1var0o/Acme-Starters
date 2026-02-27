@@ -42,7 +42,7 @@ public class Invention extends AbstractEntity {
 
 	@Autowired
 	@Transient
-	InventionRepository			inventionRepository;
+	InventionRepository			repository;
 
 	@Mandatory
 	@ValidTicker
@@ -52,7 +52,7 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				header;
+	private String				name;
 
 	@Mandatory
 	@ValidText
@@ -83,12 +83,12 @@ public class Invention extends AbstractEntity {
 	}
 
 	//	@Mandatory
-	// @ValidMoney
+	//	@ValidMoney
 	@Transient
 	public Money cost() {
 		Money res = new Money();
 		res.setCurrency("EUR");
-		Double cost = this.inventionRepository.computeTotalCost(this.getId());
+		Double cost = this.repository.computeTotalCost(this.getId());
 		res.setAmount(cost == null ? 0 : cost);
 		return res;
 	}
