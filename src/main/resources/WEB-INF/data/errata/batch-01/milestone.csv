@@ -1,0 +1,12 @@
+key,title,achievements,effort,kind,key:campaign
+milestone-01,null,"Test",10.0,TEASER,campaign-01
+milestone-02,"","Test",10.0,TEASER,campaign-01
+milestone-03,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Test",10.0,TEASER,campaign-01
+milestone-04,Test,null,10.0,TEASER,campaign-01
+milestone-05,Test,"",10.0,TEASER,campaign-01
+milestone-06,Test,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",10.0,TEASER,campaign-01
+milestone-07,Test,Test,null,TEASER,campaign-01
+milestone-08,Test,Test,-0.01,TEASER,campaign-01
+milestone-09,Test,Test,1000000.0,TEASER,campaign-01
+milestone-10,Test,Test,10.0,null,campaign-01
+milestone-11,Test,Test,10.0,TEASER,null
