@@ -7,6 +7,6 @@ user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза 
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
 user-account-req0-administrator-01,true,"UserIdentity{name: 'Admin', surname: 'One', email: 'admin1@acme.com'}",administrator1,administrator1
 user-account-req0-administrator-02,true,"UserIdentity{name: 'Admin', surname: 'Two', email: 'admin2@acme.com'}",administrator2,administrator2
-audit-report-01,true,"UserIdentity{name: 'Mario', surname: 'Audit', email: 'mario@acme.com'}",audit1,audit1
-audit-report-02,true,"UserIdentity{name: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', surname: 'Audit', email: 'mario@acme.com'}",audit2,audit2
-audit-report-03,true,"UserIdentity{name: 'Mario', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'mario@acme.com'}",audit3,audit3
+user-account-auditor-01,true,"UserIdentity{name: 'Mario', surname: 'Audit', email: 'mario@acme.com'}",audit1,audit1
+user-account-auditor-02,true,"UserIdentity{name: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', surname: 'Audit', email: 'mario@acme.com'}",audit2,audit2
+user-account-auditor-03,true,"UserIdentity{name: 'Mario', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'mario@acme.com'}",audit3,audit3
