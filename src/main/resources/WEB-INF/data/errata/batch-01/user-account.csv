@@ -1,4 +1,11 @@
 key,enabled,identity,password,username
+user-account-spokesperson-01,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-02,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-03,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-04,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-05,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-06,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
+user-account-spokesperson-07,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
 user-account-consumer-01,true,"UserIdentity{name: '', surname: 'Consumer', email: 'peter@acme.com'}",consumer1,consumer1
 user-account-consumer-02,true,"UserIdentity{name: '', surname: '貸んい建濯よ芝弾テソ Λορεμ ιπσθμ', email: 'mary@acme.com'}",consumer2,consumer2
 user-account-consumer-03,true,"UserIdentity{name: '', surname: '之乎路可良 ᏥᏲᏎᎭ', email: 'manolo@acme.com'}",consumer3,consumer3
