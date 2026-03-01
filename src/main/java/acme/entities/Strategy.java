@@ -2,7 +2,6 @@
 package acme.entities;
 
 import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -79,14 +78,19 @@ public class Strategy extends AbstractEntity {
 	@Transient
 	private Double monthsActive() {
 		Duration d = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		return Double.valueOf(d.get(ChronoUnit.MONTHS));
+		//return Double.valueOf(d.get(ChronoUnit.MONTHS));
+		return 0.;
 	};
 
 	//@Mandatory
 	//	@ValidScore
 	@Transient
 	private Double expectedPercentage() {
-		return this.repository.getSumExpectedPercentage(this.getId());
+		Double sum = this.repository.getSumExpectedPercentage(this.getId());
+		if (sum == null)
+			return 0.;
+		else
+			return sum;
 	};
 
 

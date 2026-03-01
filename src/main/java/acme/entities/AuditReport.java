@@ -78,13 +78,13 @@ public class AuditReport extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	//@Mandatory
+	// @Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		Double result = null;
-		Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
+		Double result = 0.0;
+	//	Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
+	//	result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
 		return result;
 	}
 
@@ -95,7 +95,7 @@ public class AuditReport extends AbstractEntity {
 
 
 	// @Mandatory
-	//	@ValidNumber
+	// @ValidNumber
 	@Transient
 	private Integer totalHours() {
 		return this.repository.getTotalHours(this.getId());

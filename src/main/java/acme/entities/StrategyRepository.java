@@ -9,6 +9,6 @@ import acme.client.repositories.AbstractRepository;
 @Repository
 public interface StrategyRepository extends AbstractRepository {
 
-	@Query("select sum(t.expectedPercentage) from Tactic t where t.strategy.id = ?1")
+	@Query("select sum(t.expectedPercentage) from Tactic t where t.strategy.id = :strategyId")
 	Double getSumExpectedPercentage(int strategyId);
 }
