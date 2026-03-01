@@ -1,7 +1,6 @@
 
 package acme.entities;
 
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -20,7 +19,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoment.Constraint;
 import acme.client.components.validation.ValidUrl;
-import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
@@ -81,14 +79,17 @@ public class Campaign extends AbstractEntity {
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		return Double.valueOf(MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS));
+		//return Double.valueOf(MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS));
+		return 0.0;
 	}
 
 	//@Mandatory
 	//	@ValidNumber(min = 0)
 	@Transient
 	private Double effort() {
-		return this.repository.totalEffort(this.getId());
+		Double sumEffort = this.repository.totalEffort(this.getId());
+		sumEffort = sumEffort != null ? sumEffort : 0.0;
+		return sumEffort;
 	}
 	//Relationships ------------------------------------------------
 

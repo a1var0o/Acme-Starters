@@ -1,0 +1,50 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson
+campaign-01,AA11-A1234,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-02,BB22-B12345,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-03,CC33-C12345678,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-04,DD44-D123456789,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-05,AA11-TEST_05,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t*",Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-06,AA11-TEST_06,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t",Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-07,AA11-TEST_07,L,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-08,AA11-TEST_08,Lo,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-09,AA11-TEST_09,โลเร็ม อิปซัม,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-10,AA11-TEST_10,لوريم إيبسوم,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-11,AA11-TEST_11,洛伦·伊普森,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-12,AA11-TEST_12,<marquee>Hacked</marquee>,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-13,AA11-TEST_13,<script>alert(‘Hacked!’);</script>,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-14,AA11-TEST_14,'' or 'A' = 'A,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-15,AA11-TEST_15,Test,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-16,AA11-TEST_16,Test,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-17,AA11-TEST_17,Test,L,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-18,AA11-TEST_18,Test,Lo,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-19,AA11-TEST_19,Test,โลเร็ม อิปซัม,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-20,AA11-TEST_20,Test,لوريم إيبسوم,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-21,AA11-TEST_21,Test,洛伦·伊普森,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-22,AA11-TEST_22,Test,<marquee>Hacked</marquee>,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-23,AA11-TEST_23,Test,<script>alert(‘Hacked!’);</script>,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-24,AA11-TEST_24,Test,'' or 'A' = 'A,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-25,AA11-TEST_25,"Test","Test","2025/01/01 00:00","2100/01/01 00:00","http://test.com",false,spokesperson-01
+campaign-26,AA11-TEST_26,"Test","Test","2025/01/01 00:01","2100/01/01 00:00","http://test.com",false,spokesperson-01
+campaign-27,AA11-TEST_27,"Test","Test","2200/12/31 23:58","2100/01/01 00:00","http://test.com",false,spokesperson-01
+campaign-28,AA11-TEST_28,"Test","Test","2200/12/31 23:59","2100/01/01 00:00","http://test.com",false,spokesperson-01
+campaign-29,AA11-TEST_29,"Test","Test","2100/01/01 00:00","2025/01/01 00:00","http://test.com",false,spokesperson-01
+campaign-30,AA11-TEST_30,"Test","Test","2100/01/01 00:00","2025/01/01 00:01","http://test.com",false,spokesperson-01
+campaign-31,AA11-TEST_31,"Test","Test","2100/01/01 00:00","2200/12/31 23:58","http://test.com",false,spokesperson-01
+campaign-32,AA11-TEST_32,"Test","Test","2100/01/01 00:00","2200/12/31 23:59","http://test.com",false,spokesperson-01
+campaign-33,AA11-TEST_33,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://lorem.com/ipsum",false,spokesperson-01
+campaign-34,AA11-TEST_34,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://a.b",false,spokesperson-01
+campaign-35,AA11-TEST_35,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",false,spokesperson-01
+campaign-36,AA11-TEST_36,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",false,spokesperson-01
+campaign-37,AA11-TEST_37,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","https://www.lorem-ipsum.org",false,spokesperson-01
+campaign-38,AA11-TEST_38,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://www.lorem-ipsum.org/dolor/sit.html",false,spokesperson-01
+campaign-39,AA11-TEST_39,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://www.lorem-ipsum.org/dolor/sit.html#dolor",false,spokesperson-01
+campaign-40,AA11-TEST_40,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org?a=1&b=2",false,spokesperson-01
+campaign-41,AA11-TEST_41,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org?",false,spokesperson-01
+campaign-42,AA11-TEST_42,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org?a",false,spokesperson-01
+campaign-43,AA11-TEST_43,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org?a&b",false,spokesperson-01
+campaign-44,AA11-TEST_44,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org/",false,spokesperson-01
+campaign-45,AA11-TEST_45,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org/a",false,spokesperson-01
+campaign-46,AA11-TEST_46,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org/a/b",false,spokesperson-01
+campaign-47,AA11-TEST_47,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org/a/b?",false,spokesperson-01
+campaign-48,AA11-TEST_48,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://example.org/a/b?a&b",false,spokesperson-01
+campaign-49,AA11-TEST_49,"Test","Test","2026/03/01 09:00","2026/12/31 23:59","http://www.lorem-ipsum.org",false,spokesperson-01

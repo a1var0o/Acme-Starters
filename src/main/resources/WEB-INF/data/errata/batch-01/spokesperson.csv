@@ -1,0 +1,9 @@
+key,key:userAccount,cv,achievements,licensed
+spokesperson-01,user-account-spokesperson-01,"","Test",true
+spokesperson-02,user-account-spokesperson-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i","Test",true
+spokesperson-03,user-account-spokesperson-03,"Test","",true
+spokesperson-04,user-account-spokesperson-04,"Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",true
+spokesperson-05,user-account-spokesperson-05,null,"Test",true
+spokesperson-06,user-account-spokesperson-06,"Test",null,true
+spokesperson-07,user-account-spokesperson-07,"Test","Test",null
+spokesperson-08,null,"Test","Test",true
