@@ -1,0 +1,24 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:inventor
+invention-01,Iu00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-02,IUU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-03,I00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-04,Iu0-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-05,IU00-1234,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-06,IU00-12345678910,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-07,Iu0012345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-08,IU00-12345,,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-09,IU00-12345,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tem,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-10,IU00-12345,My first invention,,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-11,IU00-12345,My first invention,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-12,IU00-12345,My first invention,A great new invention,,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-13,IU00-12345,My first invention,A great new invention,1999/12/31 23:59,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-14,IU00-12345,My first invention,A great new invention,2025/05/16 00:00,,http://www.lorem-ipsum.org,true,inventor-01
+invention-15,IU00-12345,My first invention,A great new invention,2025/05/16 00:00,1999/12/31 23:59,http://www.lorem-ipsum.org,true,inventor-01
+invention-16,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2201/01/01 00:00,http://www.lorem-ipsum.org,true,inventor-01
+invention-17,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://,true,inventor-01
+invention-18,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,ftp://,true,inventor-01
+invention-19,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://a,true,inventor-01
+invention-20,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,ftp://a,true,inventor-01
+invention-21,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org/dolor/sit/amett/consectetur/adipiscing/elitt/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/xx,true,inventor-01
+invention-22,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,,inventor-01
+invention-23,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,

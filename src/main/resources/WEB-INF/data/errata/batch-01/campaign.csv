@@ -1,0 +1,29 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson
+campaign-01,A111-A1234,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-02,AAA1-A1234,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-03,AA11A1234,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-04,AA11-A123,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-05,AA11-A1234567890,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-06,null,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-07,AA11-TEST_07,null,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-08,AA11-TEST_08,"",Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-09,AA11-TEST_09,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-10,AA11-TEST_10,Test,null,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-11,AA11-TEST_11,Test,"",2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-12,AA11-TEST_12,Test,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-13,AA11-TEST_13,Test,Test,2022/09/01 10:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-14,AA11-TEST_14,Test,Test,2024/12/31 23:59,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-15,AA11-TEST_15,Test,Test,2201/01/01 00:00,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-16,AA11-TEST_16,Test,Test,null,2026/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-17,AA11-TEST_17,Test,Test,2026/03/01 09:00,2022/09/01 10:00,http://test.com,false,spokesperson-01
+campaign-18,AA11-TEST_18,Test,Test,2026/03/01 09:00,2024/12/31 23:59,http://test.com,false,spokesperson-01
+campaign-19,AA11-TEST_19,Test,Test,2026/03/01 09:00,2201/01/01 00:00,http://test.com,false,spokesperson-01
+campaign-20,AA11-TEST_20,Test,Test,2026/03/01 09:00,null,http://test.com,false,spokesperson-01
+campaign-21,AA11-TEST_21,Test,Test,2026/03/01 09:00,2026/12/31 23:59,null,false,spokesperson-01
+campaign-22,AA11-TEST_22,Test,Test,2026/03/01 09:00,2026/12/31 23:59,"http://",false,spokesperson-01
+campaign-23,AA11-TEST_23,Test,Test,2026/03/01 09:00,2026/12/31 23:59,"ftp://",false,spokesperson-01
+campaign-24,AA11-TEST_24,Test,Test,2026/03/01 09:00,2026/12/31 23:59,"http://a",false,spokesperson-01
+campaign-25,AA11-TEST_25,Test,Test,2026/03/01 09:00,2026/12/31 23:59,"ftp://a",false,spokesperson-01
+campaign-26,AA11-TEST_26,Test,Test,2026/03/01 09:00,2026/12/31 23:59,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",false,spokesperson-01
+campaign-27,AA11-TEST_27,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,null,spokesperson-01
+campaign-28,AA11-TEST_28,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://test.com,false,null

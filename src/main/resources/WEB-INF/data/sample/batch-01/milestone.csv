@@ -1,0 +1,28 @@
+key,title,achievements,effort,kind,key:campaign
+milestone-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t","Test",10.0,TEASER,campaign-01
+milestone-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t*","Test",10.0,TEASER,campaign-01
+milestone-03,"L","Test",10.0,TEASER,campaign-01
+milestone-04,"Lo","Test",10.0,TEASER,campaign-01
+milestone-05,"โลเร็ม อิปซัม","Test",10.0,TEASER,campaign-01
+milestone-06,"لوريم إيبسوم","Test",10.0,TEASER,campaign-01
+milestone-07,"洛伦·伊普森","Test",10.0,TEASER,campaign-01
+milestone-08,"<marquee>Hacked</marquee>","Test",10.0,TEASER,campaign-01
+milestone-09,"<script>alert(‘Hacked!’);</script>","Test",10.0,TEASER,campaign-01
+milestone-10,"'' or 'A' = 'A ","Test",10.0,TEASER,campaign-01
+milestone-11,"Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",10.0,TEASER,campaign-01
+milestone-12,"Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",10.0,TEASER,campaign-01
+milestone-13,"Test","L",10.0,TEASER,campaign-01
+milestone-14,"Test","Lo",10.0,TEASER,campaign-01
+milestone-15,"Test","โลเร็ม อิปซัม",10.0,TEASER,campaign-01
+milestone-16,"Test","لوريم إيبسوم",10.0,TEASER,campaign-01
+milestone-17,"Test","洛伦·伊普森",10.0,TEASER,campaign-01
+milestone-18,"Test","<marquee>Hacked</marquee>",10.0,TEASER,campaign-01
+milestone-19,"Test","<script>alert(‘Hacked!’);</script>",10.0,TEASER,campaign-01
+milestone-20,"Test","'' or 'A' = 'A ",10.0,TEASER,campaign-01
+milestone-21,"Test","Test",999999.99,TEASER,campaign-01
+milestone-22,"Test","Test",999998.99,TEASER,campaign-01
+milestone-23,"Test","Test",0,TEASER,campaign-01
+milestone-24,"Test","Test",1,TEASER,campaign-01
+milestone-25,"Test","Test",10,TEASER,campaign-01
+milestone-26,"Test","Test",10,ENGAGING,campaign-01
+milestone-27,"Test","Test",10,CONVERSION,campaign-01
