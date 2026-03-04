@@ -1,10 +1,13 @@
 key,key:user-account,bank,statement,agent
+#fail bank
 fundraiser-01,user-account-fundraiser-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 fundraiser-02,user-account-fundraiser-07,"","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 fundraiser-03,user-account-fundraiser-03,,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+#fail statement
 fundraiser-04,user-account-fundraiser-04,"Lorem ipsum dolor sit amet, consectetu","",true
 fundraiser-05,user-account-fundraiser-05,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",true
 fundraiser-06,user-account-fundraiser-06,"Lorem ipsum dolor sit amet, consectetu",,true
+#fail mandatory attributes
 fundraiser-07,user-account-fundraiser-07,null,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 fundraiser-08,user-account-fundraiser-08,"Lorem ipsum dolor sit amet, consectetu",null,true
 fundraiser-09,user-account-fundraiser-09,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",null
