@@ -1,0 +1,44 @@
+
+package acme.features.authenticated.strategy;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.services.AbstractService;
+import acme.entities.Strategy;
+import acme.realms.Fundraiser;
+
+@Service
+public class AuthenticatedStrategyShowService extends AbstractService<Fundraiser, Strategy> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	private AuthenticatedStrategyRepository	repository;
+
+	private Strategy						strategy;
+
+	// AbstractService interface -------------------------------------------
+
+
+	@Override
+	public void load() {
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		this.strategy = this.repository.findStrategyById(id);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+		status = this.strategy.getDraftMode();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void unbind() {
+		super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "fundraiser");
+	}
+}
