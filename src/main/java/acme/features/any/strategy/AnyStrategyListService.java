@@ -22,7 +22,7 @@ public class AnyStrategyListService extends AbstractService<Any, Strategy> {
 	@Override
 	public void load() {
 
-		this.strategies = this.repository.findStrategiesByDraftMode();
+		//this.strategies = this.repository.findStrategiesByDraftMode();
 	}
 
 	@Override
