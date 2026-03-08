@@ -1,6 +1,6 @@
 key,key:sponsor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
 # ticker - standard variations
-sponsorship-01,sponsor-01,AA00-12345,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-01,sponsor-01,AA00-12345,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,false
 sponsorship-02,sponsor-01,BB11-12Ab56,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
 sponsorship-03,sponsor-01,CM09-123af6ZH9,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
 sponsorship-04,sponsor-01,DA33-123DFGp890,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
@@ -26,7 +26,7 @@ sponsorship-21,sponsor-01,AA00-123s45,Sponsorship,洛伦·伊普森,2025/01/01 1
 sponsorship-22,sponsor-01,AA00-123h45,Sponsorship,<marquee>Hacked</marquee>,2025/01/01 10:00,2025/01/15 10:00,null,true
 sponsorship-23,sponsor-01,AA00-123n45,Sponsorship,<script>alert(‘Hacked!’);</script>,2025/01/01 10:00,2025/01/15 10:00,null,true
 sponsorship-24,sponsor-01,AA00-123q45,Sponsorship,' or 'A' = 'A,2025/01/01 10:00,2025/01/15 10:00,null,true
-# startMoment - standard variations (todo: check if start == end is valid, for both min and max examples)
+# startMoment - standard variations (todo: check if start == end is valid,for both min and max examples)
 sponsorship-25,sponsor-01,AA00-12k345,Sponsorship,Sponsoring change for a better world.,2000/01/01 00:00,2025/01/15 10:00,null,true
 sponsorship-26,sponsor-01,AA00-123i45,Sponsorship,Sponsoring change for a better world.,2000/01/01 00:01,2025/01/15 10:00,null,true
 sponsorship-27,sponsor-01,AA00-123445,Sponsorship,Sponsoring change for a better world.,2200/12/31 23:58,2200/12/31 23:59,null,true
