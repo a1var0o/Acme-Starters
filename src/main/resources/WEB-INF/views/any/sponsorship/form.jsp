@@ -5,12 +5,13 @@
 
 <acme:form>
 	<acme:form-textbox code="any.sponsorship.form.label.ticker" path="ticker"/>
-	<acme:form-select code="any.sponsorship.form.label.sponsor" path="sponsor" choices="${sponsors}"/>
+	<acme:form-textbox code="any.sponsorship.form.label.sponsor" path="sponsor"/>
 	<acme:form-textbox code="any.sponsorship.form.label.name" path="name"/>
 	<acme:form-moment code="any.sponsorship.form.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="any.sponsorship.form.label.endMoment" path="endMoment"/>
 	<acme:form-url code="any.sponsorship.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="any.sponsorship.form.label.description" path="description"/>
 	
+	<acme:button code="any.sponsorship.form.button.sponsor" action="/any/sponsor/show?id=${sponsorId}"/>
 	<acme:button code="any.sponsorship.form.button.donations" action="/any/donation/list?sponsorshipId=${id}"/>
 </acme:form>

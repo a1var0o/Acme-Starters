@@ -10,6 +10,7 @@ any.sponsorship.form.label.moreInfo = Más información: (Opcional)
 any.sponsorship.form.label.sponsor = Patrocinador:
 
 any.sponsorship.form.button.donations = Donaciones
+any.sponsorship.form.button.sponsor = Perfil del patrocinador
 
 any.sponsorship.list.label.ticker = Referencia 
 any.sponsorship.list.label.name = Nombre
