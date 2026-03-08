@@ -8,7 +8,6 @@
 	<acme:form-textarea code="any.invention.show.label.description" path="description"/>
 	<acme:form-moment code="any.invention.show.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="any.invention.show.label.endMoment" path="endMoment"/>
-	<%--buttons don't work as expected--%>
-	<acme:button code="any.invention.show.label.inventor" action="any/inventor/show?id=${id}"/>
-	<acme:button code="any.invention.show.label.parts" action="any/part/list?id=${id}"/>
+	<acme:button code="any.invention.show.label.inventor" action="/any/inventor/show?id=${id}"/>
+	<acme:button code="any.invention.show.label.parts" action="/any/part/list?id=${id}"/>
 </acme:form>
