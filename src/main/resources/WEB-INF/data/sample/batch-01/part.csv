@@ -17,11 +17,11 @@ part-06,top part,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do
 # Cost min
 part-07,top part,Base description of a part,EUR 0.00,CORE,invention-03
 # Cost min + 1
-part-08,top part,Base description of a part,EUR 0.01,CORE,invention-03
+part-08,top part,Base description of a part,EUR 0.01,CORE,invention-18
 # Cost max - 1
-part-09,top part,Base description of a part,EUR 999999.99,CORE,invention-03
+part-09,top part,Base description of a part,EUR 999999.99,CORE,invention-18
 # Cost max
-part-10,top part,Base description of a part,EUR 1000000.00,CORE,invention-03
+part-10,top part,Base description of a part,EUR 1000000.00,CORE,invention-18
 # Kind (enum CORE,MANDATORY,OPTIONAL)
-part-11,top part,Base description of a part,EUR 230,MANDATORY,invention-03
-part-12,top part,Base description of a part,EUR 230,OPTIONAL,invention-03
+part-11,top part,Base description of a part,EUR 230,MANDATORY,invention-18
+part-12,top part,Base description of a part,EUR 230,OPTIONAL,invention-18
