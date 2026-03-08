@@ -26,7 +26,7 @@ public class AnyTacticListService extends AbstractService<Any, Tactic> {
 
 		int strategyId = super.getRequest().getData("strategyId", int.class);
 		this.strategy = this.repository.findStrategyById(strategyId);
-		//this.tactics = this.repository.findTacticsByStrategy(this.strategy.getId());
+		this.tactics = this.repository.findTacticsByStrategy(this.strategy.getId());
 	}
 
 	@Override
