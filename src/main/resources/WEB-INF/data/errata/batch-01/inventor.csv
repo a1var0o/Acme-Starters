@@ -1,7 +1,17 @@
 key,key:user-account,bio,key-words,licensed
 
+# Bio (string min=1, max=255)
+# Bio null / min - 1
 inventor-01,user-account-inventor-01,,Valid key word,true
+# Bio max + 1
 inventor-02,user-account-inventor-01,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i,Valid key word,true
+
+# Key-words (string min=1, max=255)
+# Key-words null / min - 1
 inventor-03,user-account-inventor-01,Base bio for an inventor,,true
+# Key-words max + 1
 inventor-04,user-account-inventor-01,Base bio for an inventor,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i,true
+
+# Licensed (boolean)
+# Licensed null
 inventor-05,user-account-inventor-01,Base bio for an inventor,Valid key word,
