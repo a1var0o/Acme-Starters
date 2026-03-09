@@ -39,22 +39,27 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			result = true;
 		else {
 			{
-				boolean hasTactics = false;
+				boolean uniqueStrategy;
+				Strategy existingstrategy;
+
+				existingstrategy = this.repository.findStrategyByTicker(strategy.getTicker());
+				uniqueStrategy = existingstrategy == null || existingstrategy.equals(strategy);
+
+				super.state(context, uniqueStrategy, "ticker", "acme.validation.strategy.duplicated-ticker.message");
+			}
+			{
+				boolean atLeastOnetactic = strategy.getDraftMode();
 				Collection<Tactic> tactics = this.repository.findTacticsByStrategy(strategy.getId());
-				if (!strategy.getDraftMode() && tactics != null)
-					hasTactics = true;
-				if (strategy.getDraftMode())
-					hasTactics = true;
-				super.state(context, hasTactics, "*", "acme.validation.strategy.no-tactics-and-published.message");
+				if (!atLeastOnetactic && tactics != null)
+					atLeastOnetactic = true;
+				super.state(context, atLeastOnetactic, "*", "acme.validation.strategy.no-tactics-and-published.message");
 			}
 			{
 				Date start = strategy.getStartMoment();
 				Date end = strategy.getEndMoment();
-				boolean correctDates = false;
+				boolean correctDates = strategy.getDraftMode();
 
-				if (!strategy.getDraftMode() && MomentHelper.isBefore(start, end))
-					correctDates = true;
-				if (strategy.getDraftMode())
+				if (!correctDates && MomentHelper.isBefore(start, end))
 					correctDates = true;
 				super.state(context, correctDates, "*", "acme.validation.strategy.correct-interval.message");
 			}

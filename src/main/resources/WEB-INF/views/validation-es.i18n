@@ -4,3 +4,4 @@ acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
 
 acme.validation.strategy.no-tactics-and-published.message = Si la estrategia está publicada, debe de teenr al menos una táctica asociada
 acme.validation.strategy.correct-interval.message = Si la estrategia está publicada, el momento de inicio debe ser anterior al momento de finalización
+acme.validation.strategy.duplicated-ticker.message = Ya existe una estrategia con la referencia introducida
