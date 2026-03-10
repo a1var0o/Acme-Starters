@@ -50,7 +50,7 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			{
 				boolean atLeastOnetactic = strategy.getDraftMode();
 				Collection<Tactic> tactics = this.repository.findTacticsByStrategy(strategy.getId());
-				if (!atLeastOnetactic && tactics != null)
+				if (!atLeastOnetactic && !tactics.isEmpty())
 					atLeastOnetactic = true;
 				super.state(context, atLeastOnetactic, "*", "acme.validation.strategy.no-tactics-and-published.message");
 			}
