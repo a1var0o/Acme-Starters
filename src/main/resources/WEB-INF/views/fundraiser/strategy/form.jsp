@@ -9,7 +9,20 @@
 	<acme:form-textarea code="fundraiser.strategy.list.label.description" path="description"/>
 	<acme:form-moment code="fundraiser.strategy.list.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="fundraiser.strategy.list.label.endMoment" path="endMoment"/>
+	<acme:form-url code="any.sponsorship.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-checkbox code="fundraiser.strategy.list.label.draftMode" path="draftMode"/>
 	
-	<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+	<jstl:choose>	 
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>	
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+			<acme:submit code="fundraiser.strategy.form.button.update" action="/fundraiser/strategy/update"/>
+			<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="fundraiser.strategy.form.button.create" action="/fundraiser/strategy/create"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>

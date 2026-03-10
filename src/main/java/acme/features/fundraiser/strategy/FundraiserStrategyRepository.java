@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.Strategy;
+import acme.realms.Fundraiser;
 
 @Repository
 public interface FundraiserStrategyRepository extends AbstractRepository {
@@ -17,5 +18,8 @@ public interface FundraiserStrategyRepository extends AbstractRepository {
 
 	@Query("select s from Strategy s where s.id = :id")
 	Strategy findStrategyById(int id);
+
+	@Query("select f from Fundraiser f where f.userAccount.id = :id")
+	Fundraiser findFundraiserByUserAccountId(int id);
 
 }
