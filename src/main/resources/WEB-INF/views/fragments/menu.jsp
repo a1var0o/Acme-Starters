@@ -18,8 +18,8 @@
 
 <acme:menu-bar>
 		<acme:menu-left>
-			<acme:menu-option code="master.menu.any" access="hasRealm('Any')">
-			<acme:menu-suboption code="master.menu.any.list-inventions" action="/any/invention/list" />
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.list-inventions" action="/any/invention/list"/>
 		</acme:menu-option>
 	
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
