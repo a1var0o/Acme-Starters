@@ -11,7 +11,7 @@ import acme.client.controllers.AbstractController;
 import acme.entities.AuditReport;
 
 @Controller
-public class AnyAuditReportsController extends AbstractController<Any, AuditReport> {
+public class AnyAuditReportController extends AbstractController<Any, AuditReport> {
 
 	@PostConstruct
 	protected void initialise() {
