@@ -11,7 +11,7 @@ import acme.client.controllers.AbstractController;
 import acme.entities.Invention;
 
 @Controller
-public class AnyInventionsController extends AbstractController<Any, Invention> {
+public class AnyInventionController extends AbstractController<Any, Invention> {
 
 	@PostConstruct
 	protected void initialise() {
