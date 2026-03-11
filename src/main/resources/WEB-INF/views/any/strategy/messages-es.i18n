@@ -1,0 +1,11 @@
+any.strategy.list.label.ticker = Ticker
+any.strategy.list.label.name = Nombre
+any.strategy.list.label.description = Descripción
+any.strategy.list.label.startMoment = Inicio
+any.strategy.list.label.endMoment = Finalización
+
+any.strategy.form.button.tactics = Tácticas
+any.strategy.form.button.fundraiser = Recaudador
+
+any.strategy.list.title = Estrategias
+any.strategy.form.title = Estrategia

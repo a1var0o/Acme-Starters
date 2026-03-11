@@ -1,0 +1,7 @@
+any.tactic.list.label.name = Name
+any.tactic.list.label.notes = Notes
+any.tactic.list.label.expectedPercentage = Expected Percentage
+any.tactic.list.label.kind = Kind
+
+any.tactic.list.title = Tactics
+any.tactic.form.title = Tactic
