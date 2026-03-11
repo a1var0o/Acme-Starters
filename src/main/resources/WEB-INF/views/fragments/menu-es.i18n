@@ -18,6 +18,11 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.any = Cualquiera
 master.menu.any.list-inventions = Listar inventons
 
+# master.menu.inventor #############################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-inventions = Listar mis inventos
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
