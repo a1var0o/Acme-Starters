@@ -1,0 +1,7 @@
+any.milestone.list.label.name = Nombre
+any.milestone.list.label.description = Descripción
+any.milestone.list.label.effort = Esfuerzo
+any.milestone.list.label.kind = Tipo
+
+any.milestone.list.title = Hitos
+any.milestone.form.title = Hito
