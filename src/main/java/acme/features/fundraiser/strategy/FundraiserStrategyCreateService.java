@@ -26,7 +26,7 @@ public class FundraiserStrategyCreateService extends AbstractService<Fundraiser,
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		this.fundraiser = this.repository.findFundraiserByUserAccountId(userAccountId);
 
-		this.strategy = new Strategy();
+		this.strategy = super.newObject(Strategy.class);
 		this.strategy.setDraftMode(true);
 		this.strategy.setFundraiser(this.fundraiser);
 	}

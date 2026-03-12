@@ -30,11 +30,13 @@ public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tac
 
 	@Override
 	public void authorise() {
+		boolean status;
+
 		super.setAuthorised(true);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind", "strategy");
+		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 	}
 }
