@@ -36,11 +36,11 @@ campaign-29,AA11-TEST_29,Test,Test,2100/01/01 00:00,2000/01/01 00:00,http://test
 campaign-30,AA11-TEST_30,Test,Test,2100/01/01 00:00,2000/01/01 00:01,http://test.com,true,spokesperson-01
 campaign-31,AA11-TEST_31,Test,Test,2100/01/01 00:00,2200/12/31 23:58,http://test.com,true,spokesperson-01
 campaign-32,AA11-TEST_32,Test,Test,2100/01/01 00:00,2200/12/31 23:59,http://test.com,true,spokesperson-01
-#Testing intervals between start and end (MIN MIN+1 MAX-1 MAX)
-campaign-33,AA11-TEST_33,Test,Test,2000/01/01 00:00,2000/01/01 00:00,http://test.com,true,spokesperson-01
-campaign-34,AA11-TEST_34,Test,Test,2000/01/01 00:00,2000/01/01 00:01,http://test.com,true,spokesperson-01
-campaign-35,AA11-TEST_35,Test,Test,2000/01/01 00:00,2200/12/31 23:58,http://test.com,true,spokesperson-01
-campaign-36,AA11-TEST_36,Test,Test,2000/01/01 00:00,2200/12/31 23:59,http://test.com,true,spokesperson-01
+#Testing valid intervals between start and end (MIN MIN+1 MAX-1 MAX)
+campaign-33,AA11-TEST_33,Test,Test,2000/01/01 00:00,2000/01/01 00:01,http://test.com,false,spokesperson-01
+campaign-34,AA11-TEST_34,Test,Test,2000/01/01 00:00,2000/01/01 00:02,http://test.com,false,spokesperson-01
+campaign-35,AA11-TEST_35,Test,Test,2000/01/01 00:00,2200/12/31 23:58,http://test.com,false,spokesperson-01
+campaign-36,AA11-TEST_36,Test,Test,2000/01/01 00:00,2200/12/31 23:59,http://test.com,false,spokesperson-01
 #Testing moreInfo
 campaign-37,AA11-TEST_37,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://lorem.com/ipsum,true,spokesperson-01
 campaign-38,AA11-TEST_38,Test,Test,2026/03/01 09:00,2026/12/31 23:59,http://a.b,true,spokesperson-01
