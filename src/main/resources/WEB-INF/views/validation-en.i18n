@@ -9,6 +9,7 @@ acme.validation.strategy.duplicated-ticker.message = There is already a strategy
 acme.validation.invention.duplicated-ticker.message = The ticker must be unique
 acme.validation.invention.parts.message = An invention needs at least one part to be published
 acme.validation.invention.interval.message = End moment must be after start moment
+acme.validation.strategy.no-future-interval.message = The interval must start in the future with respect to the date of publication
 
 acme.validation.campaign.duplicated-ticker.message = Duplicate ticker
 acme.validation.campaign.milestones.message = Campaign must have at least 1 milestone

@@ -15,20 +15,19 @@ public class AnyFundraiserShowService extends AbstractService<Any, Fundraiser> {
 
 	@Autowired
 	private AnyFundraiserRepository	repository;
-
-	private Fundraiser				fundraiser;
 	private Strategy				strategy;
+	private Fundraiser				fundraiser;
 
 	// AbstractService interface -------------------------------------------
 
 
 	@Override
 	public void load() {
-		int strategyId;
+		int id;
 
-		strategyId = super.getRequest().getData("strategyId", int.class);
-		this.strategy = this.repository.findStrategyById(strategyId);
-		this.fundraiser = this.strategy.getFundraiser();
+		id = super.getRequest().getData("id", int.class);
+		this.strategy = this.repository.findStrategyById(id);
+		this.fundraiser = this.repository.findFundraiserByStrategyId(id);
 	}
 
 	@Override

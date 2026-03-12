@@ -36,7 +36,7 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 	public void authorise() {
 		boolean status;
 
-		status = this.strategy != null && this.tactic.getStrategy().getFundraiser().isPrincipal() && !this.tactic.getStrategy().getDraftMode();
+		status = this.strategy != null && this.tactic.getStrategy().getFundraiser().isPrincipal() && this.tactic.getStrategy().getDraftMode();
 		super.setAuthorised(status);
 	}
 
@@ -60,7 +60,7 @@ public class FundraiserTacticCreateService extends AbstractService<Fundraiser, T
 		Tuple tuple;
 
 		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
-		tuple.put("stratgeyId", super.getRequest().getData("strategyId", int.class));
+		tuple.put("strategyId", super.getRequest().getData("strategyId", int.class));
 		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
 	}
 }

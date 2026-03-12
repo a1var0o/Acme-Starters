@@ -4,6 +4,7 @@ package acme.features.fundraiser.tactic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.Tactic;
 import acme.realms.Fundraiser;
@@ -37,6 +38,10 @@ public class FundraiserTacticShowService extends AbstractService<Fundraiser, Tac
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+		tuple.put("strategyId", this.tactic.getStrategy().getId());
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
 	}
 }

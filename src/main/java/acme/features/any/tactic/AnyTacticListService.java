@@ -24,9 +24,9 @@ public class AnyTacticListService extends AbstractService<Any, Tactic> {
 	@Override
 	public void load() {
 
-		int strategyId = super.getRequest().getData("strategyId", int.class);
-		this.strategy = this.repository.findStrategyById(strategyId);
-		this.tactics = this.repository.findTacticsByStrategy(this.strategy.getId());
+		int id = super.getRequest().getData("id", int.class);
+		this.strategy = this.repository.findStrategyById(id);
+		this.tactics = this.repository.findTacticsByStrategy(id);
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class AnyTacticListService extends AbstractService<Any, Tactic> {
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.tactics, "name", "notes", "expectedPercentage", "kind", "strategy");
+		super.unbindObjects(this.tactics, "name", "notes", "expectedPercentage", "kind");
 	}
 
 }

@@ -1,12 +1,16 @@
 
 package acme.features.fundraiser.strategy;
 
+import java.util.Collection;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.Strategy;
+import acme.entities.Tactic;
 import acme.realms.Fundraiser;
 
 @Service
@@ -47,6 +51,19 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 
 			futureInterval = MomentHelper.isFuture(this.strategy.getStartMoment());
 			super.state(futureInterval, "*", "acme.validation.strategy.no-future-interval.message");
+		}
+		{
+			Collection<Tactic> tactics = this.repository.findTacticsByStrategyId(this.strategy.getId());
+			boolean atLeastOnetactic = !tactics.isEmpty();
+
+			super.state(atLeastOnetactic, "*", "acme.validation.strategy.no-tactics-and-published.message");
+		}
+		{
+			Date start = this.strategy.getStartMoment();
+			Date end = this.strategy.getEndMoment();
+			boolean correctDates = MomentHelper.isBefore(start, end);
+
+			super.state(correctDates, "*", "acme.validation.strategy.correct-interval.message");
 		}
 	}
 

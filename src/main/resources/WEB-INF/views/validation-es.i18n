@@ -9,6 +9,7 @@ acme.validation.strategy.duplicated-ticker.message = Ya existe una estrategia co
 acme.validation.invention.duplicated-ticker.message = El ticker tiene que ser único
 acme.validation.invention.parts.message = Un invento necesita al menos una parte para poder ser publicado
 acme.validation.invention.interval.message = El momento de fin tiene que ser después del momento de inicio
+acme.validation.strategy.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación
 
 acme.validation.campaign.duplicated-ticker.message = Ticker duplicado
 acme.validation.campaign.milestones.message = La campaña debe tener un hito asociado

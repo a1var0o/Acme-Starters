@@ -37,6 +37,6 @@ public class AnyTacticShowService extends AbstractService<Any, Tactic> {
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind", "strategy");
+		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 	}
 }
