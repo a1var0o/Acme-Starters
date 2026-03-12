@@ -1,40 +1,34 @@
 key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:inventor
-# Base case
-invention-01,IU00-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
-# Ticker (^[A-Z]{2}[0-9]{2}-\\w{5,10}$)
-# Ticker 10 digits
+# Base
+invention-01,IU01-12345,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-01
+
+# Ticker
 invention-02,NI13-9999999999,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
-# Ticker 5 digits
 invention-03,AI20-00000,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
-# Name (string min=1,max=75)
-# Name 1 char
-invention-04,AI20-00003,L,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Name 75 chars
-invention-05,AI20-00002,My first invention,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Description (string min=1,max=255)
-# Description 1 char
-invention-06,IU00-123450,My first invention,L,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Description 255 chars
-# Description non latin chars
-invention-07,IU00-123451,My first invention,洛伦·伊普森,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-invention-08,IU00-123452,My first invention,لوريم إيبسوم,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Start-moment (date from 2000/01/01 00:00 to 2200/12/31 23:59,must be in the future with respect to the publish date)
-# Start-moment min
-invention-09,IU00-123453,My first invention,A great new invention,2000/01/01 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Start-moment min + 1
-invention-10,IU00-123454,My first invention,A great new invention,2000/01/01 00:01,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Start-moment max
-invention-11,IU00-123455,My first invention,A great new invention,2200/12/31 23:59,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# Start-moment max - 1
-invention-12,IU00-123456,My first invention,A great new invention,2200/12/31 23:59,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# End-moment (date from 2000/01/01 00:00 to 2200/12/31 23:59,must be in the future with respect to the publish date)
-# End-moment min
-invention-13,IU00-123457,My first invention,A great new invention,2025/09/12 00:00,2000/01/01 00:00,http://www.lorem-ipsum.org,true,inventor-03
-# End-moment max
-invention-14,IU00-123458,My first invention,A great new invention,2025/09/12 00:00,2025/12/31 23:59,http://www.lorem-ipsum.org,true,inventor-03
-# More-info (optional string validUrl)
-invention-15,IU00-123459,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://example.org?a=1&b=2,true,inventor-03
-invention-16,IU00-123460,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org/dolor/sit.html#dolor,true,inventor-03
-invention-17,IU00-123461,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,,true,inventor-03
-# Test draft-mode (boolean)
-invention-18,IU00-123462,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,false,inventor-03
+
+# Name
+invention-04,AI20-00003,L,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-05,AI20-00002,My first invention,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+
+# Description
+invention-06,IU00-123450,My first invention,L,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-07,IU00-123451,My first invention,洛伦·伊普森,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-08,IU00-123452,My first invention,لوريم إيبسوم,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+
+# Start-moment
+invention-09,IU00-123453,My first invention,A great new invention,2000/01/01 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-10,IU00-123454,My first invention,A great new invention,2000/01/01 00:01,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-11,IU00-123455,My first invention,A great new invention,2200/12/31 23:59,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-12,IU00-123456,My first invention,A great new invention,2200/12/31 23:59,2025/05/16 00:00,http://www.lorem-ipsum.org,true,inventor-02
+
+# End-moment
+invention-13,IU00-123457,My first invention,A great new invention,2025/09/12 00:00,2000/01/01 00:00,http://www.lorem-ipsum.org,true,inventor-02
+invention-14,IU00-123458,My first invention,A great new invention,2025/09/12 00:00,2025/12/31 23:59,http://www.lorem-ipsum.org,true,inventor-02
+
+# More-info
+invention-15,IU00-123459,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://example.org?a=1&b=2,true,inventor-02
+invention-16,IU00-123460,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,http://www.lorem-ipsum.org/dolor/sit.html#dolor,true,inventor-02
+invention-17,IU00-123461,My first invention,A great new invention,2025/09/12 00:00,2025/05/16 00:00,,true,inventor-02
+
+# Draft-mode
+invention-18,IU00-123462,My first invention,A great new invention,2025/05/16 00:00,2025/09/12 00:00,http://www.lorem-ipsum.org,false,inventor-02

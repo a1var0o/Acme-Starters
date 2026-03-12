@@ -45,9 +45,12 @@ master.menu.user-account.consumer-profile = Consumer profile
 
 master.menu.any = Any
 master.menu.any.list-strategies = List all strategies
+<<<<<<< Display-fundraiser-own-strategies
 
 # master.menu.fundraiser ##########################################################
 
 master.menu.fundraiser = Fundraiser
 master.menu.fundraiser.list-strategies = List my strategies
 
+=======
+>>>>>>> main
