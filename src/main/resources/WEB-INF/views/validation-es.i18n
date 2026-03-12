@@ -2,6 +2,10 @@ acme.validation.ticker.message		= La referencia debe tener dos letras mayúscula
 acme.validation.text.message   		= Debe tener entre 1 y 255 caracteres
 acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
 
+acme.validation.campaign.duplicated-ticker.message = Ticker duplicado
+acme.validation.campaign.milestones.message = La campaña debe tener un hito asociado
+acme.validation.campaign.interval.message = El intervalo entre inicio y final no es válido
+
 acme.validation.invention.duplicated-ticker.message = El ticker tiene que ser único
 acme.validation.invention.parts.message = Un invento necesita al menos una parte para poder ser publicado
 acme.validation.invention.interval.message = El momento de fin tiene que ser después del momento de inicio

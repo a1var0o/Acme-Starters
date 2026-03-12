@@ -1,0 +1,11 @@
+any.campaign.list.label.ticker = Ticker
+any.campaign.list.label.name = Name
+any.campaign.list.label.description = Description
+any.campaign.list.label.startMoment = Start Moment
+any.campaign.list.label.endMoment = End Moment
+
+any.campaign.list.label.spokesperson = Spokeperson
+any.campaign.list.label.milestones = Milestones
+
+any.campaign.list.title = My campaigns
+any.campaign.form.title = Campaign

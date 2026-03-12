@@ -21,8 +21,10 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.list-strategies" action="/any/strategy/list" />
+			<acme:menu-suboption code="master.menu.any.list-campaigns" action="/any/campaign/list" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
@@ -45,7 +47,13 @@
 		<acme:menu-option code="master.menu.fundraiser" access="hasRealm('Fundraiser')">
 			<acme:menu-suboption code="master.menu.fundraiser.list-strategies" action="/fundraiser/strategy/list"/>
 		</acme:menu-option>
+      
+		<acme:menu-option code="master.menu.spokesperson" access="hasRealm('Spokesperson')">
+			<acme:menu-suboption code="master.menu.spokesperson.list-campaigns" action="/spokesperson/campaign/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
+	
+
 
 	<acme:menu-right>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">

@@ -1,0 +1,10 @@
+spokesperson.campaign.list.label.ticker = Ticker
+spokesperson.campaign.list.label.name = Nombre
+spokesperson.campaign.list.label.description = Descripción
+spokesperson.campaign.list.label.startMoment = Inicio
+spokesperson.campaign.list.label.endMoment = Final
+spokesperson.campaign.list.label.draftMode = Borrador
+spokesperson.campaign.form.button.milestones = Hitos
+
+spokesperson.campaign.list.title = Mis campañas
+spokesperson.campaign.form.title = Campaña
