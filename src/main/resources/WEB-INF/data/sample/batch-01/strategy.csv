@@ -1,6 +1,6 @@
 key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:fundraiser
 #Valid data
-strategy-01,AA00-12345_aB,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
+strategy-01,AA00-12345_aB,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,false,fundraiser-01
 #Test ticker
 strategy-02,AA00-12345,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:00,2025/09/27 20:00,null,true,fundraiser-01
 strategy-03,AA00-12345_,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
@@ -17,7 +17,7 @@ strategy-12,AA00-12345_f,洛伦·伊普森,"Lorem ipsum dolor sit amet, consecte
 strategy-13,AA00-12345_g,<marquee>Hacked</marquee>,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
 strategy-14,AA00-12345_h,<script>alert(‘Hacked!’);</script>,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
 strategy-15,AA00-12345_i,' or 'A' = 'A,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
-#Test description
+#Test description,"","","","","","","",""
 strategy-16,AA00-12345_j,"Lorem ipsum dolor sit amet, consectetu",L,2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
 strategy-17,AA00-12345_k,"Lorem ipsum dolor sit amet, consectetu",Lo,2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
 strategy-18,AA00-12345_l,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01
@@ -57,4 +57,4 @@ strategy-48,AA00-12345_aQ,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum 
 strategy-49,AA00-12345_aR,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,http://example.org/a/b?,true,fundraiser-01
 strategy-50,AA00-12345_aS,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,http://example.org/a/b?a&b,true,fundraiser-01
 #Test draft-more
-strategy-51,AA00-12345_aT,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,false,fundraiser-01
+strategy-51,AA00-12345_aT,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,fundraiser-01

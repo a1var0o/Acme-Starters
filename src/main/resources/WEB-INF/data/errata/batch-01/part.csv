@@ -1,9 +1,20 @@
 key,name,description,cost,kind,key:invention
+
+# Name
 part-01,,Base description of a part,EUR 230,CORE,invention-01
 part-02,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tem,Base description of a part,EUR 230,CORE,invention-01
+
+# Description
 part-03,top part,,EUR 230,CORE,invention-01
 part-04,top part,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i,EUR 230,CORE,invention-01
+
+# Cost
 part-05,top part,Base description of a part,,CORE,invention-01
 part-06,top part,Base description of a part,EUR -0.01,CORE,invention-01
 part-07,top part,Base description of a part,EUR 1000000.01,CORE,invention-01
-part-08,top part,Base description of a part,EUR 230,,invention-01
+
+# Kind
+part-08,top part,Base description of a part,EUR 230,,invention-23
+
+# Invention FK
+part-09,top part,Base description of a part,EUR 230,,

@@ -1,10 +1,5 @@
 key,key:user-account,bio,key-words,licensed
+
 inventor-01,user-account-inventor-01,Base bio for an inventor,Valid key word,true
-inventor-02,user-account-inventor-02,A,Valid key word,true
-inventor-03,user-account-inventor-03,Lo,Valid key word,true
-inventor-04,user-account-inventor-04,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,Valid key word,true
-inventor-05,user-account-inventor-05,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,Valid key word,true
-inventor-06,user-account-inventor-06,Base bio for an inventor,V,true
-inventor-07,user-account-inventor-07,Base bio for an inventor,Lo,true
-inventor-08,user-account-inventor-08,Base bio for an inventor,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,true
-inventor-09,user-account-inventor-09,Base bio for an inventor,Valid key word,false
+inventor-02,user-account-inventor-02,Base bio for an inventor,Valid key word,true
+inventor-03,user-account-inventor-03,Base bio for an inventor,Valid key word,true

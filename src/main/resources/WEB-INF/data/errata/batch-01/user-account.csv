@@ -1,9 +1,4 @@
 key,enabled,identity,password,username
-user-account-sponsor-01,true,"UserIdentity{name: '', surname: 'One', email: 'sponsor1@acme.com'}",sponsor1,sponsor1
-user-account-sponsor-02,true,"UserIdentity{name: '', surname: 'козаა', email: 'sponsor2@us.es'}",sponsor2,sponsor2
-user-account-sponsor-03,true,"UserIdentity{name: '', surname: 'אבטיח', email: 'sponsor3@acme.com'}",sponsor3,sponsor3
-user-account-sponsor-04,true,"UserIdentity{name: '', surname: 'אבטיח', email: 'sponsor4@acme.com'}",sponsor4,sponsor4
-user-account-sponsor-05,true,"UserIdentity{name: '', surname: 'אבטיח', email: 'sponsor5@acme.com'}",sponsor5,sponsor5
 user-account-inventor-01,true,"UserIdentity{name: '', surname: 'Consumer', email: 'peter@acme.com'}",inventor1,inventor1
 user-account-spokesperson-01,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
 user-account-spokesperson-02,true,"UserIdentity{name: '', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1
