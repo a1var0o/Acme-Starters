@@ -1,0 +1,10 @@
+spokesperson.campaign.list.label.ticker = Ticker
+spokesperson.campaign.list.label.name = Name
+spokesperson.campaign.list.label.description = Description
+spokesperson.campaign.list.label.startMoment = Start Moment
+spokesperson.campaign.list.label.endMoment = End Moment
+spokesperson.campaign.list.label.draftMode = Draft Mode
+spokesperson.campaign.form.button.milestones = Milestones
+
+spokesperson.campaign.list.title = My campaigns
+spokesperson.campaign.form.title = Campaign

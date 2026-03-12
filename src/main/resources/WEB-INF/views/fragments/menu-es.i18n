@@ -22,6 +22,11 @@ master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 
+# master.menu.inventor #############################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-inventions = Listar mis inventos
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -43,10 +48,16 @@ master.menu.user-account.consumer-profile = Perfil de consumidor
 master.menu.user-account.become-fundraiser = Hazte recaudador
 master.menu.user-account.fundraiser-profile = Perfil del recaudador
 
+# master.menu.spokesperson ##########################################################
+
+master.menu.spokesperson  = Portavoz
+master.menu.spokesperson.list-campaigns = Mostrar mis campañas
+
 # master.menu.any ##########################################################
 
 master.menu.any = Cualquiera
 master.menu.any.list-strategies = Mostrar todas las estrategias
+master.menu.any.list-campaigns = Mostrar campañas
 
 # master.menu.fundraiser ##########################################################
 

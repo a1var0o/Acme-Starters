@@ -1,29 +1,20 @@
 key,name,description,cost,kind,key:invention
 
-# Name (string min=1, max=75)
-# Name null / min - 1
+# Name
 part-01,,Base description of a part,EUR 230,CORE,invention-01
-# Name max + 1
 part-02,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tem,Base description of a part,EUR 230,CORE,invention-01
 
-# Description (string min=1, max=255)
-# Description null / min - 1
+# Description
 part-03,top part,,EUR 230,CORE,invention-01
-# Description max + 1
 part-04,top part,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i,EUR 230,CORE,invention-01
 
-# Cost (money min=0.00, max=1000000.00)
-# Cost null
+# Cost
 part-05,top part,Base description of a part,,CORE,invention-01
-# Cost min - 1
 part-06,top part,Base description of a part,EUR -0.01,CORE,invention-01
-# Cost max + 1
 part-07,top part,Base description of a part,EUR 1000000.01,CORE,invention-01
 
-# Kind (enum)
-# Kind null
-part-08,top part,Base description of a part,EUR 230,,invention-01
+# Kind
+part-08,top part,Base description of a part,EUR 230,,invention-23
 
 # Invention FK
-# Invention null
 part-09,top part,Base description of a part,EUR 230,,

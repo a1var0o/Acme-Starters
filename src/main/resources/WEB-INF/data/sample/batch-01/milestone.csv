@@ -24,9 +24,9 @@ milestone-20,Test,'' or 'A' = 'A,10.0,TEASER,campaign-01
 #Testing effort (Double min=0 max=999999.99 (6 digits 2 decimals))
 milestone-21,Test,Test,999999.99,TEASER,campaign-01
 milestone-22,Test,Test,999998.99,TEASER,campaign-01
-milestone-23,Test,Test,0,TEASER,campaign-01
-milestone-24,Test,Test,1,TEASER,campaign-01
+milestone-23,Test,Test,0,TEASER,campaign-33
+milestone-24,Test,Test,1,TEASER,campaign-34
 #Testing kind
-milestone-25,Test,Test,10,TEASER,campaign-01
-milestone-26,Test,Test,10,ENGAGING,campaign-01
-milestone-27,Test,Test,10,CONVERSION,campaign-01
+milestone-25,Test,Test,10,TEASER,campaign-35
+milestone-26,Test,Test,10,ENGAGING,campaign-36
+milestone-27,Test,Test,10,CONVERSION,campaign-56
