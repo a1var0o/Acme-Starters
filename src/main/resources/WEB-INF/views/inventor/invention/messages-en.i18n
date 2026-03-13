@@ -1,0 +1,14 @@
+inventor.invention.list.title = Inventions
+inventor.invention.list.label.ticker = Ticker
+inventor.invention.list.label.name = Name
+inventor.invention.list.label.description = Description
+inventor.invention.list.label.startMoment = Start moment
+inventor.invention.list.label.endMoment = End moment
+
+inventor.invention.form.title = Invention
+inventor.invention.show.label.name = Name
+inventor.invention.show.label.description = Description
+inventor.invention.show.label.startMoment = Start moment
+inventor.invention.show.label.endMoment = End moment
+inventor.invention.show.label.inventor = Inventor
+inventor.invention.show.label.parts = Parts

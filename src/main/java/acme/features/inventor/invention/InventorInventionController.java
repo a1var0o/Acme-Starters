@@ -1,24 +1,24 @@
 
-package acme.features.any.invention;
+package acme.features.inventor.invention;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 
-import acme.client.components.principals.Any;
 import acme.client.controllers.AbstractController;
 import acme.entities.Invention;
+import acme.realms.Inventor;
 
 @Controller
-public class AnyInventionsController extends AbstractController<Any, Invention> {
+public class InventorInventionController extends AbstractController<Inventor, Invention> {
 
 	@PostConstruct
 	protected void initialise() {
 		super.setMediaType(MediaType.TEXT_HTML);
 
-		super.addBasicCommand("list", AnyInventionListService.class);
-		super.addBasicCommand("show", AnyInventionShowService.class);
+		super.addBasicCommand("list", InventorInventionListService.class);
+		super.addBasicCommand("show", InventorInventionShowService.class);
 	}
 
 }

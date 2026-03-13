@@ -24,7 +24,7 @@ public class AnyPartListService extends AbstractService<Any, Part> {
 	@Override
 	public void load() {
 		int inventionId;
-		inventionId = super.getRequest().getData("id", int.class);
+		inventionId = super.getRequest().getData("inventionId", int.class);
 
 		this.invention = this.repository.findInvention(inventionId);
 		this.parts = this.repository.findPartsByInvention(inventionId);
