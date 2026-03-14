@@ -11,3 +11,4 @@ inventor.part.form.label.description = Description
 inventor.part.form.label.cost = Cost
 inventor.part.form.label.kind = Kind
 inventor.part.form.button.create = Create
+inventor.part.form.button.update = Update
