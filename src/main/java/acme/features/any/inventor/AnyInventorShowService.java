@@ -32,7 +32,7 @@ public class AnyInventorShowService extends AbstractService<Any, Inventor> {
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null;
+		status = this.inventor != null;
 		super.setAuthorised(status);
 	}
 
