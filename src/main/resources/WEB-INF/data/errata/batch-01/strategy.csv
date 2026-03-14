@@ -35,3 +35,7 @@ strategy-26,AA00-12345_o,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum d
 strategy-27,AA00-12345_p,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,null,null,true,fundraiser-01
 strategy-28,AA00-12345_q,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,null,fundraiser-01
 strategy-29,AA00-12345_r,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,true,null
+#fail interval and published
+strategy-30,AA00-12345_t,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/06/14 21:00,null,false,fundraiser-01
+#fail tactics and published
+strategy-31,AA00-12345_u,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/06/15 21:00,2025/09/27 20:00,null,false,fundraiser-01

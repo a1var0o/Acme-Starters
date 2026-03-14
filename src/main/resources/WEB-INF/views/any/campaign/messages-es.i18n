@@ -1,0 +1,11 @@
+any.campaign.list.label.ticker = Ticker
+any.campaign.list.label.name = Nombre
+any.campaign.list.label.description = Descripción
+any.campaign.list.label.startMoment = Inicio
+any.campaign.list.label.endMoment = Final
+
+any.campaign.list.label.spokesperson = Portavoz
+any.campaign.list.label.milestones = Hitos
+
+any.campaign.list.title = Mis campañas
+any.campaign.form.title = Campaña

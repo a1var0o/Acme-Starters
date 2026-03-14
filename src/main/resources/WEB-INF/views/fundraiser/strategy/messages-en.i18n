@@ -1,0 +1,11 @@
+fundraiser.strategy.list.label.ticker = Ticker
+fundraiser.strategy.list.label.name = Name
+fundraiser.strategy.list.label.description = Description
+fundraiser.strategy.list.label.startMoment = Start Moment
+fundraiser.strategy.list.label.endMoment = End Moment
+fundraiser.strategy.list.label.draftMode = Draft mode
+
+fundraiser.strategy.form.button.tactics = Tactics
+
+fundraiser.strategy.list.title = Strategies
+fundraiser.strategy.form.title = Strategy

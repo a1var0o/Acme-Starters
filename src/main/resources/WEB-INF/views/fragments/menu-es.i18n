@@ -22,6 +22,11 @@ master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 
+# master.menu.inventor #############################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-inventions = Mostrar mis inventos
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -40,3 +45,25 @@ master.menu.user-account.become-provider = Hacerse proveedor
 master.menu.user-account.provider-profile = Perfil de proveedor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
+master.menu.user-account.become-inventor = Hacerse inventor
+master.menu.user-account.inventor-profile = Perfil de inventor
+master.menu.user-account.become-fundraiser = Hazte recaudador
+master.menu.user-account.fundraiser-profile = Perfil del recaudador
+
+# master.menu.spokesperson ##########################################################
+
+master.menu.spokesperson  = Portavoz
+master.menu.spokesperson.list-campaigns = Mostrar mis campañas
+
+# master.menu.any ##########################################################
+
+master.menu.any = Cualquiera
+master.menu.any.list-strategies = Mostrar todas las estrategias
+master.menu.any.list-campaigns = Mostrar campañas
+master.menu.any.list-inventions = Mostrar inventos
+
+# master.menu.fundraiser ##########################################################
+
+master.menu.fundraiser = Recaudador
+master.menu.fundraiser.list-strategies = Mostrar mis estrategias
+
