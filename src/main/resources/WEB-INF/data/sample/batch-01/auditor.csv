@@ -1,23 +1,5 @@
 key,key:userAccount,firm,highlights,solicitor
 
 auditor-01,user-account-auditor-01,"Macarena, Inc.","Telecomunications",true
-#Testing different laguages on strings
-auditor-02,user-account-auditor-02,"լոռեմ իպսում","Telecomunications",true
-auditor-03,user-account-auditor-03,"լոռեմ իպսում","ლორემ იფსუმ",false
-auditor-01,user-account-auditor-04,"Macarena, Inc.","ლორემ იფსუმ",true
-auditor-02,user-account-auditor-05,"مرحبا بالعالم","天飽雲馬消根清歡寫尾做兒幫",false
-#Testing string limits
-auditor-03,user-account-auditor-06,"a","Telecomunications",true
-auditor-01,user-account-auditor-07,"Macarena, Inc.","a",true
-auditor-02,user-account-auditor-08,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li","Telecomunications",true
-auditor-03,user-account-auditor-09,"Macarena, Inc.","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li",true
-#Testing emoticons on strings
-auditor-1,user-account-auditor-10,"😔","Telecomunications",true
-auditor-2,user-account-auditor-11,"Macarena, Inc.","👍",true
-#Testing scripts on strings
-auditor-3,user-account-auditor-12,"<h1>Hi</h1>","Telecomunications",true
-auditor-1,user-account-auditor-13,"Macarena, Inc.","<h1>Hi</h1>",true
-auditor-2,user-account-auditor-14,"<script>alert('!')<script>","Telecomunications",true
-auditor-3,user-account-auditor-15,"Macarena, Inc.","<script>alert('!')<script>",true
-auditor-1,user-account-auditor-16,"' or 'A' = 'A'","Telecomunications",true
-auditor-2,user-account-auditor-17,"Macarena, Inc.","' or 'A' = 'A'",true
+auditor-02,user-account-auditor-02,"Mario, Inc.","Telecomunications",true
+auditor-03,user-account-auditor-03,"Testing, Inc.","Telecomunications",true
