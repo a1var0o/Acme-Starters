@@ -1,0 +1,18 @@
+key,name,notes,hours,kind,key:audit-report
+
+audit-section-01,"First","Testing","0","PRELIMINARY",audit-report-01
+#Testing string limits
+audit-section-02,"a","Testing","0","PRELIMINARY",audit-report-01
+audit-section-03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li","Testing","0","PRELIMINARY",audit-report-01
+audit-section-04,"First","a","0","PRELIMINARY",audit-report-01
+audit-section-05,"First","Eub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJNdEub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJ","0","PRELIMINARY",audit-report-01
+#Testing script in the strings
+audit-section-06,"<h1>Hi</h1>","Testing","0","PRELIMINARY",audit-report-01
+audit-section-07,"<script>alert('!')<script>","Testing","0","PRELIMINARY",audit-report-01
+audit-section-08,"' or 'A' = 'A'","Testing","0","PRELIMINARY",audit-report-01
+audit-section-09,"First","<h1>Hi</h1>","0","PRELIMINARY",audit-report-01
+audit-section-10,"First","<script>alert('!')<script>","0","PRELIMINARY",audit-report-01
+audit-section-11,"First","' or 'A' = 'A'","0","PRELIMINARY",audit-report-01
+#Testing emoticons in the strings
+audit-section-12,"👍","Testing","0","PRELIMINARY",audit-report-01
+audit-section-13,"First","👍","0","PRELIMINARY",audit-report-01
