@@ -31,12 +31,12 @@ public class AnyTacticShowService extends AbstractService<Any, Tactic> {
 	@Override
 	public void authorise() {
 		boolean status;
-		status = !this.tactic.getStrategy().getDraftMode();
+		status = this.tactic != null && !this.tactic.getStrategy().getDraftMode();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind", "strategy");
+		super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 	}
 }

@@ -1,7 +1,6 @@
 
 package acme.entities;
 
-import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
@@ -19,13 +18,12 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
-import acme.constraints.ValidTicker;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
+import acme.constraints.ValidTicker;
 import acme.realms.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
@@ -57,12 +55,12 @@ public class Sponsorship extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	// TODO: implement dynamic enforcement of future moments
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startMoment;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	// TODO: implement dynamic enforcement of future moments
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endMoment;
 
@@ -79,18 +77,11 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 
-	// TODO: raises error, annotation disallowed for this location
-	// @Mandatory
+	@Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		Double result = 0.0;
-
-		// TODO: this doesn't work
-		// Duration duration = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		// result = Double.valueOf(duration.get(ChronoUnit.MONTHS));
-
-		return result;
+		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 	}
 
 
@@ -99,9 +90,8 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipRepository repository;
 
 
-	// TODO: raises error, annotation disallowed for this location
-	// @Mandatory
-	// @ValidMoney
+	@Mandatory
+	@ValidMoney
 	@Transient
 	private Money totalMoney() {
 		Money result = new Money();

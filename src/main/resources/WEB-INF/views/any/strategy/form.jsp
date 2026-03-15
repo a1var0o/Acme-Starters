@@ -10,6 +10,6 @@
 	<acme:form-moment code="any.strategy.list.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="any.strategy.list.label.endMoment" path="endMoment"/>
 	
-	<acme:button code="any.strategy.form.button.tactics" action="/any/tactic/list?strategyId=${id}"/>
-	<acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?strategyId=${id}"/>
+	<acme:button code="any.strategy.form.button.tactics" action="/any/tactic/list?id=${id}"/>
+	<acme:button code="any.strategy.form.button.fundraiser" action="/any/fundraiser/show?id=${id}"/>
 </acme:form>

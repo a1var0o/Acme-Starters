@@ -48,19 +48,16 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 				super.state(context, uniqueStrategy, "ticker", "acme.validation.strategy.duplicated-ticker.message");
 			}
 			{
-				boolean atLeastOnetactic = strategy.getDraftMode();
 				Collection<Tactic> tactics = this.repository.findTacticsByStrategy(strategy.getId());
-				if (!atLeastOnetactic && !tactics.isEmpty())
-					atLeastOnetactic = true;
+				boolean atLeastOnetactic = strategy.getDraftMode() || !tactics.isEmpty();
+
 				super.state(context, atLeastOnetactic, "*", "acme.validation.strategy.no-tactics-and-published.message");
 			}
 			{
 				Date start = strategy.getStartMoment();
 				Date end = strategy.getEndMoment();
-				boolean correctDates = strategy.getDraftMode();
+				boolean correctDates = strategy.getDraftMode() || MomentHelper.isBefore(start, end);
 
-				if (!correctDates && MomentHelper.isBefore(start, end))
-					correctDates = true;
 				super.state(context, correctDates, "*", "acme.validation.strategy.correct-interval.message");
 			}
 			result = !super.hasErrors(context);

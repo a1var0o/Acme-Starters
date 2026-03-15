@@ -26,19 +26,23 @@ public class FundraiserTacticListService extends AbstractService<Fundraiser, Tac
 
 		int strategyId = super.getRequest().getData("strategyId", int.class);
 		this.strategy = this.repository.findStrategyById(strategyId);
-		this.tactics = this.repository.findTacticsByStrategy(this.strategy.getId());
+		this.tactics = this.repository.findTacticsByStrategy(strategyId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = this.strategy != null;
+		status = this.strategy != null && (this.strategy.getFundraiser().isPrincipal() || !this.strategy.getDraftMode());
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.tactics, "name", "notes", "expectedPercentage", "kind", "strategy");
+		boolean showCreate;
+		super.unbindObjects(this.tactics, "name", "notes", "expectedPercentage", "kind");
+		showCreate = this.strategy.getDraftMode() && this.strategy.getFundraiser().isPrincipal();
+		super.unbindGlobal("strategyId", this.strategy.getId());
+		super.unbindGlobal("showCreate", showCreate);
 	}
 
 }

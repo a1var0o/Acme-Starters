@@ -14,3 +14,5 @@
 	<acme:list-hidden path="moreInfo"/>
 	<acme:list-hidden path="draftMode"/>
 </acme:list>
+
+<acme:button code="fundraiser.strategy.list.button.create" action="/fundraiser/strategy/create"/>
