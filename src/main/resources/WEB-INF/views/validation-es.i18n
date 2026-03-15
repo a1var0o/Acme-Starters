@@ -18,3 +18,4 @@ acme.validation.campaign.interval.message = El intervalo entre inicio y final no
 acme.validation.auditreport.duplicated-ticker.message = Ticker duplicado
 acme.validation.auditreport.auditsections.message = El Reporte de Auditoría debe tener una Sección de Auditoría asociada
 acme.validation.auditreport.interval.message = El intervalo entre inicio y final no es válido
+acme.validation.auditreport.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación

@@ -18,3 +18,4 @@ acme.validation.campaign.interval.message = The interval between start and end i
 acme.validation.auditreport.duplicated-ticker.message = Duplicate ticker
 acme.validation.auditreport.auditsections.message = Audit Report must have at least 1 Audit Section
 acme.validation.auditreport.interval.message = The interval between start and end isn't valid
+acme.validation.auditreport.no-future-interval.message = The interval must start in the future with respect to the date of publication

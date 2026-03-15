@@ -5,3 +5,9 @@ auditor.auditsection.list.label.kind = Tipo
 
 auditor.auditsection.list.title = Secciones de Auditoría
 auditor.auditsection.form.title = Sección de Auditoría
+
+auditor.auditsection.form.button.update = Actualizar sección de auditoría
+auditor.auditsection.form.button.delete = Borrar sección de auditoría
+auditor.auditsection.form.button.create = Crear sección de auditoría
+
+auditor.auditsection.list.button.create = Crear sección de auditoría

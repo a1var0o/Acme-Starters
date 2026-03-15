@@ -28,7 +28,7 @@ public class AuditorAuditReportShowService extends AbstractService<Auditor, Audi
 	@Override
 	public void authorise() {
 		boolean status;
-		status = this.auditreport != null;
+		status = this.auditreport != null && (this.auditreport.getAuditor().isPrincipal() || !this.auditreport.getDraftMode());
 
 		super.setAuthorised(status);
 	}

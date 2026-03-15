@@ -9,3 +9,7 @@
 	<acme:list-column code="auditor.auditsection.list.label.hours" path="hours" width="25%"/>
 	<acme:list-column code="auditor.auditsection.list.label.kind" path="kind" width="25%"/>
 </acme:list>
+
+<jstl:if test="${showCreate}">
+	<acme:button code="auditor.auditsection.list.button.create" action="/auditor/auditsection/create?auditReportId=${auditReportId}"/>
+</jstl:if>
