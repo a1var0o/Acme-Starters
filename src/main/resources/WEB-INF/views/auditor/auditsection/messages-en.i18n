@@ -1,0 +1,7 @@
+auditor.auditsection.list.label.name = Name
+auditor.auditsection.list.label.notes = Notes
+auditor.auditsection.list.label.hours = Hours
+auditor.auditsection.list.label.kind = Kind
+
+auditor.auditsection.list.title = Audit Sections
+auditor.auditsection.form.title = Audit Section

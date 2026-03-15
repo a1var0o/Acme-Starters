@@ -1,0 +1,10 @@
+auditor.auditreport.list.label.ticker = Ticker
+auditor.auditreport.list.label.name = Name
+auditor.auditreport.list.label.description = Description
+auditor.auditreport.list.label.startMoment = Start Moment
+auditor.auditreport.list.label.endMoment = End Moment
+auditor.auditreport.list.label.draftMode = Draft Mode
+auditor.auditreport.form.button.auditsections = Audit Sections
+
+auditor.auditreport.list.title = My audit reports
+auditor.auditreport.form.title = Audit Report

@@ -15,3 +15,6 @@ acme.validation.campaign.duplicated-ticker.message = Duplicate ticker
 acme.validation.campaign.milestones.message = Campaign must have at least 1 milestone
 acme.validation.campaign.interval.message = The interval between start and end isn't valid
 
+acme.validation.auditreport.duplicated-ticker.message = Duplicate ticker
+acme.validation.auditreport.auditsections.message = Audit Report must have at least 1 Audit Section
+acme.validation.auditreport.interval.message = The interval between start and end isn't valid
