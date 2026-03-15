@@ -19,10 +19,11 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidInvention;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.Inventor;
@@ -32,6 +33,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidInvention
 public class Invention extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -60,12 +62,12 @@ public class Invention extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startMoment;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endMoment;
 
@@ -75,15 +77,15 @@ public class Invention extends AbstractEntity {
 	private String				moreInfo;
 
 
-	//	@Mandatory
+	@Mandatory
 	@Valid
 	@Transient
 	public Double monthsActive() {
-		return Double.valueOf(MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS));
+		return Double.valueOf(MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS));
 	}
 
-	//	@Mandatory
-	//	@ValidMoney
+	@Mandatory
+	@ValidMoney
 	@Transient
 	public Money cost() {
 		Money res = new Money();

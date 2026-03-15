@@ -1,3 +1,21 @@
 acme.validation.ticker.message		= The ticker must have exactly two capital letters and two digits, a dash, and between five or ten numbers, letters or underscores. Example: AB12-EX_Tick12
 acme.validation.text.message   		= Must have from 1 to 255 characters
 acme.validation.header.message  	= Must have from 1 to 75 characters
+
+acme.validation.sponsorship.duplicated-ticker.message = The ticker is duplicated
+acme.validation.sponsorship.donations.message		  = Sponsorships cannot be published unless they have at least one donation
+acme.validation.sponsorship.interval.message          = Start and end dates must be a valid time interval
+
+acme.validation.strategy.no-tactics-and-published.message = If the strategy is published, it must have at least one tactic associated
+acme.validation.strategy.correct-interval.message = If the strategy is published, the start moment must be before the end moment
+acme.validation.strategy.duplicated-ticker.message = There is already a strategy with the given ticker
+
+acme.validation.invention.duplicated-ticker.message = The ticker must be unique
+acme.validation.invention.parts.message = An invention needs at least one part to be published
+acme.validation.invention.interval.message = End moment must be after start moment
+acme.validation.strategy.no-future-interval.message = The interval must start in the future with respect to the date of publication
+
+acme.validation.campaign.duplicated-ticker.message = Duplicate ticker
+acme.validation.campaign.milestones.message = Campaign must have at least 1 milestone
+acme.validation.campaign.interval.message = The interval between start and end isn't valid
+

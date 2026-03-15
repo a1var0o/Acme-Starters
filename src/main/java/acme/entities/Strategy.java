@@ -1,7 +1,7 @@
 
 package acme.entities;
 
-import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,9 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidUrl;
 import acme.client.helpers.MomentHelper;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidStrategy;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
 import acme.realms.Fundraiser;
@@ -29,6 +31,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidStrategy
 public class Strategy extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
@@ -69,17 +72,16 @@ public class Strategy extends AbstractEntity {
 	private StrategyRepository	repository;
 
 
-	//@Mandatory
+	@Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		Duration d = MomentHelper.computeDuration(this.startMoment, this.endMoment);
-		//return Double.valueOf(d.get(ChronoUnit.MONTHS));
-		return 0.;
+		double d = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+		return d;
 	};
 
-	//@Mandatory
-	//	@ValidScore
+	@Mandatory
+	@ValidScore
 	@Transient
 	private Double expectedPercentage() {
 		Double sum = this.repository.getSumExpectedPercentage(this.getId());

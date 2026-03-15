@@ -1,0 +1,7 @@
+any.milestone.list.label.name = Name
+any.milestone.list.label.description = Description
+any.milestone.list.label.effort = Effort
+any.milestone.list.label.kind = Kind
+
+any.milestone.list.title = Milestones
+any.milestone.form.title = Milestone

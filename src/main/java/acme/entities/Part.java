@@ -12,7 +12,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoney;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.datatypes.PartKind;
 import lombok.Getter;
 import lombok.Setter;
 

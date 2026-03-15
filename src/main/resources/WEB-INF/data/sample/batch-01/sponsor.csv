@@ -1,26 +1,4 @@
 key,key:userAccount,address,im,gold
-# address - standard variations
-sponsor-01,user-account-sponsor-01,L,sponsor@xmpp,true
-sponsor-02,user-account-sponsor-02,Lo,sponsor@xmpp,true
-sponsor-03,user-account-sponsor-03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis",sponsor@xmpp,true
-sponsor-04,user-account-sponsor-04,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,",sponsor@xmpp,true
-sponsor-05,user-account-sponsor-05,โลเร็ม อิปซัม,sponsor@xmpp,true
-sponsor-06,user-account-sponsor-06,لوريم إيبسوم,sponsor@xmpp,true
-sponsor-07,user-account-sponsor-07,洛伦·伊普森,sponsor@xmpp,true
-sponsor-08,user-account-sponsor-08,<marquee>Hacked</marquee>,sponsor@xmpp,true
-sponsor-09,user-account-sponsor-09,<script>alert(‘Hacked!’);</script>,sponsor@xmpp,true
-sponsor-10,user-account-sponsor-10,' or 'A' = 'A,'sponsor@xmpp,true
-# im - standard variations
-sponsor-11,user-account-sponsor-11,1 Test Rd,L,true
-sponsor-12,user-account-sponsor-12,1 Test Rd,Lo,true
-sponsor-13,user-account-sponsor-13,1 Test Rd,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo l",true
-sponsor-14,user-account-sponsor-14,1 Test Rd,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li",true
-sponsor-15,user-account-sponsor-15,1 Test Rd,โลเร็ม อิปซัม,true
-sponsor-16,user-account-sponsor-16,1 Test Rd,لوريم إيبسوم,true
-sponsor-17,user-account-sponsor-17,1 Test Rd,洛伦·伊普森,true
-sponsor-18,user-account-sponsor-18,1 Test Rd,<marquee>Hacked</marquee>,true
-sponsor-19,user-account-sponsor-19,1 Test Rd,<script>alert(‘Hacked!’);</script>,true
-sponsor-20,user-account-sponsor-20,1 Test Rd,' or 'A' = 'A,true
-# gold - standard variations
-sponsor-21,user-account-sponsor-21,1 Test Rd,L,true
-sponsor-22,user-account-sponsor-22,1 Test Rd,L,false
+sponsor-01,user-account-sponsor-01,1 Test Rd,sponsor@xmpp,true
+sponsor-02,user-account-sponsor-02,洛伦·伊普森,"<script>alert(‘Hacked!’);</script> etuer adipiscing elit. Aenean commodo li",true
+sponsor-03,user-account-sponsor-03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,",sponsor@xmpp,false
