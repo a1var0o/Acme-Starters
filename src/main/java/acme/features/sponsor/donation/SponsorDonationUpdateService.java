@@ -11,7 +11,7 @@ import acme.entities.Sponsorship;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorDonationShowService extends AbstractService<Sponsor, Donation> {
+public class SponsorDonationUpdateService extends AbstractService<Sponsor, Donation> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -38,9 +38,24 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 		boolean status;
 
 		status = this.donation != null && //
+			this.sponsorship.getDraftMode() && //
 			this.sponsorship.getSponsor().isPrincipal();
-
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.donation, "name", "notes", "money", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.donation);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.donation);
 	}
 
 	@Override
@@ -51,5 +66,4 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 		tuple.put("sponsorshipId", this.sponsorship.getId());
 		tuple.put("draftMode", this.sponsorship.getDraftMode());
 	}
-
 }
