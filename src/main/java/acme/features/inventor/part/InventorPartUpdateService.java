@@ -10,19 +10,22 @@ import acme.entities.Part;
 import acme.realms.Inventor;
 
 @Service
-public class InventorPartShowService extends AbstractService<Inventor, Part> {
+public class InventorPartUpdateService extends AbstractService<Inventor, Part> {
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private InventorPartRepository	repository;
 
 	private Part					part;
 
+	// AbstractService interface -------------------------------------------
+
 
 	@Override
 	public void load() {
 		int id;
-		id = super.getRequest().getData("id", int.class);
 
+		id = super.getRequest().getData("id", int.class);
 		this.part = this.repository.findPart(id);
 	}
 
@@ -31,9 +34,26 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 		boolean status;
 
 		status = this.part != null && //
-			super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && //
+			this.part.getInvention().getDraftMode() && //
 			this.part.getInvention().getInventor().isPrincipal();
+
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.part, "name", "description", "cost", "kind");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.part);
+		;
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.part);
 	}
 
 	@Override
