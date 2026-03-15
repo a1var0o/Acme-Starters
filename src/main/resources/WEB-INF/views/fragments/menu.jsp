@@ -41,6 +41,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRealm('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.list-sponsorships" action="/sponsor/sponsorships/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
