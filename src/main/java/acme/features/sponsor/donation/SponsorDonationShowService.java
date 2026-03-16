@@ -9,7 +9,6 @@ import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.Donation;
 import acme.entities.DonationKind;
-import acme.entities.Sponsorship;
 import acme.realms.Sponsor;
 
 @Service
@@ -20,7 +19,6 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 	@Autowired
 	private SponsorDonationRepository	repository;
 
-	private Sponsorship					sponsorship;
 	private Donation					donation;
 
 	// AbstractService interface -------------------------------------------
@@ -32,7 +30,6 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 
 		id = super.getRequest().getData("id", int.class);
 		this.donation = this.repository.findDonationById(id);
-		this.sponsorship = this.donation.getSponsorship();
 	}
 
 	@Override
@@ -40,7 +37,7 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 		boolean status;
 
 		status = this.donation != null && //
-			this.sponsorship.getSponsor().isPrincipal();
+			this.donation.getSponsorship().getSponsor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -53,8 +50,8 @@ public class SponsorDonationShowService extends AbstractService<Sponsor, Donatio
 		donationKinds = SelectChoices.from(DonationKind.class, this.donation.getKind());
 
 		tuple = super.unbindObject(this.donation, "name", "notes", "money", "kind");
-		tuple.put("sponsorshipId", this.sponsorship.getId());
-		tuple.put("draftMode", this.sponsorship.getDraftMode());
+		tuple.put("sponsorshipId", this.donation.getSponsorship().getId());
+		tuple.put("draftMode", this.donation.getSponsorship().getDraftMode());
 		tuple.put("donationKinds", donationKinds);
 	}
 
