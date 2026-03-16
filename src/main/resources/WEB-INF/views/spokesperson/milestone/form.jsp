@@ -8,4 +8,14 @@
 	<acme:form-textbox code="spokesperson.milestone.list.label.achievements" path="achievements"/>
 	<acme:form-double code="spokesperson.milestone.list.label.effort" path="effort"/>
 	<acme:form-textbox code="spokesperson.milestone.list.label.kind" path="kind" />
+	
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
+			<acme:submit code="spokesperson.milestone.form.button.update" action="/spokesperson/milestone/update"/>
+			<acme:submit code="spokesperson.milestone.form.button.delete" action="/spokesperson/milestone/delete"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="spokesperson.milestone.form.button.create" action="/spokesperson/milestone/create?campaignId=${campaignId}"/>
+		</jstl:when>		
+	</jstl:choose>	
 </acme:form>

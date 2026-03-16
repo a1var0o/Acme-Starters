@@ -11,3 +11,5 @@
 	<acme:list-column code="inventor.invention.list.label.endMoment" path="endMoment" width="10%"/>
 	<acme:list-hidden path="moreIfo"/>
 </acme:list>
+
+<acme:button code="inventor.invention.list.button.create" action="/inventor/invention/create"/>

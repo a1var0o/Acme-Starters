@@ -1,6 +1,7 @@
 key,key:userAccount,address,im,gold
-sponsor-01,user-account-sponsor-01,1 Sponsor Way,"",true
-sponsor-02,user-account-sponsor-02,"",@twitter,false
-sponsor-03,user-account-sponsor-03,بالعالم,Telegram,null
-sponsor-04,user-account-sponsor-04,بالعالم,"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz pr",true
-sponsor-05,user-account-sponsor-05,"One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches.",Telegram,true
+# address - standard variations
+sponsor-01,user-account-sponsor-01,,sponsor@xmpp,true
+sponsor-02,user-account-sponsor-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",sponsor@xmpp,true
+# im - standard variations
+sponsor-03,user-account-sponsor-03,1 Test Rd,,true
+sponsor-04,user-account-sponsor-04,1 Test Rd,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",true

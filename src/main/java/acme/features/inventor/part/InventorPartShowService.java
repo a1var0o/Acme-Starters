@@ -4,6 +4,7 @@ package acme.features.inventor.part;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.Part;
 import acme.realms.Inventor;
@@ -29,12 +30,18 @@ public class InventorPartShowService extends AbstractService<Inventor, Part> {
 	public void authorise() {
 		boolean status;
 
-		status = this.part != null && super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.part.getInvention().getInventor().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		status = this.part != null && //
+			super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && //
+			this.part.getInvention().getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.part, "name", "description", "cost", "kind");
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.part, "name", "description", "cost", "kind");
+		tuple.put("inventionId", this.part.getInvention().getId());
+		tuple.put("draftMode", this.part.getInvention().getDraftMode());
 	}
 }

@@ -8,4 +8,14 @@
 	<acme:form-textarea code="inventor.part.list.label.description" path="description"/>
 	<acme:form-money code="inventor.part.list.label.cost" path="cost"/>
 	<acme:form-textbox code="inventor.part.list.label.kind" path="kind"/>
+	
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">
+			<acme:submit code="inventor.part.form.button.update" action="/inventor/part/update"/>
+			<acme:submit code="inventor.part.form.button.delete" action="/inventor/part/delete"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="inventor.part.form.button.create" action="/inventor/part/create?inventionId=${inventionId}"/>
+		</jstl:when>		
+	</jstl:choose>	
 </acme:form>

@@ -4,6 +4,7 @@ package acme.features.spokesperson.milestone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.Milestone;
 import acme.realms.Spokesperson;
@@ -30,11 +31,17 @@ public class SpokespersonMilestoneShowService extends AbstractService<Spokespers
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status;
+		status = this.milestone != null && (this.milestone.getCampaign().getSpokesperson().isPrincipal() || !this.milestone.getCampaign().getDraftMode());
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.milestone, "title", "achievements", "effort", "kind", "campaign");
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind", "campaign");
+		tuple.put("campaignId", this.milestone.getCampaign().getId());
+		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
 	}
 }

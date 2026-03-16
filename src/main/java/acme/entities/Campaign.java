@@ -35,49 +35,48 @@ import lombok.Setter;
 @ValidCampaign
 public class Campaign extends AbstractEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
 	@Mandatory
 	@ValidTicker
 	@Column(unique = true)
-	private String				ticker;
+	private String ticker;
 
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				name;
+	private String name;
 
 	@Mandatory
 	@ValidText
 	@Column
-	private String				description;
+	private String description;
 
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				startMoment;
+	private Date startMoment;
 
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				endMoment;
+	private Date endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	private String				moreInfo;
+	private String moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				draftMode;
+	private Boolean draftMode;
 
-	//Derived attributes
+	// Derived attributes
 
 	@Autowired
 	@Transient
-	private CampaignRepository	repository;
-
+	private CampaignRepository repository;
 
 	@Mandatory
 	@Valid
@@ -94,8 +93,7 @@ public class Campaign extends AbstractEntity {
 		sumEffort = sumEffort != null ? sumEffort : 0.0;
 		return sumEffort;
 	}
-	//Relationships ------------------------------------------------
-
+	// Relationships ------------------------------------------------
 
 	@Mandatory
 	@Valid

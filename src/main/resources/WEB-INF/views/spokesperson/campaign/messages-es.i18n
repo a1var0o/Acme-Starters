@@ -5,6 +5,14 @@ spokesperson.campaign.list.label.startMoment = Inicio
 spokesperson.campaign.list.label.endMoment = Final
 spokesperson.campaign.list.label.draftMode = Borrador
 spokesperson.campaign.form.button.milestones = Hitos
+spokesperson.campaign.form.label.moreInfo = Más información
 
 spokesperson.campaign.list.title = Mis campañas
 spokesperson.campaign.form.title = Campaña
+
+spokesperson.campaign.form.button.update = Actualizar campaña
+spokesperson.campaign.form.button.delete = Borrar campaña
+spokesperson.campaign.form.button.publish = Publicar campaña
+spokesperson.campaign.form.button.create = Crear campaña
+
+spokesperson.campaign.list.button.create = Crear campaña

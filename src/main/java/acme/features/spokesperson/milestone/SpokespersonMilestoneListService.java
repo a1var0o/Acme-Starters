@@ -32,13 +32,17 @@ public class SpokespersonMilestoneListService extends AbstractService<Spokespers
 	@Override
 	public void authorise() {
 		boolean status;
-		status = this.campaign != null;
+		status = this.campaign != null && (this.campaign.getSpokesperson().isPrincipal() || !this.campaign.getDraftMode());
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
+		boolean showCreate;
 		super.unbindObjects(this.milestones, "title", "achievements", "effort", "kind", "campaign");
+		showCreate = this.campaign.getDraftMode() && this.campaign.getSpokesperson().isPrincipal();
+		super.unbindGlobal("campaignId", this.campaign.getId());
+		super.unbindGlobal("showCreate", showCreate);
 	}
 
 }

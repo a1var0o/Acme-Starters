@@ -5,3 +5,11 @@ spokesperson.milestone.list.label.kind = Tipo
 
 spokesperson.milestone.list.title = Hitos
 spokesperson.milestone.form.title = Hito
+
+spokesperson.milestone.form.button.update = Actualizar hito
+spokesperson.milestone.form.button.delete = Borrar hito
+spokesperson.milestone.form.button.create = Crear hito
+
+
+
+spokesperson.milestone.list.button.create = Crear hito

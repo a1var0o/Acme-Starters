@@ -5,3 +5,11 @@ spokesperson.milestone.list.label.kind = Kind
 
 spokesperson.milestone.list.title = Milestones
 spokesperson.milestone.form.title = Milestone
+
+spokesperson.milestone.form.button.update = Update milestone
+spokesperson.milestone.form.button.delete = Delete milestone
+spokesperson.milestone.form.button.create = Create milestone
+
+
+
+spokesperson.milestone.list.button.create = Create milestone

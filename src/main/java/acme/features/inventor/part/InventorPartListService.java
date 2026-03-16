@@ -34,13 +34,20 @@ public class InventorPartListService extends AbstractService<Inventor, Part> {
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null && super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && this.invention.getInventor().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		status = this.invention != null && //
+			super.getRequest().getPrincipal().hasRealmOfType(Inventor.class) && //
+			this.invention.getInventor().isPrincipal();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
+		boolean showCreate;
+
 		super.unbindObjects(this.parts, "name", "description", "cost", "kind");
+		showCreate = this.invention.getDraftMode() && this.invention.getInventor().isPrincipal();
+		super.unbindGlobal("inventionId", this.invention.getId());
+		super.unbindGlobal("showCreate", showCreate);
 	}
 
 }
