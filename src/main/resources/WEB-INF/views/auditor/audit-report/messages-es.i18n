@@ -4,7 +4,7 @@ auditor.audit-report.list.label.description = Descripción
 auditor.audit-report.list.label.startMoment = Inicio
 auditor.audit-report.list.label.endMoment = Final
 auditor.audit-report.list.label.draftMode = Borrador
-auditor.audit-report.form.button.auditsections = Secciones de Auditoría
+auditor.audit-report.form.button.audit-sections = Secciones de Auditoría
 auditor.audit-report.form.label.moreInfo = Más información
 
 auditor.audit-report.list.title = Mis reportes de auditoría
