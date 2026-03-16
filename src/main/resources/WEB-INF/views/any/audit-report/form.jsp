@@ -9,5 +9,5 @@
 	<acme:form-moment code="any.audit-report.list.label.startMoment" path="startMoment"/>
 	<acme:form-moment code="any.audit-report.list.label.endMoment" path="endMoment"/>
 	<acme:button code="any.audit-report.list.label.auditor" action="/any/auditor/show?id=${id}"/>
-	<acme:button code="any.audit-report.list.label.auditsection" action="/any/auditsection/list?id=${id}"/>
+	<acme:button code="any.audit-report.list.label.auditsection" action="/any/audit-section/list?id=${id}"/>
 </acme:form>
