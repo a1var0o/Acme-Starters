@@ -62,7 +62,7 @@ master.menu.spokesperson.list-campaigns = Mostrar mis campañas
 # master.menu.any ##########################################################
 
 master.menu.any = Cualquiera
-master.menu.any.list-strategies = Mostrar todas las estrategias
+master.menu.any.list-strategies = Mostrar estrategias
 master.menu.any.list-campaigns = Mostrar campañas
 master.menu.any.list-inventions = Mostrar inventos
 master.menu.any.list-sponsorships = Mostrar patrocinios
