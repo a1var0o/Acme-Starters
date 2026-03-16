@@ -4,14 +4,12 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list navigable="true">
-	<acme:list-column code="sponsor.sponsorship.list.label.ticker" path="ticker" width="15%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.name" path="name" width="15%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.description" path="description" width="40%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.startMoment" path="startMoment" width="12%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.endMoment" path="endMoment" width="12%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.draftMode" path="draftMode" width="6%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.ticker" path="ticker"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.name" path="name"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.description" path="description"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.startMoment" path="startMoment"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.endMoment" path="endMoment"/>
 	<acme:list-hidden path="moreInfo"/>
-	<acme:list-hidden path="draftMode"/>
 </acme:list>
 
 <acme:button code="sponsor.sponsorship.list.button.create" action="/sponsor/sponsorship/create"/>
