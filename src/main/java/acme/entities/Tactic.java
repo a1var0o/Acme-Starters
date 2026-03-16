@@ -11,7 +11,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidScore;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
-import acme.datatypes.TacticKind;
 import lombok.Getter;
 import lombok.Setter;
 

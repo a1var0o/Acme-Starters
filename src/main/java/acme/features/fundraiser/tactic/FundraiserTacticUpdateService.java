@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
 import acme.entities.Tactic;
+import acme.entities.TacticKind;
 import acme.realms.Fundraiser;
 
 @Service
@@ -58,8 +60,13 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 	public void unbind() {
 		Tuple tuple;
 
+		SelectChoices choices;
+
+		choices = SelectChoices.from(TacticKind.class, this.tactic.getKind());
+
 		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
 		tuple.put("strategyId", this.tactic.getStrategy().getId());
 		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
+		tuple.put("kinds", choices);
 	}
 }
