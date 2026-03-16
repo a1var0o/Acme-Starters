@@ -9,11 +9,13 @@ acme.validation.sponsorship.interval.message          = Start and end dates must
 acme.validation.strategy.no-tactics-and-published.message = If the strategy is published, it must have at least one tactic associated
 acme.validation.strategy.correct-interval.message = If the strategy is published, the start moment must be before the end moment
 acme.validation.strategy.duplicated-ticker.message = There is already a strategy with the given ticker
+acme.validation.strategy.no-future-interval.message = The interval must start in the future with respect to the date of publication
 
 acme.validation.invention.duplicated-ticker.message = The ticker must be unique
 acme.validation.invention.parts.message = An invention needs at least one part to be published
 acme.validation.invention.interval.message = End moment must be after start moment
-acme.validation.strategy.no-future-interval.message = The interval must start in the future with respect to the date of publication
+acme.validation.invention.start.message = Start moment must be in the future 
+acme.validation.invention.draft.message = The invention must be in draft mode
 
 acme.validation.campaign.duplicated-ticker.message = Duplicate ticker
 acme.validation.campaign.milestones.message = Campaign must have at least 1 milestone
