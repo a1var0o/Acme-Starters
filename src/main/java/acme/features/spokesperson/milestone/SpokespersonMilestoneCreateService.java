@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.models.Tuple;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractService;
+import acme.datatypes.MilestoneKind;
 import acme.entities.Campaign;
 import acme.entities.Milestone;
 import acme.realms.Spokesperson;
@@ -58,8 +60,13 @@ public class SpokespersonMilestoneCreateService extends AbstractService<Spokespe
 	public void unbind() {
 		Tuple tuple;
 
+		SelectChoices milestoneKinds;
+
+		milestoneKinds = SelectChoices.from(MilestoneKind.class, this.milestone.getKind());
+
 		tuple = super.unbindObject(this.milestone, "title", "achievements", "effort", "kind");
 		tuple.put("campaignId", super.getRequest().getData("campaignId", int.class));
 		tuple.put("draftMode", this.milestone.getCampaign().getDraftMode());
+		tuple.put("milestoneKinds", milestoneKinds);
 	}
 }
