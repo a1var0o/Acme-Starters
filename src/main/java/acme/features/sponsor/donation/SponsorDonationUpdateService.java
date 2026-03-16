@@ -42,6 +42,7 @@ public class SponsorDonationUpdateService extends AbstractService<Sponsor, Donat
 		status = this.donation != null && //
 			this.sponsorship.getDraftMode() && //
 			this.sponsorship.getSponsor().isPrincipal();
+
 		super.setAuthorised(status);
 	}
 

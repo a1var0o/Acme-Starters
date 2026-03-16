@@ -4,7 +4,6 @@ package acme.features.sponsor.sponsorship;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.entities.Sponsorship;
 import acme.realms.Sponsor;
@@ -35,10 +34,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
-		super.setAuthorised(status);
+		super.setAuthorised(true);
 	}
 
 	@Override
@@ -61,9 +57,4 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 		super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals("POST"))
-			PrincipalHelper.handleUpdate();
-	}
 }

@@ -1,3 +1,4 @@
+
 package acme.features.sponsor.sponsorship;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,10 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && this.sponsorship.getDraftMode() && this.sponsorship.getSponsor().isPrincipal();
+		status = this.sponsorship != null &&  //
+			this.sponsorship.getDraftMode() && //
+			this.sponsorship.getSponsor().isPrincipal();
+
 		super.setAuthorised(status);
 	}
 
