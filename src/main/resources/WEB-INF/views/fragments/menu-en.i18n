@@ -16,6 +16,11 @@ master.menu.administrator.populate-db-initial = Populate DB (initial)
 master.menu.administrator.populate-db-sample = Populate DB (samples)
 master.menu.administrator.shut-system-down = Shut system down
 
+# master.menu.sponsor #############################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-sponsorships = List my sponsorships
+
 # master.menu.fundraiser ##########################################################
 
 master.menu.fundraiser = Fundraiser

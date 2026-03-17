@@ -63,7 +63,7 @@ public class SponsorshipValidator extends AbstractValidator<ValidSponsorship, Sp
 				Date startMoment = sponsorship.getStartMoment();
 				Date endMoment = sponsorship.getEndMoment();
 
-				correctInterval = sponsorship.getDraftMode() || MomentHelper.isBeforeOrEqual(startMoment, endMoment);
+				correctInterval = sponsorship.getDraftMode() || MomentHelper.isBefore(startMoment, endMoment);
 
 				super.state(context, correctInterval, "*", "acme.validation.sponsorship.interval.message");
 			}

@@ -2,9 +2,10 @@ acme.validation.ticker.message		= The ticker must have exactly two capital lette
 acme.validation.text.message   		= Must have from 1 to 255 characters
 acme.validation.header.message  	= Must have from 1 to 75 characters
 
-acme.validation.sponsorship.duplicated-ticker.message = The ticker is duplicated
-acme.validation.sponsorship.donations.message		  = Sponsorships cannot be published unless they have at least one donation
-acme.validation.sponsorship.interval.message          = Start and end dates must be a valid time interval
+acme.validation.sponsorship.duplicated-ticker.message    = The ticker is duplicated
+acme.validation.sponsorship.donations.message		     = Sponsorships cannot be published unless they have at least one donation
+acme.validation.sponsorship.interval.message             = Start and end dates must be a valid time interval
+acme.validation.sponsorship.no-future-interval.message   = The interval must start in the future with respect to the date of publication
 
 acme.validation.strategy.no-tactics-and-published.message = If the strategy is published, it must have at least one tactic associated
 acme.validation.strategy.correct-interval.message = If the strategy is published, the start moment must be before the end moment
