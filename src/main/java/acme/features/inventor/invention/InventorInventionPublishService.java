@@ -46,16 +46,20 @@ public class InventorInventionPublishService extends AbstractService<Inventor, I
 			Date startMoment = this.invention.getStartMoment();
 			Date endMoment = this.invention.getEndMoment();
 
-			validInterval = MomentHelper.isFuture(startMoment) && MomentHelper.isBefore(startMoment, endMoment);
-			super.state(validInterval, "*", "acme.validation.invention.interval.message");
+			if (startMoment != null && endMoment != null) {
+				validInterval = MomentHelper.isBefore(startMoment, endMoment);
+				super.state(validInterval, "*", "acme.validation.invention.interval.message");
+			}
 		}
 		{
 			boolean validStart;
 
 			Date startMoment = this.invention.getStartMoment();
 
-			validStart = MomentHelper.isFuture(startMoment);
-			super.state(validStart, "*", "acme.validation.invention.start.message");
+			if (startMoment != null) {
+				validStart = MomentHelper.isFuture(startMoment);
+				super.state(validStart, "*", "acme.validation.invention.start.message");
+			}
 		}
 		{
 			boolean enoughParts;
