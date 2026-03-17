@@ -48,9 +48,13 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 		super.validateObject(this.strategy);
 		{
 			boolean futureInterval;
+			Date start = this.strategy.getStartMoment();
 
-			futureInterval = MomentHelper.isFuture(this.strategy.getStartMoment());
-			super.state(futureInterval, "*", "acme.validation.strategy.no-future-interval.message");
+			if (start != null) {
+				futureInterval = MomentHelper.isFuture(this.strategy.getStartMoment());
+				super.state(futureInterval, "*", "acme.validation.strategy.no-future-interval.message");
+			}
+
 		}
 		{
 			Collection<Tactic> tactics = this.repository.findTacticsByStrategyId(this.strategy.getId());
@@ -61,9 +65,13 @@ public class FundraiserStrategyPublishService extends AbstractService<Fundraiser
 		{
 			Date start = this.strategy.getStartMoment();
 			Date end = this.strategy.getEndMoment();
-			boolean correctDates = MomentHelper.isBefore(start, end);
 
-			super.state(correctDates, "*", "acme.validation.strategy.correct-interval.message");
+			if (start != null && end != null) {
+				boolean correctDates = MomentHelper.isBefore(start, end);
+
+				super.state(correctDates, "*", "acme.validation.strategy.correct-interval.message");
+			}
+
 		}
 	}
 

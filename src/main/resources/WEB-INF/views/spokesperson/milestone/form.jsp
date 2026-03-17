@@ -7,7 +7,7 @@
 	<acme:form-textbox code="spokesperson.milestone.list.label.title" path="title"/>
 	<acme:form-textbox code="spokesperson.milestone.list.label.achievements" path="achievements"/>
 	<acme:form-double code="spokesperson.milestone.list.label.effort" path="effort"/>
-	<acme:form-textbox code="spokesperson.milestone.list.label.kind" path="kind" />
+	<acme:form-select code="spokesperson.milestone.list.label.kind" path="kind" choices="${milestoneKinds}"/>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && draftMode == true}">

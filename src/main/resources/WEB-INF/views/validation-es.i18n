@@ -5,6 +5,7 @@ acme.validation.header.message  	= Debe tener entre 1 y 75 caracteres
 acme.validation.sponsorship.duplicated-ticker.message  = Referencia ya usada
 acme.validation.sponsorship.donations.message		   = Los patrocinios no pueden ser publicados hasta que no dispongan de, al menos, una donación asociada
 acme.validation.sponsorship.interval.message    	   = Las fechas de inicio y finalización deben formar un intervalo temporal válido
+acme.validation.sponsorship.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación
 
 acme.validation.strategy.no-tactics-and-published.message = Si la estrategia está publicada, debe de teenr al menos una táctica asociada
 acme.validation.strategy.correct-interval.message = Si la estrategia está publicada, el momento de inicio debe ser anterior al momento de finalización

@@ -32,7 +32,9 @@ public class InventorInventionUpdateService extends AbstractService<Inventor, In
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null && this.invention.getInventor().equals(this.inventor) && this.invention.getDraftMode();
+		status = this.invention != null && //
+			this.invention.getDraftMode() && //
+			this.invention.getInventor().isPrincipal();
 
 		super.setAuthorised(status);
 	}
@@ -54,7 +56,7 @@ public class InventorInventionUpdateService extends AbstractService<Inventor, In
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
 	}
 
 }

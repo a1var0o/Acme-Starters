@@ -56,7 +56,7 @@ public class StrategyValidator extends AbstractValidator<ValidStrategy, Strategy
 			{
 				Date start = strategy.getStartMoment();
 				Date end = strategy.getEndMoment();
-				boolean correctDates = strategy.getDraftMode() || MomentHelper.isBefore(start, end);
+				boolean correctDates = strategy.getDraftMode() || strategy.getStartMoment() != null && strategy.getEndMoment() != null && MomentHelper.isBefore(start, end);
 
 				super.state(context, correctDates, "*", "acme.validation.strategy.correct-interval.message");
 			}
