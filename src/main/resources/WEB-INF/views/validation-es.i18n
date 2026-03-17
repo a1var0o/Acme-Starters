@@ -22,3 +22,8 @@ acme.validation.campaign.duplicated-ticker.message = Ticker duplicado
 acme.validation.campaign.milestones.message = La campaña debe tener un hito asociado
 acme.validation.campaign.interval.message = El intervalo entre inicio y final no es válido
 acme.validation.campaign.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación
+
+acme.validation.audit-report.duplicated-ticker.message = Ticker duplicado
+acme.validation.audit-report.auditsections.message = El Reporte de Auditoría debe tener al menos una Sección de Auditoría asociada
+acme.validation.audit-report.interval.message = El intervalo entre inicio y final no es válido
+acme.validation.audit-report.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación

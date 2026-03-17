@@ -1,0 +1,7 @@
+key,key:userAccount,firm,highlights,solicitor
+
+#Testing string limits
+auditor-01,user-account-auditor-01,"","Telecomunications",true
+auditor-02,user-account-auditor-02,"Macarena, Inc.","",true
+auditor-03,user-account-auditor-03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias","Telecomunications",true
+auditor-04,user-account-auditor-04,"Macarena, Inc.","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias",true

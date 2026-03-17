@@ -1,0 +1,13 @@
+auditor.audit-section.list.label.name = Name
+auditor.audit-section.list.label.notes = Notes
+auditor.audit-section.list.label.hours = Hours
+auditor.audit-section.list.label.kind = Kind
+
+auditor.audit-section.list.title = Audit Sections
+auditor.audit-section.form.title = Audit Section
+
+auditor.audit-section.form.button.update = Update audit section
+auditor.audit-section.form.button.delete = Delete audit section
+auditor.audit-section.form.button.create = Create audit section
+
+auditor.audit-section.list.button.create = Create audit section
