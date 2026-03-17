@@ -1,6 +1,8 @@
 
 package acme.constraints;
 
+import java.util.Date;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,11 +51,11 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 				super.state(context, enoughAuditSections, "*", "acme.validation.auditreport.auditsections.message");
 			}
 			{
-				boolean validInterval;
+				Date start = auditReport.getStartMoment();
+				Date end = auditReport.getEndMoment();
+				boolean interval = auditReport.getDraftMode() || auditReport.getStartMoment() != null && auditReport.getEndMoment() != null && MomentHelper.isBefore(start, end);
 
-				validInterval = auditReport.getDraftMode() || MomentHelper.isBefore(auditReport.getStartMoment(), auditReport.getEndMoment());
-
-				super.state(context, validInterval, "*", "acme.validation.auditreport.interval.message");
+				super.state(context, interval, "*", "acme.validation.auditreport.correct-interval.message");
 			}
 			result = !super.hasErrors(context);
 		}

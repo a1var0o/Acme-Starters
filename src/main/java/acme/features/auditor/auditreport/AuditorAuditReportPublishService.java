@@ -59,11 +59,16 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 			super.state(atLeastOneAuditSection, "*", "acme.validation.auditreport.auditsections.message");
 		}
 		{
-			Date start = this.auditReport.getStartMoment();
-			Date end = this.auditReport.getEndMoment();
-			boolean correctDates = MomentHelper.isBefore(start, end);
+			boolean Interval;
+			Date startMoment;
+			Date endMoment;
 
-			super.state(correctDates, "*", "acme.validation.auditreport.interval.message");
+			startMoment = this.auditReport.getStartMoment();
+			endMoment = this.auditReport.getEndMoment();
+
+			Interval = startMoment != null && endMoment != null && MomentHelper.isBefore(startMoment, endMoment);
+
+			super.state(Interval, "*", "acme.validation.auditreport.interval.message");
 		}
 	}
 
