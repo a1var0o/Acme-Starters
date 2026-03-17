@@ -51,7 +51,9 @@ public class InventionValidator extends AbstractValidator<ValidInvention, Invent
 			{
 				boolean validInterval;
 
-				validInterval = invention.getDraftMode() || MomentHelper.isBefore(invention.getStartMoment(), invention.getEndMoment());
+				validInterval = invention.getDraftMode() || //
+					invention.getStartMoment() != null && invention.getEndMoment() != null && //
+						MomentHelper.isBefore(invention.getStartMoment(), invention.getEndMoment());
 
 				super.state(context, validInterval, "*", "acme.validation.invention.interval.message");
 			}
