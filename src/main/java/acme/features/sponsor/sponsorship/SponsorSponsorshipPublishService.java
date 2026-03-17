@@ -55,20 +55,31 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		super.validateObject(this.sponsorship);
 		{
 			boolean futureInterval;
+			Date startMoment;
 
-			futureInterval = MomentHelper.isFuture(this.sponsorship.getStartMoment());
+			startMoment = this.sponsorship.getStartMoment();
+			futureInterval = startMoment != null && MomentHelper.isFuture(startMoment);
+
 			super.state(futureInterval, "*", "acme.validation.sponsorship.no-future-interval.message");
 		}
 		{
-			Collection<Donation> donations = this.repository.findDonationsBySponsorshipId(this.sponsorship.getId());
-			boolean atLeastOneDonation = !donations.isEmpty();
+			boolean atLeastOneDonation;
+			Collection<Donation> donations;
+
+			donations = this.repository.findDonationsBySponsorshipId(this.sponsorship.getId());
+			atLeastOneDonation = !donations.isEmpty();
 
 			super.state(atLeastOneDonation, "*", "acme.validation.sponsorship.donations.message");
 		}
 		{
-			Date start = this.sponsorship.getStartMoment();
-			Date end = this.sponsorship.getEndMoment();
-			boolean correctDates = MomentHelper.isBefore(start, end);
+			boolean correctDates;
+			Date startMoment;
+			Date endMoment;
+
+			startMoment = this.sponsorship.getStartMoment();
+			endMoment = this.sponsorship.getEndMoment();
+
+			correctDates = startMoment != null && endMoment != null && MomentHelper.isBefore(startMoment, endMoment);
 
 			super.state(correctDates, "*", "acme.validation.sponsorship.interval.message");
 		}
