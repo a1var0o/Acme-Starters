@@ -32,7 +32,9 @@ public class InventorInventionUpdateService extends AbstractService<Inventor, In
 	public void authorise() {
 		boolean status;
 
-		status = this.invention != null && this.invention.getInventor().equals(this.inventor) && this.invention.getDraftMode();
+		status = this.invention != null && //
+			this.invention.getDraftMode() && //
+			this.invention.getInventor().isPrincipal();
 
 		super.setAuthorised(status);
 	}

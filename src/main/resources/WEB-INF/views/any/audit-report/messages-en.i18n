@@ -1,0 +1,11 @@
+any.audit-report.list.label.ticker = Ticker
+any.audit-report.list.label.name = Name
+any.audit-report.list.label.description = Description
+any.audit-report.list.label.startMoment = Start Moment
+any.audit-report.list.label.endMoment = End Moment
+
+any.audit-report.list.label.auditor = Auditor
+any.audit-report.list.label.auditsection = Audit Sections
+
+any.audit-report.list.title = Audit reports
+any.audit-report.form.title = Audit Report
