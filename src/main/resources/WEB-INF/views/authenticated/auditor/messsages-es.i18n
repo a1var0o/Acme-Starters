@@ -2,7 +2,7 @@ authenticated.auditor.form.title = Auditor
 
 authenticated.auditor.form.label.firm = Empresa
 authenticated.auditor.form.label.highlights = Destacado
-authenticated.auditor.form.label.solicitor = Solicitante
+authenticated.auditor.form.label.solicitor = Abogado
 
 authenticated.auditor.form.button.create = Registrar
 authenticated.auditor.form.button.update = Actualizar

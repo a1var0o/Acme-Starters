@@ -1,7 +1,13 @@
 key,key:userAccount,firm,highlights,solicitor
-
-#Testing string limits
+#Testing firm
 auditor-01,user-account-auditor-01,"","Telecomunications",true
-auditor-02,user-account-auditor-02,"Macarena, Inc.","",true
-auditor-03,user-account-auditor-03,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias","Telecomunications",true
-auditor-04,user-account-auditor-04,"Macarena, Inc.","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias",true
+auditor-02,user-account-auditor-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididu","Telecomunications",true
+auditor-03,user-account-auditor-01,null,"Telecomunications",true
+#Testing highlights
+auditor-04,user-account-auditor-01,"Macarena, Inc.","",true
+auditor-05,user-account-auditor-01,"Macarena, Inc.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididu",true
+auditor-06,user-account-auditor-01,"Macarena, Inc.",null,true
+#Testing solicitor
+auditor-07,user-account-auditor-01,"Macarena, Inc.","Telecomunications",null
+#Testing userAccount
+auditor-08,null,"Macarena, Inc.","Telecomunications",true

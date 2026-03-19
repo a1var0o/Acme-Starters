@@ -17,7 +17,7 @@ user-account-inventor-03,true,"UserIdentity{name: 'Marina', surname: 'โลเ�
 # Auditor
 user-account-auditor-01,true,"UserIdentity{name: 'Testing', surname: 'test', email: 'auditor_test@acme.org'}",auditor1,auditor1
 user-account-auditor-02,true,"UserIdentity{name: 'Test', surname: 'testTwo', email: 'auditor@us.es'}",auditor2,auditor2
-user-account-auditor-03,true,"UserIdentity{name: 'Mario', surname: 'โลเร็ม อิปซัม', email: 'ar@us.es'}",auditor3,auditor3
+user-account-auditor-03,true,"UserIdentity{name: 'Mario', surname: 'testThree', email: 'ar@us.es'}",auditor3,auditor3
 
 # Spokesperson
 user-account-spokesperson-01,true,"UserIdentity{name: 'Spokesperson1', surname: 'One', email: 'spokesperson1@acme.com'}",spokesperson1,spokesperson1

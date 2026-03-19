@@ -5,10 +5,10 @@ user-account-req0-administrator-01,true,"UserIdentity{name: '', surname: 'One', 
 user-account-req0-administrator-02,true,"UserIdentity{name: '', surname: 'Two', email: 'admin2@acme.com'}",administrator2,administrator2
 
 # Auditor
-user-account-auditor-01,true,"UserIdentity{name: '', surname: 'Audit13', email: 'alba@acme.com'}",audit1,audit11
-user-account-auditor-02,true,"UserIdentity{name: '', surname: 'Audit14', email: 'josefina@acme.com'}",audit1,audit2
-user-account-auditor-03,true,"UserIdentity{name: '', surname: 'Audit15', email: 'alejandro@acme.com'}",audit1,audit3
-user-account-auditor-04,true,"UserIdentity{name: '', surname: 'Audit16', email: 'luis@acme.com'}",audit1,audit4
+user-account-auditor-01,true,"UserIdentity{name: '', surname: 'Audit13', email: 'alba@acme.com'}",audit1,audit1
+user-account-auditor-02,true,"UserIdentity{name: '', surname: 'Audit14', email: 'josefina@acme.com'}",audit2,audit2
+user-account-auditor-03,true,"UserIdentity{name: '', surname: 'Audit15', email: 'alejandro@acme.com'}",audit3,audit3
+user-account-auditor-04,true,"UserIdentity{name: '', surname: 'Audit16', email: 'luis@acme.com'}",audit4,audit4
 
 # Fundraiser
 user-account-fundraiser-01,true,"UserIdentity{name: '', surname: 'One', email: 'fundraiser1@acme.com'}",fundraiser1,fundraiser1

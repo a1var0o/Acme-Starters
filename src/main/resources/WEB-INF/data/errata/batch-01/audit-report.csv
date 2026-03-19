@@ -1,29 +1,35 @@
 key,key:auditor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
-
-audit-report-01,auditor-01,MV00-12345,"","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-#Testing string limits
-audit-report-02,auditor-01,MV00-12345,"TestCase","",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-03,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-04,auditor-01,MV00-12345,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-05,auditor-01,MV00-12345,"TestCase","Eub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJNdEub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJiegiufb",2025/01/01 00:00,2025/05/16 00:00,"",true
-#Testing ticker format
-audit-report-06,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-07,auditor-01,MVA0-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-08,auditor-01,M000-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-09,auditor-01,MV00-,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-10,auditor-01,"","TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-11,auditor-01,MV00-1234,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-18,auditor-01,MV00-12345678901,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
-#Testing different values in time data
-audit-report-12,auditor-01,MV00-12345,"TestCase","TestingThePopulations","",2025/05/16 00:00,"",true
-audit-report-13,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,"","",false
-audit-report-14,auditor-01,MV00-12345,"TestCase","TestingThePopulations",1999/12/31 23:59,2025/05/16 00:00,"",true
-audit-report-15,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2201/01/01 00:00,"",false
-audit-report-16,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2201/01/01 00:00,2025/05/16 00:00,"",true
-audit-report-17,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,1999/12/31 23:59,"",false
-#Testing the url field
-audit-report-19,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a",true
-audit-report-20,auditor-01,"MV27-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","ftp://localhost",true
-audit-report-21,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a?",true
-audit-report-27,auditor-01,"MV27-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","a",true
-audit-report-28,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a?",true
+#Testing ticker
+audit-report-01,auditor-01,A111-A1234,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-02,auditor-01,AAA1-A1234,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-03,auditor-01,AA11A1234,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-04,auditor-01,AA11-A123,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-05,auditor-01,AA11-A1234567890,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-06,auditor-01,null,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+#Testing name
+audit-report-07,auditor-01,AA11-TEST07,null,"Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-08,auditor-01,AA11-TEST08,"","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-09,auditor-01,AA11-TEST09,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididu","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+#Testing description
+audit-report-10,auditor-01,AA11-TEST10,"TestCase",null,2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-11,auditor-01,AA11-TEST11,"TestCase","",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+audit-report-12,auditor-01,AA11-TEST12,"TestCase","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true
+#Testing startMoment
+audit-report-13,auditor-01,AA11-TEST13,"TestCase","Test",1999/12/31 23:59,2100/01/01 00:00,"http://test.com",true
+audit-report-14,auditor-01,AA11-TEST14,"TestCase","Test",2201/01/01 00:00,2100/01/01 00:00,"http://test.com",true
+audit-report-15,auditor-01,AA11-TEST15,"TestCase","Test",null,2100/01/01 00:00,"http://test.com",true
+#Testing endMoment
+audit-report-16,auditor-01,AA11-TEST16,"TestCase","Test",2100/01/01 00:00,1999/12/31 23:59,"http://test.com",true
+audit-report-17,auditor-01,AA11-TEST17,"TestCase","Test",2100/01/01 00:00,2201/01/01 00:00,"http://test.com",true
+audit-report-18,auditor-01,AA11-TEST18,"TestCase","Test",2100/01/01 00:00,null,"http://test.com",true
+#Testing interval
+audit-report-19,auditor-01,AA11-TEST19,"TestCase","Test",2100/01/01 00:00,2100/01/01 00:00,"http://test.com",true
+audit-report-20,auditor-01,AA11-TEST20,"TestCase","Test",2000/01/01 00:00,2201/01/01 00:00,"http://test.com",true
+#Testing MoreInfo
+audit-report-21,auditor-01,AA11-TEST21,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://",true
+audit-report-22,auditor-01,AA11-TEST22,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"ftp://",true
+audit-report-23,auditor-01,AA11-TEST23,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://a",true
+audit-report-24,auditor-01,AA11-TEST24,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"ftp://a",true
+audit-report-25,auditor-01,AA11-TEST25,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",true
+#Testing auditor
+audit-report-26,null,AA11-TEST26,"TestCase","Test",2026/03/01 09:00,2026/12/31 23:59,"http://test.com",true

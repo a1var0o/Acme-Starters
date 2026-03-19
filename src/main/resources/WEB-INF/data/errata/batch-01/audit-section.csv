@@ -1,12 +1,17 @@
 key,name,notes,hours,kind,key:audit-report
-
-#Testing string limits
-audit-section-01,"","Testing","0","PRELIMINARY",audit-report-01
-audit-section-02,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias","Testing","0","PRELIMINARY",audit-report-01
-audit-section-03,"First","","0","PRELIMINARY",audit-report-01
-audit-section-04,"First","Eub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJNdEub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJsaudgawya","0","PRELIMINARY",audit-report-01
-#Testing null on enum
-audit-section-05,"First","Testing","0",null,audit-report-01
-#Testing non positive numbers and no number
-audit-section-06,"First","Testing","","PRELIMINARY",audit-report-01
-audit-section-07,"First","Testing","-12","PRELIMINARY",audit-report-01
+#Testing name
+audit-section-01,null,"Testing",0,"PRELIMINARY",audit-report-01
+audit-section-02,"","Testing",0,"PRELIMINARY",audit-report-01
+audit-section-03,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem","Testing",0,"PRELIMINARY",audit-report-01
+#Testing notes
+audit-section-04,"Test",null,0,"PRELIMINARY",audit-report-01
+audit-section-05,"Test","",0,"PRELIMINARY",audit-report-01
+audit-section-06,"Test","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",0,"PRELIMINARY",audit-report-01
+#Testing hours
+audit-section-07,"Test","Testing",null,"PRELIMINARY",audit-report-01
+audit-section-08,"Test","Testing",-1,"PRELIMINARY",audit-report-01
+audit-section-09,"Test","Testing",1000000,"PRELIMINARY",audit-report-01
+#Testing kind
+audit-section-10,"Test","Testing",0,null,audit-report-01
+#Testing Audit Report
+audit-section-11,"Test","Testing",0,"PRELIMINARY",null
