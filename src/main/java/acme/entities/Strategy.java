@@ -75,7 +75,7 @@ public class Strategy extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double getMonthsActive() {
+	public Double getMonthsActive() {
 		double d = 0.;
 		if (this.getStartMoment() != null && this.getEndMoment() != null)
 			d = MomentHelper.computeDifference(this.getStartMoment(), this.getEndMoment(), ChronoUnit.MONTHS);
@@ -85,7 +85,7 @@ public class Strategy extends AbstractEntity {
 	@Mandatory
 	@ValidScore
 	@Transient
-	private Double getExpectedPercentage() {
+	public Double getExpectedPercentage() {
 		Double sum = this.repository.getSumExpectedPercentage(this.getId());
 		if (sum == null)
 			return 0.;

@@ -48,7 +48,14 @@ public class FundraiserTacticUpdateService extends AbstractService<Fundraiser, T
 	@Override
 	public void validate() {
 		super.validateObject(this.tactic);
-		;
+		{
+			if (this.tactic.getExpectedPercentage() != null) {
+				boolean sumLowerThan100 = this.tactic.getStrategy().getExpectedPercentage() + this.tactic.getExpectedPercentage() <= 100;
+
+				super.state(sumLowerThan100, "expectedPercentage", "acme.validation.tactic.total-sum-greater-than-100");
+			}
+
+		}
 	}
 
 	@Override

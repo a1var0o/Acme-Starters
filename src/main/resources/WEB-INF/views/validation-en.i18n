@@ -11,6 +11,7 @@ acme.validation.strategy.no-tactics-and-published.message = If the strategy is p
 acme.validation.strategy.correct-interval.message = If the strategy is published, the start moment must be before the end moment
 acme.validation.strategy.duplicated-ticker.message = There is already a strategy with the given ticker
 acme.validation.strategy.no-future-interval.message = The interval must start in the future with respect to the date of publication
+acme.validation.tactic.total-sum-greater-than-100 = The sum of the expected percentage of the tactics associated to this strategy would exceed 100, choose a lower value
 
 acme.validation.invention.duplicated-ticker.message = The ticker must be unique
 acme.validation.invention.parts.message = An invention needs at least one part to be published
