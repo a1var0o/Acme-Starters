@@ -80,8 +80,13 @@ public class Sponsorship extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double monthsActive() {
-		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+	private Double getMonthsActive() {
+		double result = 0.0;
+
+		if (this.getStartMoment() != null && this.getEndMoment() != null)
+			result = MomentHelper.computeDifference(this.getStartMoment(), this.getEndMoment(), ChronoUnit.MONTHS);
+
+		return result;
 	}
 
 
@@ -93,7 +98,7 @@ public class Sponsorship extends AbstractEntity {
 	@Mandatory
 	@ValidMoney
 	@Transient
-	private Money totalMoney() {
+	private Money getTotalMoney() {
 		Money result = new Money();
 
 		Double totalDonations = this.repository.getTotalDonations(this.getId());
