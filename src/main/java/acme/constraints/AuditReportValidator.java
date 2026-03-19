@@ -41,21 +41,21 @@ public class AuditReportValidator extends AbstractValidator<ValidAuditReport, Au
 				existingAuditReport = this.repository.findAuditReportByTicker(auditReport.getTicker());
 				uniqueAuditReport = existingAuditReport == null || existingAuditReport.equals(auditReport);
 
-				super.state(context, uniqueAuditReport, "ticker", "acme.validation.auditreport.duplicated-ticker.message");
+				super.state(context, uniqueAuditReport, "ticker", "acme.validation.audit-report.duplicated-ticker.message");
 			}
 			{
 				boolean enoughAuditSections;
 
 				enoughAuditSections = auditReport.getDraftMode() || !this.repository.getAuditSectionsByAuditReportId(auditReport.getId()).isEmpty();
 
-				super.state(context, enoughAuditSections, "*", "acme.validation.auditreport.auditsections.message");
+				super.state(context, enoughAuditSections, "*", "acme.validation.audit-report.auditsections.message");
 			}
 			{
+				boolean interval;
 				Date start = auditReport.getStartMoment();
 				Date end = auditReport.getEndMoment();
-				boolean interval = auditReport.getDraftMode() || auditReport.getStartMoment() != null && auditReport.getEndMoment() != null && MomentHelper.isBefore(start, end);
-
-				super.state(context, interval, "*", "acme.validation.auditreport.correct-interval.message");
+				interval = auditReport.getDraftMode() || MomentHelper.isBefore(start, end);
+				super.state(context, interval, "*", "acme.validation.audit-report.correct-interval.message");
 			}
 			result = !super.hasErrors(context);
 		}

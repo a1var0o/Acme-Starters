@@ -32,13 +32,20 @@ public class AuditorAuditSectionListService extends AbstractService<Auditor, Aud
 	@Override
 	public void authorise() {
 		boolean status;
-		status = this.auditReport != null;
+		status = this.auditReport != null && //
+			this.auditReport.getAuditor().isPrincipal();
+
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
+		boolean showCreate;
+
 		super.unbindObjects(this.auditSections, "name", "notes", "hours", "kind", "auditReport");
+		showCreate = this.auditReport.getDraftMode() && this.auditReport.getAuditor().isPrincipal();
+		super.unbindGlobal("auditReportId", this.auditReport.getId());
+		super.unbindGlobal("showCreate", showCreate);
 	}
 
 }

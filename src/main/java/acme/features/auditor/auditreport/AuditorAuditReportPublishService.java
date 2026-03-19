@@ -50,13 +50,13 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 			boolean futureInterval;
 
 			futureInterval = MomentHelper.isFuture(this.auditReport.getStartMoment());
-			super.state(futureInterval, "*", "acme.validation.auditreport.no-future-interval.message");
+			super.state(futureInterval, "*", "acme.validation.audit-report.no-future-interval.message");
 		}
 		{
 			Collection<AuditSection> auditSections = this.repository.findAuditSectionsByAuditReportId(this.auditReport.getId());
 			boolean atLeastOneAuditSection = !auditSections.isEmpty();
 
-			super.state(atLeastOneAuditSection, "*", "acme.validation.auditreport.auditsections.message");
+			super.state(atLeastOneAuditSection, "*", "acme.validation.audit-report.auditsections.message");
 		}
 		{
 			boolean Interval;
@@ -68,7 +68,7 @@ public class AuditorAuditReportPublishService extends AbstractService<Auditor, A
 
 			Interval = startMoment != null && endMoment != null && MomentHelper.isBefore(startMoment, endMoment);
 
-			super.state(Interval, "*", "acme.validation.auditreport.interval.message");
+			super.state(Interval, "*", "acme.validation.audit-report.interval.message");
 		}
 	}
 
