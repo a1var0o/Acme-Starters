@@ -85,7 +85,7 @@ public class Campaign extends AbstractEntity {
 	private Double getMonthsActive() {
 		Double d = 0.0;
 		if (this.getStartMoment() != null && this.getEndMoment() != null)
-			d = MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
+			d = MomentHelper.computeDifference(this.getStartMoment(), this.getEndMoment(), ChronoUnit.MONTHS);
 		return d;
 	}
 
