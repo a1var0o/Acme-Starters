@@ -1,0 +1,23 @@
+sponsor.sponsorship.form.title = Detalles de patrocinio
+sponsor.sponsorship.form.label.ticker = Referencia:
+sponsor.sponsorship.form.label.name = Nombre:
+sponsor.sponsorship.form.label.description = Descripción:
+sponsor.sponsorship.form.label.startMoment = Fecha de inicio:
+sponsor.sponsorship.form.label.endMoment = Fecha de finalización:
+sponsor.sponsorship.form.label.moreInfo = Más información: (Opcional)
+sponsor.sponsorship.form.label.sponsor = Patrocinador:
+sponsor.sponsorship.form.button.donations = Donaciones
+sponsor.sponsorship.form.button.sponsor = Perfil del patrocinador
+sponsor.sponsorship.form.button.create = Crear
+sponsor.sponsorship.form.button.update = Actualizar
+sponsor.sponsorship.form.button.delete = Eliminar
+sponsor.sponsorship.form.button.publish = Publicar
+
+
+sponsor.sponsorship.list.title = Lista de patrocinios
+sponsor.sponsorship.list.label.ticker = Referencia 
+sponsor.sponsorship.list.label.name = Nombre
+sponsor.sponsorship.list.label.description = Descripción
+sponsor.sponsorship.list.label.startMoment = Fecha de inicio
+sponsor.sponsorship.list.label.endMoment = Fecha de finalización
+sponsor.sponsorship.list.button.create = Crear

@@ -1,0 +1,67 @@
+
+package acme.features.spokesperson.campaign;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.helpers.PrincipalHelper;
+import acme.client.services.AbstractService;
+import acme.entities.Campaign;
+import acme.realms.Spokesperson;
+
+@Service
+public class SpokespersonCampaignCreateService extends AbstractService<Spokesperson, Campaign> {
+
+	@Autowired
+	private SpokespersonCampaignRepository	repository;
+
+	private Spokesperson					spokesperson;
+	private Campaign						campaign;
+
+
+	@Override
+	public void load() {
+		int userAccountId;
+
+		userAccountId = super.getRequest().getPrincipal().getAccountId();
+		this.spokesperson = this.repository.findSpokespersonByUserAccountId(userAccountId);
+
+		this.campaign = super.newObject(Campaign.class);
+		this.campaign.setDraftMode(true);
+		this.campaign.setSpokesperson(this.spokesperson);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+	}
+
+	@Override
+	public void validate() {
+		super.validateObject(this.campaign);
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.campaign);
+	}
+
+	@Override
+	public void unbind() {
+		super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+	}
+
+	@Override
+	public void onSuccess() {
+		if (super.getRequest().getMethod().equals("POST"))
+			PrincipalHelper.handleUpdate();
+	}
+}

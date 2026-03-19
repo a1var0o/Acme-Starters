@@ -1,4 +1,32 @@
 key,key:sponsorship,name,notes,money,kind
-donation-01,sponsorship-01,s,LoremIpsum,EUR 1,ALTRUIST
-donation-02,sponsorship-01,"Li Europan lingues es membres del sam familie. Lor separat existentie es un","One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches",EUR 1000000.00,REWARDED
-donation-03,sponsorship-01,Not so much a Donation,a,EUR 0.00,CELEBRATED
+# name - standard variations
+donation-01,sponsorship-01,L,LoremIpsum,EUR 1,ALTRUIST
+donation-02,sponsorship-01,Lo,LoremIpsum,EUR 1,ALTRUIST
+donation-03,sponsorship-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod t",LoremIpsum,EUR 1,ALTRUIST
+donation-04,sponsorship-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod te",LoremIpsum,EUR 1,ALTRUIST
+donation-05,sponsorship-01,โลเร็ม อิปซัม,LoremIpsum,EUR 1,ALTRUIST
+donation-06,sponsorship-01,لوريم إيبسوم,LoremIpsum,EUR 1,ALTRUIST
+donation-07,sponsorship-01,洛伦·伊普森,LoremIpsum,EUR 1,ALTRUIST
+donation-08,sponsorship-01,<marquee>Hacked</marquee>,LoremIpsum,EUR 1,ALTRUIST
+donation-09,sponsorship-01,<script>alert(‘Hacked!’);</script>,LoremIpsum,EUR 1,ALTRUIST
+donation-10,sponsorship-01,' or 'A' = 'A,LoremIpsum,EUR 1,ALTRUIST
+# notes - standard variations
+donation-11,sponsorship-01,Donation,L,EUR 1,ALTRUIST
+donation-12,sponsorship-01,Donation,Lo,EUR 1,ALTRUIST
+donation-13,sponsorship-01,Donation,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",EUR 1,ALTRUIST
+donation-14,sponsorship-01,Donation,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",EUR 1,ALTRUIST
+donation-15,sponsorship-01,Donation,โลเร็ม อิปซัม,EUR 1,ALTRUIST
+donation-16,sponsorship-01,Donation,لوريم إيبسوم,EUR 1,ALTRUIST
+donation-17,sponsorship-01,Donation,洛伦·伊普森,EUR 1,ALTRUIST
+donation-18,sponsorship-01,Donation,<marquee>Hacked</marquee>,EUR 1,ALTRUIST
+donation-19,sponsorship-01,Donation,<script>alert(‘Hacked!’);</script>,EUR 1,ALTRUIST
+donation-20,sponsorship-01,Donation,' or 'A' = 'A,EUR 1,ALTRUIST
+# money - standard variations
+donation-21,sponsorship-02,Donation,LoremIpsum,EUR 0.00,ALTRUIST
+donation-22,sponsorship-02,Donation,LoremIpsum,EUR 0.01,ALTRUIST
+donation-23,sponsorship-02,Donation,LoremIpsum,EUR 999999.99,ALTRUIST
+donation-24,sponsorship-02,Donation,LoremIpsum,EUR 1000000.00,ALTRUIST
+# kind - standard variations
+donation-25,sponsorship-40,Donation,LoremIpsum,EUR 1,ALTRUIST
+donation-26,sponsorship-40,Donation,LoremIpsum,EUR 1,REWARDED
+donation-27,sponsorship-40,Donation,LoremIpsum,EUR 1,CELEBRATED

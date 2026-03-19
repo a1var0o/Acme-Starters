@@ -1,6 +1,7 @@
 
 package acme.entities;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,8 +18,10 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoment.Constraint;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.client.helpers.MomentHelper;
+import acme.constraints.ValidCampaign;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.constraints.ValidTicker;
@@ -29,70 +32,68 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidCampaign
 public class Campaign extends AbstractEntity {
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
 	@Mandatory
 	@ValidTicker
 	@Column(unique = true)
-	private String				ticker;
+	private String ticker;
 
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				name;
+	private String name;
 
 	@Mandatory
 	@ValidText
 	@Column
-	private String				description;
+	private String description;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				startMoment;
+	private Date startMoment;
 
 	@Mandatory
-	@ValidMoment(constraint = Constraint.ENFORCE_FUTURE)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				endMoment;
+	private Date endMoment;
 
 	@Optional
 	@ValidUrl
 	@Column
-	private String				moreInfo;
+	private String moreInfo;
 
 	@Mandatory
 	@Valid
 	@Column
-	private Boolean				draftMode;
+	private Boolean draftMode;
 
-	//Derived attributes
+	// Derived attributes
 
 	@Autowired
 	@Transient
-	private CampaignRepository	repository;
+	private CampaignRepository repository;
 
-
-	//@Mandatory
+	@Mandatory
 	@Valid
 	@Transient
 	private Double monthsActive() {
-		//return Double.valueOf(MomentHelper.computeDuration(this.startMoment, this.endMoment).get(ChronoUnit.MONTHS));
-		return 0.0;
+		return MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS);
 	}
 
-	//@Mandatory
-	//	@ValidNumber(min = 0)
+	@Mandatory
+	@ValidNumber(min = 0)
 	@Transient
 	private Double effort() {
 		Double sumEffort = this.repository.totalEffort(this.getId());
 		sumEffort = sumEffort != null ? sumEffort : 0.0;
 		return sumEffort;
 	}
-	//Relationships ------------------------------------------------
-
+	// Relationships ------------------------------------------------
 
 	@Mandatory
 	@Valid

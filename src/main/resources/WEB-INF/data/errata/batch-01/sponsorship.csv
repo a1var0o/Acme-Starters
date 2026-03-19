@@ -1,13 +1,26 @@
 key,key:sponsor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
-sponsorship-01,sponsor-01,A119-123AbCdE,Sponsorship One,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
-sponsorship-02,sponsor-01,AB00-1111,a,a,2025/01/01 00:00,2200/12/31 23:59,null,true
-sponsorship-03,sponsor-01,AB00-01234567890,But I must explain to you how all this mistaken idea of denouncing pleasure,"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt",2025/01/01 10:00,2025/01/15 10:00,https://github.com/a1var0o/Acme-Starters-C-G029/,false
-sponsorship-04,sponsor-01,ABCD-01234,"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz pr",a,2025/01/01 10:00,2025/01/15 10:00,https://github.com/a1var0o/Acme-Starters-C-G029/,false
-sponsorship-05,sponsor-01,ABCD-01234,a,"The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt.",2025/01/01 10:00,2025/01/15 10:00,https://github.com/a1var0o/Acme-Starters-C-G029/,false
-sponsorship-06,sponsor-01,ABCD-01234,"","The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt",2025/01/01 10:00,2025/01/15 10:00,https://github.com/a1var0o/Acme-Starters-C-G029/,false
-sponsorship-07,sponsor-01,ABCD-01234,But I must explain to you how all this mistaken idea of denouncing pleasure,"",2025/01/01 10:00,2025/01/15 10:00,https://github.com/a1var0o/Acme-Starters-C-G029/,false
-sponsorship-08,sponsor-01,AB00-11116,a,a,2024/12/31 23:59,2200/12/31 23:59,null,true
-sponsorship-09,sponsor-01,AB00-11113,a,a,2025/01/01 00:00,2201/01/01 00:00,null,true
-sponsorship-10,sponsor-01,A119-123AbCdE,Sponsorship One,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,""
-sponsorship-11,sponsor-01,"",Sponsorship One,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
-sponsorship-12,sponsor-01,A119-123AbCdE,Sponsorship One,Sponsoring change for a better world.,2025/01/01 10:00,"",null,true
+# ticker - standard variations
+sponsorship-01,sponsor-01,,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-02,sponsor-01,AA00-12345,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-03,sponsor-01,A000-12341,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-04,sponsor-01,AAA0-12342,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-05,sponsor-01,AA00-1234,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-06,sponsor-01,AA00-12345678901,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+# name - standard variations
+sponsorship-07,sponsor-01,AA00-11345,,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-08,sponsor-01,AA00-12346,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lig",Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,null,true
+# description - standard variations
+sponsorship-09,sponsor-01,AA00-12347,Sponsorship,,2025/01/01 10:00,2025/01/15 10:00,null,true
+sponsorship-10,sponsor-01,AA00-12354,Sponsorship,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,*",2025/01/01 10:00,2025/01/15 10:00,null,true
+# startMoment - standard variations
+sponsorship-11,sponsor-01,AA00-12245,Sponsorship,Sponsoring change for a better world.,,2025/01/15 10:00,null,true
+sponsorship-12,sponsor-01,AA00-12f45,Sponsorship,Sponsoring change for a better world.,1999/12/31 23:59,2025/01/15 10:00,null,true
+sponsorship-13,sponsor-01,AA00-123g45,Sponsorship,Sponsoring change for a better world.,2201/01/01 00:00,2025/01/15 10:00,null,true
+# endMoment - standard variations
+sponsorship-14,sponsor-01,AA00-123h45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,,null,true
+sponsorship-15,sponsor-01,AA00-123i45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,1999/12/31 23:59,null,true
+sponsorship-16,sponsor-01,AA00-123j45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2201/01/01 00:00,null,true
+# moreInfo - standard variations
+sponsorship-17,sponsor-01,AA00-123k45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,"http://",true
+sponsorship-18,sponsor-01,AA00-123l45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/x",true
+sponsorship-19,sponsor-01,AA00-123m45,Sponsorship,Sponsoring change for a better world.,2025/01/01 10:00,2025/01/15 10:00,"http://a",true

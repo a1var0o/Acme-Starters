@@ -1,0 +1,29 @@
+key,key:auditor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
+
+audit-report-01,auditor-01,MV00-12345,"","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+#Testing string limits
+audit-report-02,auditor-01,MV00-12345,"TestCase","",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-03,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-04,auditor-01,MV00-12345,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo lias","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-05,auditor-01,MV00-12345,"TestCase","Eub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJNdEub6JiBOkvCHkvv5TYvqdwwf1befBfI19qqCBJOa47V62Gxs0n75SdXNKxeZ1mTbq33s6g5BZv5mgwVbTlmBDLzMhqRGYHgz0BH822UcooSuAsqfCXqFlMibDfKdyJiegiufb",2025/01/01 00:00,2025/05/16 00:00,"",true
+#Testing ticker format
+audit-report-06,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-07,auditor-01,MVA0-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-08,auditor-01,M000-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-09,auditor-01,MV00-,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-10,auditor-01,"","TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-11,auditor-01,MV00-1234,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-18,auditor-01,MV00-12345678901,"TestCase","TestingThePopulations",2025/01/01 00:00,2025/05/16 00:00,"",true
+#Testing different values in time data
+audit-report-12,auditor-01,MV00-12345,"TestCase","TestingThePopulations","",2025/05/16 00:00,"",true
+audit-report-13,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,"","",false
+audit-report-14,auditor-01,MV00-12345,"TestCase","TestingThePopulations",1999/12/31 23:59,2025/05/16 00:00,"",true
+audit-report-15,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,2201/01/01 00:00,"",false
+audit-report-16,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2201/01/01 00:00,2025/05/16 00:00,"",true
+audit-report-17,auditor-01,MV00-12345,"TestCase","TestingThePopulations",2025/01/01 00:00,1999/12/31 23:59,"",false
+#Testing the url field
+audit-report-19,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a",true
+audit-report-20,auditor-01,"MV27-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","ftp://localhost",true
+audit-report-21,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a?",true
+audit-report-27,auditor-01,"MV27-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","a",true
+audit-report-28,auditor-01,"MV26-12345","TestCase","TestingThePopulations","2025/01/01 00:00","2025/05/16 00:00","http://a?",true

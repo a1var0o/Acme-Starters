@@ -14,7 +14,7 @@ part-06,top part,Base description of a part,-0.01 EUR,CORE,invention-01
 part-07,top part,Base description of a part,1000000.01 EUR,CORE,invention-01
 
 # Kind
-part-08,top part,Base description of a part,EUR 230,,invention-23
+part-08,top part,Base description of a part,230 EUR,,invention-23
 
 # Invention FK
-part-09,top part,Base description of a part,EUR 230,,
+part-09,top part,Base description of a part,230 EUR,,

@@ -1,0 +1,60 @@
+
+package acme.features.fundraiser.tactic;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import acme.client.components.models.Tuple;
+import acme.client.services.AbstractService;
+import acme.entities.Tactic;
+import acme.realms.Fundraiser;
+
+@Service
+public class FundraiserTacticDeleteService extends AbstractService<Fundraiser, Tactic> {
+
+	@Autowired
+	private FundraiserTacticRepository	repository;
+	private Tactic						tactic;
+
+
+	@Override
+	public void load() {
+		int id;
+
+		id = super.getRequest().getData("id", int.class);
+		this.tactic = this.repository.findTacticById(id);
+	}
+
+	@Override
+	public void authorise() {
+		boolean status;
+
+		status = this.tactic != null && this.tactic.getStrategy().getDraftMode() && this.tactic.getStrategy().getFundraiser().isPrincipal();
+
+		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+	}
+
+	@Override
+	public void validate() {
+		;
+	}
+
+	@Override
+	public void execute() {
+		this.repository.delete(this.tactic);
+	}
+
+	@Override
+	public void unbind() {
+		Tuple tuple;
+
+		tuple = super.unbindObject(this.tactic, "name", "notes", "expectedPercentage", "kind");
+		tuple.put("strategyId", this.tactic.getStrategy().getId());
+		tuple.put("draftMode", this.tactic.getStrategy().getDraftMode());
+	}
+}
