@@ -80,15 +80,20 @@ public class Invention extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	public Double monthsActive() {
-		return Double.valueOf(MomentHelper.computeDifference(this.startMoment, this.endMoment, ChronoUnit.MONTHS));
+	public Double getMonthsActive() {
+		double res = 0.;
+
+		if (this.getStartMoment() != null && this.getEndMoment() != null)
+			res = MomentHelper.computeDifference(this.getStartMoment(), this.getEndMoment(), ChronoUnit.MONTHS);
+		return res;
 	}
 
 	@Mandatory
 	@ValidMoney
 	@Transient
-	public Money cost() {
+	public Money getCost() {
 		Money res = new Money();
+
 		res.setCurrency("EUR");
 		Double cost = this.repository.computeTotalCost(this.getId());
 		res.setAmount(cost == null ? 0 : cost);
