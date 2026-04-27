@@ -82,7 +82,7 @@ public class Campaign extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Transient
-	private Double getMonthsActive() {
+	public Double getMonthsActive() {
 		Double d = 0.0;
 		if (this.getStartMoment() != null && this.getEndMoment() != null)
 			d = MomentHelper.computeDifference(this.getStartMoment(), this.getEndMoment(), ChronoUnit.MONTHS);
@@ -103,5 +103,10 @@ public class Campaign extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Spokesperson spokesperson;
+	private Spokesperson	spokesperson;
+
+	@Optional
+	@Valid
+	@ManyToOne
+	private Project			project;
 }
