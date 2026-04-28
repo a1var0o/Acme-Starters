@@ -1,0 +1,8 @@
+authenticated.manager.form.title = Gerente
+
+authenticated.manager.form.label.position= Posición
+authenticated.manager.form.label.skills= Habilidades
+authenticated.manager.form.label.executive = Ejecutivo
+
+authenticated.manager.form.button.create = Registrar
+authenticated.manager.form.button.update = Actualizar

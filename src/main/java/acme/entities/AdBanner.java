@@ -30,7 +30,7 @@ public class AdBanner extends AbstractEntity {
 	@Mandatory
 	@ValidUrl
 	@Column
-	private String				url;
+	private String				targetUrl;
 
 	@Mandatory
 	@ValidUrl
