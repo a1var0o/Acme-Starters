@@ -1,5 +1,5 @@
 
-package acme.features.administrator;
+package acme.features.administrator.adbanner;
 
 import javax.annotation.PostConstruct;
 
@@ -21,7 +21,6 @@ public class AdministratorAdBannerController extends AbstractController<Administ
 		super.addBasicCommand("show", AdministratorAdBannerShowService.class);
 		super.addBasicCommand("create", AdministratorAdBannerCreateService.class);
 		super.addBasicCommand("update", AdministratorAdBannerUpdateService.class);
-		//super.addBasicCommand("delete", FundraiserStrategyDeleteService.class);
-
+		super.addBasicCommand("delete", AdministratorAdBannerDeleteService.class);
 	}
 }
