@@ -1,6 +1,8 @@
 
 package acme.entities;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -40,7 +42,7 @@ public class Project extends AbstractEntity {
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				name;
+	private String				keywords;
 
 	@Mandatory
 	@ValidText
@@ -78,10 +80,17 @@ public class Project extends AbstractEntity {
 		Double campaignsMonthsActive = this.repository.getProjectCampaigns(this.getId()).stream().mapToDouble(c -> c.getMonthsActive()).sum();
 		Double strategiesMonthsActive = this.repository.getProjectStrategies(this.getId()).stream().mapToDouble(s -> s.getMonthsActive()).sum();
 		double sum = inventionsMonthsActive + campaignsMonthsActive + strategiesMonthsActive;
-		Long nMembers = this.repository.getProjectMembers(this.getId());
-		if (nMembers == null)
-			return sum;
-		else
-			return sum / nMembers;
+		BigDecimal formatSum = BigDecimal.valueOf(sum);
+		formatSum = formatSum.setScale(2, RoundingMode.HALF_UP);
+		Integer nMembers = this.repository.getProjectMembers(this.getId());
+		if (nMembers == 0)
+			return formatSum.doubleValue();
+		else {
+			Double result = sum / nMembers;
+			BigDecimal formatResult = BigDecimal.valueOf(result);
+			formatResult = formatResult.setScale(2, RoundingMode.HALF_UP);
+			return formatResult.doubleValue();
+		}
+
 	};
 }
