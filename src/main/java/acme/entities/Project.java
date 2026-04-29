@@ -84,7 +84,7 @@ public class Project extends AbstractEntity {
 		double sum = inventionsMonthsActive + campaignsMonthsActive + strategiesMonthsActive;
 		BigDecimal formatSum = BigDecimal.valueOf(sum);
 		formatSum = formatSum.setScale(2, RoundingMode.HALF_UP);
-		Integer nMembers = this.repository.getProjectMembers(this.getId());
+		Integer nMembers = this.repository.getProjectMembers(this.getId()).size();
 		if (nMembers == 0)
 			return formatSum.doubleValue();
 		else {
