@@ -19,6 +19,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidHeader;
+import acme.constraints.ValidProject;
 import acme.constraints.ValidText;
 import acme.realms.Manager;
 import lombok.Getter;
@@ -27,6 +28,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidProject
 public class Project extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
