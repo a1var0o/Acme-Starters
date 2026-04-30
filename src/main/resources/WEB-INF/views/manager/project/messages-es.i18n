@@ -1,0 +1,6 @@
+manager.project.list.label.title = Proyectos
+manager.project.list.label.name = Nombre
+manager.project.list.label.description = Descripción
+manager.project.list.label.kickOffMoment = Momento de inicio
+manager.project.list.label.closeOutMoment = Momento de cierre
+manager.project.list.button.create = Nuevo proyecto

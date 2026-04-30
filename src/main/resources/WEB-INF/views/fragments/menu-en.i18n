@@ -31,6 +31,11 @@ master.menu.fundraiser.list-strategies = List my strategies
 master.menu.inventor = Inventor
 master.menu.inventor.list-inventions = List my inventions
 
+# master.menu.manager ###########################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-projects = List my projects
+
 # master.menu.spokesperson ##########################################################
 
 master.menu.spokesperson  = Spokesperson
