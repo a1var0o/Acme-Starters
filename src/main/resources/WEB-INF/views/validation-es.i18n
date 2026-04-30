@@ -28,3 +28,6 @@ acme.validation.audit-report.duplicated-ticker.message = Ticker duplicado
 acme.validation.audit-report.auditsections.message = El Reporte de Auditoría debe tener al menos una Sección de Auditoría asociada
 acme.validation.audit-report.interval.message = El intervalo entre inicio y final no es válido
 acme.validation.audit-report.no-future-interval.message = El intervalo debe de empezar en el futuro con respecto a la fecha de publicación
+
+acme.validation.project.no-inventions-and-published.message = Un proyecto publicado debe de tener una invención como mínimo
+acme.validation.project.correct-interval.message = Si el proyecto está publicado, el momento de inicio debe ser anterior al momento de finalización
