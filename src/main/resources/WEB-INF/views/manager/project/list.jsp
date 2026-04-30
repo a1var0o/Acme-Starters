@@ -5,7 +5,7 @@
 
 <acme:list navigable="true">
 	<acme:list-column code="manager.project.list.label.title" path="title" width="10%"/>
-	<acme:list-column code="manager.project.list.label.name" path="name" width="10%"/>
+	<acme:list-column code="manager.project.list.label.keywords" path="keywords" width="10%"/>
 	<acme:list-column code="manager.project.list.label.description" path="description" width="50%"/>
 	<acme:list-column code="manager.project.list.label.kickOffMoment" path="kickOffMoment" width="10%"/>
 	<acme:list-column code="manager.project.list.label.closeOutMoment" path="closeOurMoment" width="10%"/>

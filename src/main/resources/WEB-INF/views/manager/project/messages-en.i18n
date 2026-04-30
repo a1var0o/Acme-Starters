@@ -1,6 +1,15 @@
-manager.project.list.label.title = Projects
-manager.project.list.label.name = Name
+manager.project.list.title = Projects
+manager.project.list.label.title = Title
+manager.project.list.label.keywords = Keywords
 manager.project.list.label.description = Description
 manager.project.list.label.kickOffMoment = Kick off moment
 manager.project.list.label.closeOutMoment = Close out moment
 manager.project.list.button.create = New project
+
+manager.project.form.title = Project
+manager.project.form.label.title = Title
+manager.project.form.label.keywords = Keywords 
+manager.project.form.label.description = Description
+manager.project.form.label.kickOffMoment = Kick off moment
+manager.project.form.label.closeOutMoment = Close out moment
+manager.project.form.button.create = Create
