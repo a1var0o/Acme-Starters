@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidText;
 import acme.realms.Manager;
@@ -40,7 +39,7 @@ public class Project extends AbstractEntity {
 	@Mandatory
 	@ValidHeader
 	@Column
-	private String				name;
+	private String				keywords;
 
 	@Mandatory
 	@ValidText
@@ -70,18 +69,18 @@ public class Project extends AbstractEntity {
 	private ProjectRepository	repository;
 
 
-	@Mandatory
-	@ValidNumber
-	@Transient
-	public Double getEffort() {
-		Double inventionsMonthsActive = this.repository.getProjectInventions(this.getId()).stream().mapToDouble(i -> i.getMonthsActive()).sum();
-		Double campaignsMonthsActive = this.repository.getProjectCampaigns(this.getId()).stream().mapToDouble(c -> c.getMonthsActive()).sum();
-		Double strategiesMonthsActive = this.repository.getProjectStrategies(this.getId()).stream().mapToDouble(s -> s.getMonthsActive()).sum();
-		double sum = inventionsMonthsActive + campaignsMonthsActive + strategiesMonthsActive;
-		Long nMembers = this.repository.getProjectMembers(this.getId());
-		if (nMembers == null)
-			return sum;
-		else
-			return sum / nMembers;
-	};
+		@Mandatory
+		@ValidNumber
+		@Transient
+		public Double getEffort() {
+			Double inventionsMonthsActive = this.repository.getProjectInventions(this.getId()).stream().mapToDouble(i -> i.getMonthsActive()).sum();
+			Double campaignsMonthsActive = this.repository.getProjectCampaigns(this.getId()).stream().mapToDouble(c -> c.getMonthsActive()).sum();
+			Double strategiesMonthsActive = this.repository.getProjectStrategies(this.getId()).stream().mapToDouble(s -> s.getMonthsActive()).sum();
+			double sum = inventionsMonthsActive + campaignsMonthsActive + strategiesMonthsActive;
+			Long nMembers = this.repository.getProjectMembers(this.getId());
+			if (nMembers == null)
+				return sum;
+			else
+				return sum / nMembers;
+		};
 }
