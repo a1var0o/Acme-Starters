@@ -1,0 +1,13 @@
+key,enabled,identity,password,username
+
+# Manager
+user-account-manager-01,true,"UserIdentity{name: 'Manager', surname: 'One', email: 'peter@acme.com'}",manager1,manager1
+user-account-manager-02,true,"UserIdentity{name: 'Manager', surname: 'Two', email: 'peter@acme.com'}",manager2,manager2
+user-account-manager-03,true,"UserIdentity{name: 'Manager', surname: 'Three', email: 'peter@acme.com'}",manager3,manager3
+user-account-manager-04,true,"UserIdentity{name: 'Manager', surname: 'Four', email: 'peter@acme.com'}",manager4,manager4
+user-account-manager-05,true,"UserIdentity{name: 'Manager', surname: 'Five', email: 'peter@acme.com'}",manager5,manager5
+user-account-manager-06,true,"UserIdentity{name: 'Manager', surname: 'Six', email: 'peter@acme.com'}",manager6,manager6
+user-account-manager-07,true,"UserIdentity{name: 'Manager', surname: 'Seven', email: 'peter@acme.com'}",manager7,manager7
+user-account-manager-08,true,"UserIdentity{name: 'Manager', surname: 'Eight', email: 'peter@acme.com'}",manager8,manager8
+user-account-manager-09,true,"UserIdentity{name: 'Manager', surname: 'Nine', email: 'peter@acme.com'}",manager9,manager9
+user-account-manager-10,true,"UserIdentity{name: 'Manager', surname: 'Ten', email: 'peter@acme.com'}",manager10,manager10
