@@ -1,5 +1,5 @@
 manager.project.list.label.title = Projects
-manager.project.list.label.name = Name
+manager.project.list.label.keywords = Keywords
 manager.project.list.label.description = Description
 manager.project.list.label.kickOffMoment = Kick off moment
 manager.project.list.label.closeOutMoment = Close out moment
