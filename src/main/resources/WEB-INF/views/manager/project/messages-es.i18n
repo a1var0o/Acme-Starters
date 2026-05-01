@@ -1,0 +1,15 @@
+manager.project.list.title = Proyectos
+manager.project.list.label.title = Título
+manager.project.list.label.keywords = Palabras clave
+manager.project.list.label.description = Descripción
+manager.project.list.label.kickOffMoment = Momento de inicio
+manager.project.list.label.closeOutMoment = Momento de cierre
+manager.project.list.button.create = Nuevo proyecto
+
+manager.project.form.title = Proyecto
+manager.project.form.label.title = Título
+manager.project.form.label.keywords = Palabras clave 
+manager.project.form.label.description = Descripción
+manager.project.form.label.kickOffMoment = Momento de inicio
+manager.project.form.label.closeOutMoment = Momento de cierre
+manager.project.form.button.create = Crear
