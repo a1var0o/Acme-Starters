@@ -1,0 +1,20 @@
+key,key:manager,title,keywords,description,kickOffMoment,closeOutMoment,draftMode
+# Test title
+project-01,manager-01,d,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2012/7/2 0:01,true
+project-02,manager-01,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2012/7/2 0:01,true
+# Test keywords
+project-03,manager-01,Lorem ipsum dolor sit amet. consectetu,"",Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2012/7/2 0:01,true
+project-04,manager-01,Lorem ipsum dolor sit amet. consectetu,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2012/7/2 0:01,true
+# Test description
+project-05,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,"",2012/7/2 0:00,2012/7/2 0:01,true
+project-06,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i",2012/7/2 0:00,2012/7/2 0:01,true
+# Test kickOffMoment
+project-07,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,1999/12/31 23:59,2012/7/2 0:01,true
+project-08,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2201/1/1 0:00,2012/7/2 0:01,true
+project-09,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:01,2012/7/2 0:00,false
+# Test invention startDate before kickOffMoment
+project-10,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2026/8/2 0:00,false
+# Test invention endDate after closeOutMoment
+project-11,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2012/8/2 0:00,false
+# Test invention from inventor not member of project
+project-12,manager-01,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2012/7/2 0:00,2026/8/2 0:00,false

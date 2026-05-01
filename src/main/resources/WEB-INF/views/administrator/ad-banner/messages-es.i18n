@@ -1,0 +1,12 @@
+administrator.ad-banner.list.label.slogan = Eslogan
+administrator.ad-banner.list.label.targetUrl = Url objetivo
+administrator.ad-banner.list.label.pictureUrl = Url de la imagen
+
+administrator.ad-banner.list.title = banner publicitario
+administrator.ad-banner.form.title = banner publicitario
+
+administrator.ad-banner.form.button.update = Actualizar banner publicitario
+administrator.ad-banner.form.button.delete = Borrar banner publicitario
+administrator.ad-banner.form.button.create = Crear banner publicitario
+
+administrator.ad-banner.list.button.create = Crear un banner publicitario

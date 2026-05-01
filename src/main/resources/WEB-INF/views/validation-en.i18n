@@ -28,3 +28,6 @@ acme.validation.audit-report.duplicated-ticker.message = Duplicate ticker
 acme.validation.audit-report.auditsections.message = Audit Report must have at least 1 Audit Section
 acme.validation.audit-report.interval.message = The interval between start and end isn't valid
 acme.validation.audit-report.no-future-interval.message = The interval must start in the future with respect to the date of publication
+
+acme.validation.project.no-inventions-and-published.message = A published project must have at least one invention
+acme.validation.project.correct-interval.message = If the project is published, the kick off moment must be before the close out moment
