@@ -18,3 +18,4 @@ manager.project.form.button.publish = Publicar
 acme.validation.project.dates.message = El momento de cierre debe ser posterior al momento de inicio
 acme.validation.project.kickOffMoment.message = El momento de inicio debe ser anterior al momento de inicio de todos sus componentes
 acme.validation.project.closeOutMoment.message = El momento de cierre debe ser posterior al momento de finalizacion de todos sus componentes
+acme.validation.project.inventions.message = Un proyecto publicado debe contener al menos una invencion
