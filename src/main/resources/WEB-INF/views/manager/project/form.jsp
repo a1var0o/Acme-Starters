@@ -10,7 +10,10 @@
 	<acme:form-moment code="manager.project.form.label.kickOffMoment" path="kickOffMoment"/>
 	<acme:form-moment code="manager.project.form.label.closeOutMoment" path="closeOutMoment"/>
 	
-	<jstl:choose>	 
+	<jstl:choose>	 	 
+		<jstl:when test="${acme:anyOf(_command, 'show|delete') && draftMode == true}">
+			<acme:submit code="manager.project.form.button.delete" action="/manager/project/delete"/>
+		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="manager.project.form.button.create" action="/manager/project/create"/>
 		</jstl:when>
