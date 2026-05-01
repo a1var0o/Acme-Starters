@@ -13,3 +13,4 @@ manager.project.form.label.description = Descripción
 manager.project.form.label.kickOffMoment = Momento de inicio
 manager.project.form.label.closeOutMoment = Momento de cierre
 manager.project.form.button.create = Crear
+manager.project.form.button.update = Actualizar
