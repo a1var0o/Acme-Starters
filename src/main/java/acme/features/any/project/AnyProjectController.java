@@ -18,5 +18,6 @@ public class AnyProjectController extends AbstractController<Any, Project> {
 		super.setMediaType(MediaType.TEXT_HTML);
 
 		super.addBasicCommand("list", AnyProjectListService.class);
+		super.addBasicCommand("show", AnyProjectShowService.class);
 	}
 }
