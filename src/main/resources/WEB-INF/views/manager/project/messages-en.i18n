@@ -14,3 +14,7 @@ manager.project.form.label.kickOffMoment = Kick off moment
 manager.project.form.label.closeOutMoment = Close out moment
 manager.project.form.button.create = Create
 manager.project.form.button.publish = Publish
+
+acme.validation.project.dates.message = The close out moment must be after the kick off moment
+acme.validation.project.kickOffMoment.message = The kick off moment must be before the start moment of all its components
+acme.validation.project.closeOutMoment.message = The close out moment must be after the end moment of all its components

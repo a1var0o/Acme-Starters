@@ -43,10 +43,72 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void validate() {
 		super.validateObject(this.project);
 		{
-			Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
-			boolean atLeastOneInvention = !inventions.isEmpty();
+			// The CloseOutMoment must be after the KickOffMoment
+			boolean validDates = this.project.getCloseOutMoment().after(this.project.getKickOffMoment());
+			super.state(validDates, "closeOutMoment", "acme.validation.project.dates.message");
+		}
 
+		Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
+		Collection<Campaign> campaigns = this.repository.findCampaignsByProjectId(this.project.getId());
+		Collection<Strategy> strategies = this.repository.findStrategiesByProjectId(this.project.getId());
+
+		{
+			boolean atLeastOneInvention = !inventions.isEmpty();
 			super.state(atLeastOneInvention, "*", "acme.validation.project.inventions.message");
+		}
+
+		{
+			boolean validStartMoments = true;
+			for (Invention inv : inventions) {
+				if (!this.project.getKickOffMoment().before(inv.getStartMoment())) {
+					validStartMoments = false;
+					break;
+				}
+			}
+			if (validStartMoments) {
+				for (Campaign cam : campaigns) {
+					if (!this.project.getKickOffMoment().before(cam.getStartMoment())) {
+						validStartMoments = false;
+						break;
+					}
+				}
+			}
+			if (validStartMoments) {
+				for (Strategy str : strategies) {
+					if (!this.project.getKickOffMoment().before(str.getStartMoment())) {
+						validStartMoments = false;
+						break;
+					}
+				}
+			}
+			super.state(validStartMoments, "kickOffMoment", "acme.validation.project.kickOffMoment.message");
+		}
+
+		{
+			boolean validEndMoments = true;
+			for (Invention inv : inventions) {
+				if (!this.project.getCloseOutMoment().after(inv.getEndMoment())) {
+					validEndMoments = false;
+					break;
+				}
+			}
+			if (validEndMoments) {
+				for (Campaign cam : campaigns) {
+					if (!this.project.getCloseOutMoment().after(cam.getEndMoment())) {
+						validEndMoments = false;
+						break;
+					}
+				}
+			}
+			if (validEndMoments) {
+				for (Strategy str : strategies) {
+					if (!this.project.getCloseOutMoment().after(str.getEndMoment())) {
+						validEndMoments = false;
+						break;
+					}
+				}
+			}
+			super.state(validEndMoments, "closeOutMoment", "acme.validation.project.closeOutMoment.message");
 		}
 	}
 
