@@ -1,0 +1,25 @@
+
+package acme.features.manager.project;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+
+import acme.client.controllers.AbstractController;
+import acme.entities.Project;
+import acme.realms.Manager;
+
+@Controller
+public class ManagerProjectController extends AbstractController<Manager, Project> {
+
+	@PostConstruct
+	protected void initilase() {
+		super.setMediaType(MediaType.TEXT_HTML);
+
+		super.addBasicCommand("list", ManagerProjectListService.class);
+		super.addBasicCommand("show", ManagerProjectShowService.class);
+		super.addBasicCommand("create", ManagerProjectCreateService.class);
+		super.addCustomCommand("publish", "update", ManagerProjectPublishService.class);
+	}
+}
