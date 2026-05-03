@@ -1,0 +1,13 @@
+any.project.list.title = Projects
+any.project.list.label.title = Title
+any.project.list.label.keywords = Keywords
+any.project.list.label.description = Description
+any.project.list.label.kickOffMoment = Kick off moment
+any.project.list.label.closeOutMoment = Close out moment
+
+any.project.form.title = Project
+any.project.form.label.title = Title
+any.project.form.label.keywords = Keywords 
+any.project.form.label.description = Description
+any.project.form.label.kickOffMoment = Kick off moment
+any.project.form.label.closeOutMoment = Close out moment
