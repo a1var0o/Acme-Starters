@@ -1,6 +1,8 @@
+
 package acme.features.manager.project;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +18,10 @@ import acme.realms.Manager;
 public class ManagerProjectPublishService extends AbstractService<Manager, Project> {
 
 	@Autowired
-	private ManagerProjectRepository repository;
+	private ManagerProjectRepository	repository;
 
-	private Project project;
+	private Project						project;
+
 
 	@Override
 	public void load() {
@@ -59,55 +62,45 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 
 		if (this.project.getKickOffMoment() != null) {
 			boolean validStartMoments = true;
-			for (Invention inv : inventions) {
+			for (Invention inv : inventions)
 				if (inv.getStartMoment() != null && !this.project.getKickOffMoment().before(inv.getStartMoment())) {
 					validStartMoments = false;
 					break;
 				}
-			}
-			if (validStartMoments) {
-				for (Campaign cam : campaigns) {
+			if (validStartMoments)
+				for (Campaign cam : campaigns)
 					if (cam.getStartMoment() != null && !this.project.getKickOffMoment().before(cam.getStartMoment())) {
 						validStartMoments = false;
 						break;
 					}
-				}
-			}
-			if (validStartMoments) {
-				for (Strategy str : strategies) {
+			if (validStartMoments)
+				for (Strategy str : strategies)
 					if (str.getStartMoment() != null && !this.project.getKickOffMoment().before(str.getStartMoment())) {
 						validStartMoments = false;
 						break;
 					}
-				}
-			}
 			super.state(validStartMoments, "kickOffMoment", "acme.validation.project.kickOffMoment.message");
 		}
 
 		if (this.project.getCloseOutMoment() != null) {
 			boolean validEndMoments = true;
-			for (Invention inv : inventions) {
+			for (Invention inv : inventions)
 				if (inv.getEndMoment() != null && !this.project.getCloseOutMoment().after(inv.getEndMoment())) {
 					validEndMoments = false;
 					break;
 				}
-			}
-			if (validEndMoments) {
-				for (Campaign cam : campaigns) {
+			if (validEndMoments)
+				for (Campaign cam : campaigns)
 					if (cam.getEndMoment() != null && !this.project.getCloseOutMoment().after(cam.getEndMoment())) {
 						validEndMoments = false;
 						break;
 					}
-				}
-			}
-			if (validEndMoments) {
-				for (Strategy str : strategies) {
+			if (validEndMoments)
+				for (Strategy str : strategies)
 					if (str.getEndMoment() != null && !this.project.getCloseOutMoment().after(str.getEndMoment())) {
 						validEndMoments = false;
 						break;
 					}
-				}
-			}
 			super.state(validEndMoments, "closeOutMoment", "acme.validation.project.closeOutMoment.message");
 		}
 	}
@@ -115,6 +108,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void execute() {
 		this.project.setDraftMode(false);
+		this.project.setPublishMoment(new Date());
 
 		Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
 		for (Invention invention : inventions) {
