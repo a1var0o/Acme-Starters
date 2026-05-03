@@ -1,0 +1,16 @@
+project-member.strategy.list.title = Project Strategies
+project-member.strategy.list.label.ticker = Ticker
+project-member.strategy.list.label.name = Name
+project-member.strategy.list.label.startMoment = Start moment
+project-member.strategy.list.label.endMoment = End moment
+project-member.strategy.list.button.show = Show
+project-member.strategy.list.button.return = Return
+
+project-member.strategy.form.title = Strategy Details
+project-member.strategy.form.label.ticker = Ticker
+project-member.strategy.form.label.name = Name
+project-member.strategy.form.label.description = Description
+project-member.strategy.form.label.startMoment = Start moment
+project-member.strategy.form.label.endMoment = End moment
+project-member.strategy.form.label.moreInfo = More info
+project-member.strategy.form.button.return = Return

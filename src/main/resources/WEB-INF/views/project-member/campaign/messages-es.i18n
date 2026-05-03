@@ -1,0 +1,16 @@
+project-member.campaign.list.title = Campañas del Proyecto
+project-member.campaign.list.label.ticker = Ticker
+project-member.campaign.list.label.name = Nombre
+project-member.campaign.list.label.startMoment = Momento de inicio
+project-member.campaign.list.label.endMoment = Momento de cierre
+project-member.campaign.list.button.show = Ver
+project-member.campaign.list.button.return = Volver
+
+project-member.campaign.form.title = Detalles de Campaña
+project-member.campaign.form.label.ticker = Ticker
+project-member.campaign.form.label.name = Nombre
+project-member.campaign.form.label.description = Descripción
+project-member.campaign.form.label.startMoment = Momento de inicio
+project-member.campaign.form.label.endMoment = Momento de cierre
+project-member.campaign.form.label.moreInfo = Más información
+project-member.campaign.form.button.return = Volver
