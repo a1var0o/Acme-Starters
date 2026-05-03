@@ -42,7 +42,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void validate() {
 		super.validateObject(this.project);
-		{
+		if (this.project.getKickOffMoment() != null && this.project.getCloseOutMoment() != null) {
 			// The CloseOutMoment must be after the KickOffMoment
 			boolean validDates = this.project.getCloseOutMoment().after(this.project.getKickOffMoment());
 			super.state(validDates, "closeOutMoment", "acme.validation.project.dates.message");
@@ -57,17 +57,17 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 			super.state(atLeastOneInvention, "*", "acme.validation.project.inventions.message");
 		}
 
-		{
+		if (this.project.getKickOffMoment() != null) {
 			boolean validStartMoments = true;
 			for (Invention inv : inventions) {
-				if (!this.project.getKickOffMoment().before(inv.getStartMoment())) {
+				if (inv.getStartMoment() != null && !this.project.getKickOffMoment().before(inv.getStartMoment())) {
 					validStartMoments = false;
 					break;
 				}
 			}
 			if (validStartMoments) {
 				for (Campaign cam : campaigns) {
-					if (!this.project.getKickOffMoment().before(cam.getStartMoment())) {
+					if (cam.getStartMoment() != null && !this.project.getKickOffMoment().before(cam.getStartMoment())) {
 						validStartMoments = false;
 						break;
 					}
@@ -75,7 +75,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 			}
 			if (validStartMoments) {
 				for (Strategy str : strategies) {
-					if (!this.project.getKickOffMoment().before(str.getStartMoment())) {
+					if (str.getStartMoment() != null && !this.project.getKickOffMoment().before(str.getStartMoment())) {
 						validStartMoments = false;
 						break;
 					}
@@ -84,17 +84,17 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 			super.state(validStartMoments, "kickOffMoment", "acme.validation.project.kickOffMoment.message");
 		}
 
-		{
+		if (this.project.getCloseOutMoment() != null) {
 			boolean validEndMoments = true;
 			for (Invention inv : inventions) {
-				if (!this.project.getCloseOutMoment().after(inv.getEndMoment())) {
+				if (inv.getEndMoment() != null && !this.project.getCloseOutMoment().after(inv.getEndMoment())) {
 					validEndMoments = false;
 					break;
 				}
 			}
 			if (validEndMoments) {
 				for (Campaign cam : campaigns) {
-					if (!this.project.getCloseOutMoment().after(cam.getEndMoment())) {
+					if (cam.getEndMoment() != null && !this.project.getCloseOutMoment().after(cam.getEndMoment())) {
 						validEndMoments = false;
 						break;
 					}
@@ -102,7 +102,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 			}
 			if (validEndMoments) {
 				for (Strategy str : strategies) {
-					if (!this.project.getCloseOutMoment().after(str.getEndMoment())) {
+					if (str.getEndMoment() != null && !this.project.getCloseOutMoment().after(str.getEndMoment())) {
 						validEndMoments = false;
 						break;
 					}
