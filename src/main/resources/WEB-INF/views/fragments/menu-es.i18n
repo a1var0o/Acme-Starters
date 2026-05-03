@@ -70,5 +70,6 @@ master.menu.any = Cualquiera
 master.menu.any.list-strategies = Mostrar estrategias
 master.menu.any.list-campaigns = Mostrar campañas
 master.menu.any.list-inventions = Mostrar inventos
+master.menu.any.list-projects = Mostrar proyectos
 master.menu.any.list-sponsorships = Mostrar patrocinios
 master.menu.any.list-audit-reports = Mostrar reportes de auditoría
