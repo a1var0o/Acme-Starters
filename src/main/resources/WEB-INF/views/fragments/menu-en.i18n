@@ -36,6 +36,7 @@ master.menu.inventor.list-inventions = List my inventions
 
 master.menu.manager = Manager
 master.menu.manager.list-projects = List my projects
+master.menu.manager.show-dashboard = Show dashboard
 
 # master.menu.spokesperson ##########################################################
 

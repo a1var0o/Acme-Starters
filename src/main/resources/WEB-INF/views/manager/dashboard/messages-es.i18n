@@ -1,0 +1,9 @@
+manager.dashboard.form.title =  Dashboard de proyectos
+
+manager.dashboard.form.title.general-indicators = Indicadores generales
+manager.dashboard.form.label.number-of-projects = Número de proyectos
+manager.dashboard.form.label.number-of-projects-deviation = Desviación del número de proyectos
+manager.dashboard.form.label.min-effort = Esfuerzo mínimo
+manager.dashboard.form.label.max-effort = Esfuerzo máximo
+manager.dashboard.form.label.avg-effort = Esfuerzo medio
+manager.dashboard.form.label.std-effort = Desviación estándar de esfuerzo
