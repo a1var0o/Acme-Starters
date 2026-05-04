@@ -19,8 +19,8 @@
 				</jstl:if>
 				
 				<jstl:if test="${!hasProject}">
-					<input type="hidden" name="customProjectId" value="${projectId}" />
-					<acme:submit code="project-member.invention.list.button.assign" action="/project-member/invention/assign" />
+					<input type="hidden" name="projectId" value="${projectId}" />
+					<acme:submit code="project-member.invention.list.button.assign" action="/project-member/invention/assign?id=${id}&projectId=${projectId}" />
 				</jstl:if>
 			</acme:form>
 

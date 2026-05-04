@@ -1,3 +1,4 @@
+
 package acme.features.projectmember.invention;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,24 +13,24 @@ import acme.realms.ProjectMember;
 public class ProjectMemberInventionAssignService extends AbstractService<ProjectMember, Invention> {
 
 	@Autowired
-	private ProjectMemberInventionRepository repository;
+	private ProjectMemberInventionRepository	repository;
 
-	private Invention invention;
-	private Project project;
+	private Invention							invention;
+	private Project								project;
+
 
 	@Override
 	public void load() {
 		int inventionId = super.getRequest().getData("id", int.class);
 		this.invention = this.repository.findInventionById(inventionId);
 
-		int projectId = super.getRequest().getData("customProjectId", int.class);
+		int projectId = super.getRequest().getData("projectId", int.class);
 		this.project = this.repository.findProjectById(projectId);
 	}
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.invention != null
-				&& this.project != null;
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.invention != null && this.project != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
 			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
@@ -38,9 +39,8 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 				status = this.project.getDraftMode();
 
 				// The user must be the inventor of the invention
-				if (status && this.invention.getInventor() != null) {
+				if (status && this.invention.getInventor() != null)
 					status = this.invention.getInventor().getUserAccount().getId() == accountId;
-				}
 			}
 		}
 		super.setAuthorised(status);
@@ -48,7 +48,7 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 
 	@Override
 	public void bind() {
-		super.bindObject(this.invention);
+		super.bindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
 	}
 
 	@Override
@@ -65,6 +65,5 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 	@Override
 	public void unbind() {
 		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
-		super.unbindGlobal("projectId", this.project.getId());
 	}
 }

@@ -1,3 +1,4 @@
+
 package acme.features.projectmember.invention;
 
 import java.util.Collection;
@@ -14,10 +15,11 @@ import acme.realms.ProjectMember;
 public class ProjectMemberInventionListService extends AbstractService<ProjectMember, Invention> {
 
 	@Autowired
-	private ProjectMemberInventionRepository repository;
+	private ProjectMemberInventionRepository	repository;
 
-	private Collection<Invention> inventions;
-	private Project project;
+	private Collection<Invention>				inventions;
+	private Project								project;
+
 
 	@Override
 	public void load() {

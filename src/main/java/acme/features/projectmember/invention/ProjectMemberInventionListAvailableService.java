@@ -1,3 +1,4 @@
+
 package acme.features.projectmember.invention;
 
 import java.util.Collection;
@@ -15,10 +16,11 @@ import acme.realms.ProjectMember;
 public class ProjectMemberInventionListAvailableService extends AbstractService<ProjectMember, Invention> {
 
 	@Autowired
-	private ProjectMemberInventionRepository repository;
+	private ProjectMemberInventionRepository	repository;
 
-	private Collection<Invention> inventions;
-	private Project project;
+	private Collection<Invention>				inventions;
+	private Project								project;
+
 
 	@Override
 	public void load() {
@@ -28,9 +30,11 @@ public class ProjectMemberInventionListAvailableService extends AbstractService<
 		int accountId = super.getRequest().getPrincipal().getAccountId();
 		Inventor inventor = this.repository.findInventorByAccountId(accountId);
 
-		if (inventor != null) {
+		if (inventor != null)
 			this.inventions = this.repository.findAvailableInventions(inventor.getId());
-		}
+
+		super.getResponse().addGlobal("projectId", this.project.getId());
+		super.getResponse().addGlobal("inventions", this.inventions);
 	}
 
 	@Override
@@ -39,10 +43,9 @@ public class ProjectMemberInventionListAvailableService extends AbstractService<
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
 			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
-			if (status) {
+			if (status)
 				// The project must be unpublished to add inventions
 				status = this.project.getDraftMode();
-			}
 		}
 		super.setAuthorised(status);
 	}
@@ -50,6 +53,6 @@ public class ProjectMemberInventionListAvailableService extends AbstractService<
 	@Override
 	public void unbind() {
 		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment");
-		super.unbindGlobal("projectId", this.project.getId());
 	}
+
 }

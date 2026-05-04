@@ -45,6 +45,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void validate() {
 		super.validateObject(this.project);
+		super.getErrors().hasErrors("kickOffMoment");
 		if (this.project.getKickOffMoment() != null && this.project.getCloseOutMoment() != null) {
 			// The CloseOutMoment must be after the KickOffMoment
 			boolean validDates = this.project.getCloseOutMoment().after(this.project.getKickOffMoment());
