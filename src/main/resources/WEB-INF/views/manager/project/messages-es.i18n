@@ -21,3 +21,6 @@ acme.validation.project.dates.message = El momento de cierre debe ser posterior 
 acme.validation.project.kickOffMoment.message = El momento de inicio debe ser anterior al momento de inicio de todos sus componentes
 acme.validation.project.closeOutMoment.message = El momento de cierre debe ser posterior al momento de finalizacion de todos sus componentes
 acme.validation.project.inventions.message = Un proyecto publicado debe contener al menos una invencion
+acme.validation.project.no-future-interval.message = Todas las invenciones, campañas y estrategias asociadas deben tener un momento de inicio futuro
+acme.validation.project.invalid-interval.message = Todas las invenciones, campañas y estrategias asociadas deben tener un momento de inicio anterior a su momento de fin
+acme.validation.project.items-without-children.message = Todas las invenciones, campañas y estrategias asociadas deben tener al menos una parte, un hito o una táctica respectivamente

@@ -7,6 +7,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.helpers.MomentHelper;
+
 import acme.client.services.AbstractService;
 import acme.entities.Campaign;
 import acme.entities.Invention;
@@ -45,71 +47,57 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void validate() {
 		super.validateObject(this.project);
-		super.getErrors().hasErrors("kickOffMoment");
-		if (this.project.getKickOffMoment() != null && this.project.getCloseOutMoment() != null) {
-			// The CloseOutMoment must be after the KickOffMoment
-			boolean validDates = this.project.getCloseOutMoment().after(this.project.getKickOffMoment());
-			super.state(validDates, "closeOutMoment", "acme.validation.project.dates.message");
+		if (!super.getErrors().hasErrors("kickOffMoment") && !super.getErrors().hasErrors("closeOutMoment")) {
+			if (this.project.getKickOffMoment() != null && this.project.getCloseOutMoment() != null) {
+				// The CloseOutMoment must be after the KickOffMoment
+				boolean validDates = this.project.getCloseOutMoment().after(this.project.getKickOffMoment());
+				super.state(validDates, "closeOutMoment", "acme.validation.project.dates.message");
+			}
 		}
 
-		Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
-		Collection<Campaign> campaigns = this.repository.findCampaignsByProjectId(this.project.getId());
-		Collection<Strategy> strategies = this.repository.findStrategiesByProjectId(this.project.getId());
+		long countInventions = this.repository.countInventionsByProjectId(this.project.getId());
+		super.state(countInventions > 0, "*", "acme.validation.project.inventions.message");
 
-		{
-			boolean atLeastOneInvention = !inventions.isEmpty();
-			super.state(atLeastOneInvention, "*", "acme.validation.project.inventions.message");
+		if (!super.getErrors().hasErrors("kickOffMoment") && this.project.getKickOffMoment() != null) {
+			long invalidStarts = 0;
+			invalidStarts += this.repository.countInventionsWithStartMomentBefore(this.project.getId(), this.project.getKickOffMoment());
+			invalidStarts += this.repository.countCampaignsWithStartMomentBefore(this.project.getId(), this.project.getKickOffMoment());
+			invalidStarts += this.repository.countStrategiesWithStartMomentBefore(this.project.getId(), this.project.getKickOffMoment());
+			super.state(invalidStarts == 0, "kickOffMoment", "acme.validation.project.kickOffMoment.message");
 		}
 
-		if (this.project.getKickOffMoment() != null) {
-			boolean validStartMoments = true;
-			for (Invention inv : inventions)
-				if (inv.getStartMoment() != null && !this.project.getKickOffMoment().before(inv.getStartMoment())) {
-					validStartMoments = false;
-					break;
-				}
-			if (validStartMoments)
-				for (Campaign cam : campaigns)
-					if (cam.getStartMoment() != null && !this.project.getKickOffMoment().before(cam.getStartMoment())) {
-						validStartMoments = false;
-						break;
-					}
-			if (validStartMoments)
-				for (Strategy str : strategies)
-					if (str.getStartMoment() != null && !this.project.getKickOffMoment().before(str.getStartMoment())) {
-						validStartMoments = false;
-						break;
-					}
-			super.state(validStartMoments, "kickOffMoment", "acme.validation.project.kickOffMoment.message");
+		if (!super.getErrors().hasErrors("closeOutMoment") && this.project.getCloseOutMoment() != null) {
+			long invalidEnds = 0;
+			invalidEnds += this.repository.countInventionsWithEndMomentAfter(this.project.getId(), this.project.getCloseOutMoment());
+			invalidEnds += this.repository.countCampaignsWithEndMomentAfter(this.project.getId(), this.project.getCloseOutMoment());
+			invalidEnds += this.repository.countStrategiesWithEndMomentAfter(this.project.getId(), this.project.getCloseOutMoment());
+			super.state(invalidEnds == 0, "closeOutMoment", "acme.validation.project.closeOutMoment.message");
 		}
 
-		if (this.project.getCloseOutMoment() != null) {
-			boolean validEndMoments = true;
-			for (Invention inv : inventions)
-				if (inv.getEndMoment() != null && !this.project.getCloseOutMoment().after(inv.getEndMoment())) {
-					validEndMoments = false;
-					break;
-				}
-			if (validEndMoments)
-				for (Campaign cam : campaigns)
-					if (cam.getEndMoment() != null && !this.project.getCloseOutMoment().after(cam.getEndMoment())) {
-						validEndMoments = false;
-						break;
-					}
-			if (validEndMoments)
-				for (Strategy str : strategies)
-					if (str.getEndMoment() != null && !this.project.getCloseOutMoment().after(str.getEndMoment())) {
-						validEndMoments = false;
-						break;
-					}
-			super.state(validEndMoments, "closeOutMoment", "acme.validation.project.closeOutMoment.message");
-		}
+		Date now = MomentHelper.getCurrentMoment();
+		long pastStarts = 0;
+		pastStarts += this.repository.countInventionsWithStartMomentInPast(this.project.getId(), now);
+		pastStarts += this.repository.countCampaignsWithStartMomentInPast(this.project.getId(), now);
+		pastStarts += this.repository.countStrategiesWithStartMomentInPast(this.project.getId(), now);
+		super.state(pastStarts == 0, "*", "acme.validation.project.no-future-interval.message");
+
+		long invalidIntervals = 0;
+		invalidIntervals += this.repository.countInventionsWithInvalidInterval(this.project.getId());
+		invalidIntervals += this.repository.countCampaignsWithInvalidInterval(this.project.getId());
+		invalidIntervals += this.repository.countStrategiesWithInvalidInterval(this.project.getId());
+		super.state(invalidIntervals == 0, "*", "acme.validation.project.invalid-interval.message");
+
+		long itemsWithoutChildren = 0;
+		itemsWithoutChildren += this.repository.countInventionsWithoutParts(this.project.getId());
+		itemsWithoutChildren += this.repository.countCampaignsWithoutMilestones(this.project.getId());
+		itemsWithoutChildren += this.repository.countStrategiesWithoutTactics(this.project.getId());
+		super.state(itemsWithoutChildren == 0, "*", "acme.validation.project.items-without-children.message");
 	}
 
 	@Override
 	public void execute() {
 		this.project.setDraftMode(false);
-		this.project.setPublishMoment(new Date());
+		this.project.setPublishMoment(MomentHelper.getCurrentMoment());
 
 		Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
 		for (Invention invention : inventions) {
