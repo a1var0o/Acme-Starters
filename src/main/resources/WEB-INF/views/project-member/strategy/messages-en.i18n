@@ -1,12 +1,16 @@
 project-member.strategy.list.title = Project Strategies
+project-member.strategy.list-available.title = My Available Strategies
 project-member.strategy.list.label.ticker = Ticker
 project-member.strategy.list.label.name = Name
 project-member.strategy.list.label.startMoment = Start moment
 project-member.strategy.list.label.endMoment = End moment
 project-member.strategy.list.button.show = Show
+project-member.strategy.list.button.add = Add Strategy
+project-member.strategy.list.button.assign = Assign
 project-member.strategy.list.button.return = Return
 
 project-member.strategy.form.title = Strategy Details
+project-member.strategy.assign.title = Assign Strategy
 project-member.strategy.form.label.ticker = Ticker
 project-member.strategy.form.label.name = Name
 project-member.strategy.form.label.description = Description

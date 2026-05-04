@@ -1,3 +1,4 @@
+
 package acme.features.projectmember.strategy;
 
 import java.util.Collection;
@@ -12,7 +13,7 @@ import acme.realms.Fundraiser;
 import acme.realms.ProjectMember;
 
 @Service
-public class ProjectMemberStrategyListService extends AbstractService<ProjectMember, Strategy> {
+public class ProjectMemberStrategyListAvailableService extends AbstractService<ProjectMember, Strategy> {
 
 	@Autowired
 	private ProjectMemberStrategyRepository repository;
@@ -24,7 +25,15 @@ public class ProjectMemberStrategyListService extends AbstractService<ProjectMem
 	public void load() {
 		int projectId = super.getRequest().getData("projectId", int.class);
 		this.project = this.repository.findProjectById(projectId);
-		this.strategies = this.repository.findStrategiesByProjectId(projectId);
+
+		int accountId = super.getRequest().getPrincipal().getAccountId();
+		Fundraiser fundraiser = this.repository.findFundraiserByAccountId(accountId);
+
+		if (fundraiser != null)
+			this.strategies = this.repository.findAvailableStrategies(fundraiser.getId());
+
+		super.getResponse().addGlobal("projectId", this.project.getId());
+		super.getResponse().addGlobal("strategies", this.strategies);
 	}
 
 	@Override
@@ -33,6 +42,8 @@ public class ProjectMemberStrategyListService extends AbstractService<ProjectMem
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
 			status = this.repository.isProjectMember(this.project.getId(), accountId);
+			if (status)
+				status = this.project.getDraftMode();
 		}
 		super.setAuthorised(status);
 	}
@@ -41,9 +52,5 @@ public class ProjectMemberStrategyListService extends AbstractService<ProjectMem
 	public void unbind() {
 		super.unbindObjects(this.strategies, "ticker", "name", "description", "startMoment", "endMoment");
 		super.unbindGlobal("projectId", this.project.getId());
-		super.unbindGlobal("projectDraftMode", this.project.getDraftMode());
-		
-		boolean canAdd = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		super.unbindGlobal("canAdd", canAdd);
 	}
 }

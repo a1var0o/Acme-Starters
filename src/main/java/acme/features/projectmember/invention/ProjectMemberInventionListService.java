@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.services.AbstractService;
 import acme.entities.Invention;
 import acme.entities.Project;
+import acme.realms.Inventor;
 import acme.realms.ProjectMember;
 
 @Service
@@ -33,7 +34,7 @@ public class ProjectMemberInventionListService extends AbstractService<ProjectMe
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.project != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
+			status = this.repository.isProjectMember(this.project.getId(), accountId);
 		}
 		super.setAuthorised(status);
 	}
@@ -43,5 +44,8 @@ public class ProjectMemberInventionListService extends AbstractService<ProjectMe
 		super.unbindObjects(this.inventions, "ticker", "name", "description", "startMoment", "endMoment");
 		super.unbindGlobal("projectId", this.project.getId());
 		super.unbindGlobal("projectDraftMode", this.project.getDraftMode());
+		
+		boolean canAdd = super.getRequest().getPrincipal().hasRealmOfType(Inventor.class);
+		super.unbindGlobal("canAdd", canAdd);
 	}
 }

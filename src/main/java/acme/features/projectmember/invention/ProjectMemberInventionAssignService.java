@@ -13,11 +13,10 @@ import acme.realms.ProjectMember;
 public class ProjectMemberInventionAssignService extends AbstractService<ProjectMember, Invention> {
 
 	@Autowired
-	private ProjectMemberInventionRepository	repository;
+	private ProjectMemberInventionRepository repository;
 
-	private Invention							invention;
-	private Project								project;
-
+	private Invention invention;
+	private Project project;
 
 	@Override
 	public void load() {
@@ -30,10 +29,11 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.invention != null && this.project != null;
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.invention != null
+				&& this.project != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
+			status = this.repository.isProjectMember(this.project.getId(), accountId);
 			if (status) {
 				// The project must be unpublished to add inventions
 				status = this.project.getDraftMode();
@@ -48,12 +48,12 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 
 	@Override
 	public void bind() {
-		super.bindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		// Do not bind properties as we only want to assign the project
 	}
 
 	@Override
 	public void validate() {
-		super.validateObject(this.invention);
+		// No validation needed for properties
 	}
 
 	@Override
@@ -64,6 +64,7 @@ public class ProjectMemberInventionAssignService extends AbstractService<Project
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.getResponse().addGlobal("assigned", true);
+		super.getResponse().addGlobal("projectId", this.project.getId());
 	}
 }

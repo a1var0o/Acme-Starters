@@ -31,6 +31,7 @@ public class ProjectMemberProjectListService extends AbstractService<ProjectMemb
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.projects, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "draftMode");
+		super.unbindObjects(this.projects, "title", "keywords", "description", "kickOffMoment", "closeOutMoment",
+				"draftMode");
 	}
 }

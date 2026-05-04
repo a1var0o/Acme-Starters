@@ -16,11 +16,10 @@ import acme.realms.ProjectMember;
 public class ProjectMemberInventionListAvailableService extends AbstractService<ProjectMember, Invention> {
 
 	@Autowired
-	private ProjectMemberInventionRepository	repository;
+	private ProjectMemberInventionRepository repository;
 
-	private Collection<Invention>				inventions;
-	private Project								project;
-
+	private Collection<Invention> inventions;
+	private Project project;
 
 	@Override
 	public void load() {
@@ -42,7 +41,7 @@ public class ProjectMemberInventionListAvailableService extends AbstractService<
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.project != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
+			status = this.repository.isProjectMember(this.project.getId(), accountId);
 			if (status)
 				// The project must be unpublished to add inventions
 				status = this.project.getDraftMode();

@@ -17,6 +17,8 @@ public class ProjectMemberCampaignController extends AbstractController<ProjectM
 		super.setMediaType(MediaType.TEXT_HTML);
 
 		super.addBasicCommand("list", ProjectMemberCampaignListService.class);
+		super.addCustomCommand("list-available", "list", ProjectMemberCampaignListAvailableService.class);
 		super.addBasicCommand("show", ProjectMemberCampaignShowService.class);
+		super.addCustomCommand("assign", "update", ProjectMemberCampaignAssignService.class);
 	}
 }

@@ -9,6 +9,7 @@ import acme.client.services.AbstractService;
 import acme.entities.Campaign;
 import acme.entities.Project;
 import acme.realms.ProjectMember;
+import acme.realms.Spokesperson;
 
 @Service
 public class ProjectMemberCampaignListService extends AbstractService<ProjectMember, Campaign> {
@@ -31,7 +32,7 @@ public class ProjectMemberCampaignListService extends AbstractService<ProjectMem
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.project != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.project.getId(), accountId) > 0;
+			status = this.repository.isProjectMember(this.project.getId(), accountId);
 		}
 		super.setAuthorised(status);
 	}
@@ -40,5 +41,9 @@ public class ProjectMemberCampaignListService extends AbstractService<ProjectMem
 	public void unbind() {
 		super.unbindObjects(this.campaigns, "ticker", "name", "description", "startMoment", "endMoment");
 		super.unbindGlobal("projectId", this.project.getId());
+		super.unbindGlobal("projectDraftMode", this.project.getDraftMode());
+		
+		boolean canAdd = super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class);
+		super.unbindGlobal("canAdd", canAdd);
 	}
 }

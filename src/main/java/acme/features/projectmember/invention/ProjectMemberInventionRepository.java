@@ -28,6 +28,6 @@ public interface ProjectMemberInventionRepository extends AbstractRepository {
 	@Query("select i from Invention i where i.id = :id")
 	Invention findInventionById(int id);
 	
-	@Query("select count(m) from Member m where m.project.id = :projectId and m.projectMember.userAccount.id = :accountId")
-	int countProjectMembership(int projectId, int accountId);
+	@Query("select count(m) > 0 from Member m where m.project.id = :projectId and m.projectMember.userAccount.id = :accountId")
+	boolean isProjectMember(int projectId, int accountId);
 }

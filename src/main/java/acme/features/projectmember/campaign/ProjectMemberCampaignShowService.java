@@ -23,17 +23,31 @@ public class ProjectMemberCampaignShowService extends AbstractService<ProjectMem
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.campaign != null && this.campaign.getProject() != null;
+		boolean status = this.campaign != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.campaign.getProject().getId(), accountId) > 0;
+			int projectId;
+			if (this.campaign.getProject() != null)
+				projectId = this.campaign.getProject().getId();
+			else
+				projectId = super.getRequest().getData("projectId", int.class);
+			status = this.repository.isProjectMember(projectId, accountId);
 		}
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-		super.unbindGlobal("projectId", this.campaign.getProject().getId());
+		int projectId;
+
+		super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.unbindGlobal("hasProject", this.campaign.getProject() != null);
+
+		if (this.campaign.getProject() != null)
+			projectId = this.campaign.getProject().getId();
+		else
+			projectId = super.getRequest().getData("projectId", int.class);
+
+		super.unbindGlobal("projectId", projectId);
 	}
 }

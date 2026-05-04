@@ -4,7 +4,6 @@ package acme.features.projectmember.invention;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.models.Tuple;
 import acme.client.services.AbstractService;
 import acme.entities.Invention;
 import acme.realms.ProjectMember;
@@ -26,24 +25,31 @@ public class ProjectMemberInventionShowService extends AbstractService<ProjectMe
 
 	@Override
 	public void authorise() {
-		super.setAuthorised(true);
+		boolean status = this.invention != null;
+		if (status) {
+			int accountId = super.getRequest().getPrincipal().getAccountId();
+			int projectId;
+			if (this.invention.getProject() != null)
+				projectId = this.invention.getProject().getId();
+			else
+				projectId = super.getRequest().getData("projectId", int.class);
+			status = this.repository.isProjectMember(projectId, accountId);
+		}
+		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
-		tuple = super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
+		int projectId;
 
-		boolean hasProject = this.invention.getProject() != null;
-		tuple.put("hasProject", hasProject);
-		tuple.put("id", this.invention.getId());
+		super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.unbindGlobal("hasProject", this.invention.getProject() != null);
 
-		if (hasProject) {
-			tuple.put("projectId", this.invention.getProject().getId());
-			tuple.put("projectTitle", this.invention.getProject().getTitle());
-		} else {
-			int reqProjectId = super.getRequest().getData("projectId", int.class);
-			tuple.put("projectId", reqProjectId);
-		}
+		if (this.invention.getProject() != null)
+			projectId = this.invention.getProject().getId();
+		else
+			projectId = super.getRequest().getData("projectId", int.class);
+
+		super.unbindGlobal("projectId", projectId);
 	}
 }

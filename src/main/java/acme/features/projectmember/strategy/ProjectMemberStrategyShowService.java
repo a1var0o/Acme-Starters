@@ -23,17 +23,31 @@ public class ProjectMemberStrategyShowService extends AbstractService<ProjectMem
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(ProjectMember.class) && this.strategy != null && this.strategy.getProject() != null;
+		boolean status = this.strategy != null;
 		if (status) {
 			int accountId = super.getRequest().getPrincipal().getAccountId();
-			status = this.repository.countProjectMembership(this.strategy.getProject().getId(), accountId) > 0;
+			int projectId;
+			if (this.strategy.getProject() != null)
+				projectId = this.strategy.getProject().getId();
+			else
+				projectId = super.getRequest().getData("projectId", int.class);
+			status = this.repository.isProjectMember(projectId, accountId);
 		}
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode");
-		super.unbindGlobal("projectId", this.strategy.getProject().getId());
+		int projectId;
+
+		super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo");
+		super.unbindGlobal("hasProject", this.strategy.getProject() != null);
+
+		if (this.strategy.getProject() != null)
+			projectId = this.strategy.getProject().getId();
+		else
+			projectId = super.getRequest().getData("projectId", int.class);
+
+		super.unbindGlobal("projectId", projectId);
 	}
 }
