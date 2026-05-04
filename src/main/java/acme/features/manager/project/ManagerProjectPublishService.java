@@ -2,11 +2,11 @@
 package acme.features.manager.project;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.Campaign;
 import acme.entities.Invention;
@@ -108,7 +108,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void execute() {
 		this.project.setDraftMode(false);
-		this.project.setPublishMoment(new Date());
+		this.project.setPublishMoment(MomentHelper.getCurrentMoment());
 
 		Collection<Invention> inventions = this.repository.findInventionsByProjectId(this.project.getId());
 		for (Invention invention : inventions) {
