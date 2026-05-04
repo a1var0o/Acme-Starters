@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.components.principals.Administrator;
-import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.entities.AdBanner;
 
@@ -52,9 +51,4 @@ public class AdministratorAdBannerUpdateService extends AbstractService<Administ
 		super.unbindObject(this.adBanner, "slogan", "targetUrl", "pictureUrl");
 	}
 
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals("POST"))
-			PrincipalHelper.handleUpdate();
-	}
 }
