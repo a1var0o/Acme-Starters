@@ -12,8 +12,19 @@
 	<acme:form-url code="auditor.audit-report.form.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>	
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == false}">
+			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
+			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/assign"/>	
+		</jstl:when>
+		<jstl:when test="${_command == 'assign' && draftMode == false}">
+			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
+			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/assign"/>	
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
+			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
