@@ -9,6 +9,7 @@ import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.realms.Manager;
+import acme.realms.ProjectMember;
 
 @Service
 public class AuthenticatedManagerCreateService extends AbstractService<Authenticated, Manager> {
@@ -17,6 +18,8 @@ public class AuthenticatedManagerCreateService extends AbstractService<Authentic
 	private AuthenticatedManagerRepository	repository;
 
 	private Manager							manager;
+
+	private ProjectMember					projectMember;
 
 
 	@Override
@@ -29,6 +32,12 @@ public class AuthenticatedManagerCreateService extends AbstractService<Authentic
 
 		this.manager = this.newObject(Manager.class);
 		this.manager.setUserAccount(userAccount);
+
+		this.projectMember = this.repository.findProjectMemberByUserAccountId(userAccountId);
+		if (this.projectMember == null) {
+			this.projectMember = super.newObject(ProjectMember.class);
+			this.projectMember.setUserAccount(userAccount);
+		}
 	}
 
 	@Override
@@ -52,6 +61,7 @@ public class AuthenticatedManagerCreateService extends AbstractService<Authentic
 	@Override
 	public void execute() {
 		this.repository.save(this.manager);
+		this.repository.save(this.projectMember);
 	}
 
 	@Override
