@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditreport;
+package acme.features.sponsor.sponsorship;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.Project;
 
 @Repository
-public interface AuditorProjectRepository extends AbstractRepository {
+public interface SponsorProjectRepository extends AbstractRepository {
 
 	@Query("select p from Project p where p.draftMode = false")
 	Collection<Project> findPublishedProjects();
