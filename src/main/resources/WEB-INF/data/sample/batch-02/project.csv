@@ -28,3 +28,4 @@ project-21,manager-04,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor s
 project-22,manager-04,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2000/1/1 0:00,2012/7/2 0:01,true,
 # Test draft mode
 project-23,manager-04,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetu,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,2025/06/10 21:00,2025/09/28 20:00,false,2025/09/29 20:00
+project-test,manager-01,Test Publish Project,Test Publish,Description,2027/01/01 00:00,2027/12/31 23:59,true,

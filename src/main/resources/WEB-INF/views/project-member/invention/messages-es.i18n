@@ -1,0 +1,22 @@
+project-member.invention.list.title = Invenciones del Proyecto
+project-member.invention.list-available.title = Mis Invenciones Disponibles
+project-member.invention.list.label.ticker = Ticker
+project-member.invention.list.label.name = Nombre
+project-member.invention.list.label.startMoment = Momento de inicio
+project-member.invention.list.label.endMoment = Momento de cierre
+project-member.invention.list.button.show = Ver
+project-member.invention.list.button.add = Añadir Invención
+project-member.invention.list.button.assign = Asignar
+project-member.invention.list.button.return = Volver
+
+project-member.invention.form.title = Detalles de Invención
+project-member.invention.assign.title = Asignar Invención
+project-member.invention.form.label.ticker = Ticker
+project-member.invention.form.label.name = Nombre
+project-member.invention.form.label.description = Descripción
+project-member.invention.form.label.startMoment = Momento de inicio
+project-member.invention.form.label.endMoment = Momento de cierre
+project-member.invention.form.label.moreInfo = Más información
+
+project-member.invention.form.button.assign = Confirmar Asignación
+project-member.invention.form.button.return = Volver

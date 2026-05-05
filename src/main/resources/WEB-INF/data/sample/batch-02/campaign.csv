@@ -1,0 +1,2 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson,key:project
+campaign-test,AA11-TEST_cc,Test Publish Campaign,Description,2027/02/01 00:00,2027/11/30 23:59,null,true,spokesperson-01,project-test
