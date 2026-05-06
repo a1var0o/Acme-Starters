@@ -1,0 +1,4 @@
+manager.member.form.title = New member
+manager.member.form.label.project = Project
+manager.member.form.label.project-member = Member
+manager.member.form.button.add = Add
