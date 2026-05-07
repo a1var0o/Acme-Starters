@@ -34,6 +34,6 @@ public class AnyProjectListService extends AbstractService<Any, Project> {
 
 	@Override
 	public void unbind() {
-		super.unbindObjects(this.projects, "title", "keywords", "description", "kickOffMoment", "closeOutMoment");
+		super.unbindObjects(this.projects, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "publishMoment");
 	}
 }
