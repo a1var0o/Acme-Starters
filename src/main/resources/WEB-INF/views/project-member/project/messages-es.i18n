@@ -4,6 +4,7 @@ project-member.project.list.label.keywords = Palabras clave
 project-member.project.list.label.kickOffMoment = Momento de inicio
 project-member.project.list.label.closeOutMoment = Momento de cierre
 project-member.project.list.button.show = Ver
+project-member.project.list.label.draftMode = Borrador
 
 project-member.project.form.title = Detalles del Proyecto
 project-member.project.form.label.title = Titulo
