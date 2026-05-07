@@ -15,12 +15,12 @@
 		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == false}">
 			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>
 			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
-			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/assign"/>	
+			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/attach"/>	
 		</jstl:when>
-		<jstl:when test="${_command == 'assign' && draftMode == false}">
+		<jstl:when test="${_command == 'attach' && draftMode == false}">
 			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>
 			<acme:button code="auditor.audit-report.form.button.audit-sections" action="/auditor/audit-section/list?auditReportId=${id}"/>
-			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/assign"/>	
+			<acme:submit code="auditor.audit-report.form.button.attachProject" action="/auditor/audit-report/attach"/>	
 		</jstl:when>
 		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
 			<acme:form-select code="auditor.audit-section.form.label.project" path="project" choices="${projects}"/>

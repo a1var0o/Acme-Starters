@@ -9,4 +9,5 @@
 	<acme:form-textarea code="manager.project.form.label.description" path="description"/>
 	<acme:form-moment code="manager.project.form.label.kickOffMoment" path="kickOffMoment"/>
 	<acme:form-moment code="manager.project.form.label.closeOutMoment" path="closeOutMoment"/>
+	<acme:form-moment code="any.project.form.label.publishMoment" path="publishMoment"/>
 </acme:form>
