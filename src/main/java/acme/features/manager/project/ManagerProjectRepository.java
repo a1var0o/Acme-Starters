@@ -7,11 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.Member;
 import acme.entities.Campaign;
 import acme.entities.Invention;
+import acme.entities.Member;
 import acme.entities.Project;
 import acme.entities.Strategy;
+import acme.realms.ProjectMember;
 
 @Repository
 public interface ManagerProjectRepository extends AbstractRepository {
@@ -82,4 +83,7 @@ public interface ManagerProjectRepository extends AbstractRepository {
 
 	@Query("select count(s) from Strategy s where s.project.id = :projectId and s.startMoment >= s.endMoment")
 	long countStrategiesWithInvalidInterval(int projectId);
+
+	@Query("select pm from ProjectMember pm where pm.userAccount.id = :accountId")
+	ProjectMember findProjectMemberByUserAccountId(int accountId);
 }
