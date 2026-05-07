@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.components.principals.UserAccount;
 import acme.client.repositories.AbstractRepository;
 import acme.realms.Fundraiser;
+import acme.realms.ProjectMember;
 
 @Repository
 public interface AuthenticatedFundraiserRepository extends AbstractRepository {
@@ -16,4 +17,7 @@ public interface AuthenticatedFundraiserRepository extends AbstractRepository {
 
 	@Query("select f from Fundraiser f where f.userAccount.id = :id")
 	Fundraiser findFundraiserByUserAccountId(int id);
+
+	@Query("select pm from ProjectMember pm where pm.userAccount.id = :userAccountId")
+	ProjectMember findProjectMemberByUserAccountId(int userAccountId);
 }
