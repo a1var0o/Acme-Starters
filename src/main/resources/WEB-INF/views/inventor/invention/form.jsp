@@ -12,10 +12,31 @@
 	<acme:form-textarea code="inventor.invention.form.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == false && hasProject == false}">
+			<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
+			<acme:submit code="inventor.invention.form.button.assign-project" action="/inventor/invention/assign-project"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
+			<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${projects}"/>
 			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
 		</jstl:when>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == true && hasProject == false}">
+			<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
+			<acme:submit code="inventor.invention.form.button.assign-project" action="/inventor/invention/assign-project"/>
+			<acme:submit code="inventor.invention.form.button.update" action="/inventor/invention/update"/>
+			<acme:submit code="inventor.invention.form.button.delete" action="/inventor/invention/delete"/>
+			<acme:submit code="inventor.invention.form.button.publish" action="/inventor/invention/publish"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == true && hasProject == true}">
+			<acme:form-select code="inventor.invention.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
+			<acme:submit code="inventor.invention.form.button.update" action="/inventor/invention/update"/>
+			<acme:submit code="inventor.invention.form.button.delete" action="/inventor/invention/delete"/>
+			<acme:submit code="inventor.invention.form.button.publish" action="/inventor/invention/publish"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'update|delete|publish') && draftMode == true}">
 			<acme:button code="inventor.invention.form.button.parts" action="/inventor/part/list?inventionId=${id}"/>
 			<acme:submit code="inventor.invention.form.button.update" action="/inventor/invention/update"/>
 			<acme:submit code="inventor.invention.form.button.delete" action="/inventor/invention/delete"/>

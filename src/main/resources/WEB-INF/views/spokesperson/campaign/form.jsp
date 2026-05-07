@@ -12,10 +12,31 @@
 	<acme:form-url code="spokesperson.campaign.form.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>	
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == false && hasProject == false}">
+			<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
+			<acme:submit code="spokesperson.campaign.form.button.assign-project" action="/spokesperson/campaign/assign-project"/>
 		</jstl:when>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
+			<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == true && hasProject == false}">
+			<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
+			<acme:submit code="spokesperson.campaign.form.button.assign-project" action="/spokesperson/campaign/assign-project"/>
+			<acme:submit code="spokesperson.campaign.form.button.update" action="/spokesperson/campaign/update"/>
+			<acme:submit code="spokesperson.campaign.form.button.delete" action="/spokesperson/campaign/delete"/>
+			<acme:submit code="spokesperson.campaign.form.button.publish" action="/spokesperson/campaign/publish"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == true && hasProject == true}">
+			<acme:form-select code="spokesperson.campaign.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
+			<acme:submit code="spokesperson.campaign.form.button.update" action="/spokesperson/campaign/update"/>
+			<acme:submit code="spokesperson.campaign.form.button.delete" action="/spokesperson/campaign/delete"/>
+			<acme:submit code="spokesperson.campaign.form.button.publish" action="/spokesperson/campaign/publish"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'update|delete|publish') && draftMode == true}">
 			<acme:button code="spokesperson.campaign.form.button.milestones" action="/spokesperson/milestone/list?campaignId=${id}"/>
 			<acme:submit code="spokesperson.campaign.form.button.update" action="/spokesperson/campaign/update"/>
 			<acme:submit code="spokesperson.campaign.form.button.delete" action="/spokesperson/campaign/delete"/>

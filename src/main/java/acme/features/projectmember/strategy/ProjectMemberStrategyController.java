@@ -17,8 +17,6 @@ public class ProjectMemberStrategyController extends AbstractController<ProjectM
 		super.setMediaType(MediaType.TEXT_HTML);
 
 		super.addBasicCommand("list", ProjectMemberStrategyListService.class);
-		super.addCustomCommand("list-available", "list", ProjectMemberStrategyListAvailableService.class);
 		super.addBasicCommand("show", ProjectMemberStrategyShowService.class);
-		super.addCustomCommand("assign", "update", ProjectMemberStrategyAssignService.class);
 	}
 }
