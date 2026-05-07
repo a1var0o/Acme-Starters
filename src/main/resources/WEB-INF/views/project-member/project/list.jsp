@@ -8,4 +8,5 @@
 	<acme:list-column code="project-member.project.list.label.keywords" path="keywords"/>
 	<acme:list-column code="project-member.project.list.label.kickOffMoment" path="kickOffMoment"/>
 	<acme:list-column code="project-member.project.list.label.closeOutMoment" path="closeOutMoment"/>
+	<acme:list-column code="project-member.project.list.label.draftMode" path="draftMode"/>
 </acme:list>
