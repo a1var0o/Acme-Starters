@@ -1,4 +1,3 @@
-
 package acme.features.spokesperson.campaign;
 
 import java.util.Collection;
@@ -14,37 +13,48 @@ import acme.entities.Project;
 import acme.realms.Spokesperson;
 
 @Service
-public class SpokespersonCampaignShowService extends AbstractService<Spokesperson, Campaign> {
-	// Internal state ---------------------------------------------------------
+public class SpokespersonCampaignAssignProjectService extends AbstractService<Spokesperson, Campaign> {
 
 	@Autowired
 	private SpokespersonCampaignRepository	repository;
 
 	private Campaign						campaign;
-	private Collection<Project>				projects;
-
-	// AbstractService interface -------------------------------------------
-
+	private Collection<Project>			projects;
 
 	@Override
 	public void load() {
 		int id;
-
 		id = super.getRequest().getData("id", int.class);
 		this.campaign = this.repository.findCampaignById(id);
 		int accountId = super.getRequest().getPrincipal().getAccountId();
-		Collection<Project> draftProjects = this.repository.findDraftProjectsByAccountId(accountId);
-		this.projects = new java.util.ArrayList<>(draftProjects);
-		if (this.campaign.getProject() != null && !this.projects.contains(this.campaign.getProject()))
-			this.projects.add(this.campaign.getProject());
+		this.projects = this.repository.findDraftProjectsByAccountId(accountId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		status = this.campaign != null && (this.campaign.getSpokesperson().isPrincipal() || !this.campaign.getDraftMode());
 
+		status = this.campaign != null && this.campaign.getProject() == null && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class) && this.campaign.getSpokesperson().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
 		super.setAuthorised(status);
+	}
+
+	@Override
+	public void bind() {
+		super.bindObject(this.campaign, "project");
+	}
+
+	@Override
+	public void validate() {
+		{
+			boolean isDraft;
+			isDraft = this.campaign.getProject() != null && this.campaign.getProject().getDraftMode() == true;
+			super.state(isDraft, "project", "acme.validation.assign.project.draft.message");
+		}
+	}
+
+	@Override
+	public void execute() {
+		this.repository.save(this.campaign);
 	}
 
 	@Override
@@ -53,7 +63,7 @@ public class SpokespersonCampaignShowService extends AbstractService<Spokesperso
 		SelectChoices availableProjects;
 		boolean hasProject = this.campaign.getProject() != null;
 		availableProjects = SelectChoices.from(this.projects, "title", this.campaign.getProject());
-
+		
 		tuple = super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "project");
 		tuple.put("projects", availableProjects);
 		tuple.put("hasProject", hasProject);

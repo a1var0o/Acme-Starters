@@ -24,6 +24,7 @@ public class InventorInventionController extends AbstractController<Inventor, In
 		super.addBasicCommand("delete", InventorInventionDeleteService.class);
 
 		super.addCustomCommand("publish", "update", InventorInventionPublishService.class);
+		super.addCustomCommand("assign-project", "update", InventorInventionAssignProjectService.class);
 	}
 
 }

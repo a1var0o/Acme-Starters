@@ -32,3 +32,5 @@ acme.validation.audit-report.no-future-interval.message = The interval must star
 acme.validation.project.no-inventions-and-published.message = A published project must have at least one invention
 acme.validation.project.correct-interval.message = If the project is published, the kick off moment must be before the close out moment
 acme.validation.attach.project.interval.message = To attach a project, select a project whose published moment is before the start date
+acme.validation.assign.project.draft.message = The project must be in draft mode to be assigned
+acme.validation.audit-report.project.interval.message = To attach a project, select a project whose published moment is before the start date
