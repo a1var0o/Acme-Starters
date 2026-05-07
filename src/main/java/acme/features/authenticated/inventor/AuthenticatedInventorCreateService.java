@@ -9,6 +9,7 @@ import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
 import acme.realms.Inventor;
+import acme.realms.ProjectMember;
 
 @Service
 public class AuthenticatedInventorCreateService extends AbstractService<Authenticated, Inventor> {
@@ -20,6 +21,8 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 
 	private Inventor						inventor;
 
+	private ProjectMember					projectMember;
+
 	// AbstractService<Authenticated, Inventor> ---------------------------
 
 
@@ -30,6 +33,12 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		userAccount = this.repository.findUserAccountById(userAccountId);
+
+		this.projectMember = this.repository.findProjectMemberByUserAccountId(userAccountId);
+		if (this.projectMember == null) {
+			this.projectMember = super.newObject(ProjectMember.class);
+			this.projectMember.setUserAccount(userAccount);
+		}
 
 		this.inventor = super.newObject(Inventor.class);
 		this.inventor.setUserAccount(userAccount);
@@ -56,6 +65,7 @@ public class AuthenticatedInventorCreateService extends AbstractService<Authenti
 	@Override
 	public void execute() {
 		this.repository.save(this.inventor);
+		this.repository.save(this.projectMember);
 	}
 
 	@Override
