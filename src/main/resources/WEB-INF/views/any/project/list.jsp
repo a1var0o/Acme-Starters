@@ -9,4 +9,5 @@
 	<acme:list-column code="any.project.list.label.description" path="description" width="50%"/>
 	<acme:list-column code="any.project.list.label.kickOffMoment" path="kickOffMoment" width="10%"/>
 	<acme:list-column code="any.project.list.label.closeOutMoment" path="closeOutMoment" width="10%"/>
+	<acme:list-column code="any.project.list.label.publishMoment" path="publishMoment" width="10%"/>
 </acme:list>

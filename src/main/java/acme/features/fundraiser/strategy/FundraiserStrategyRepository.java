@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.Project;
 import acme.entities.Strategy;
 import acme.entities.Tactic;
 import acme.realms.Fundraiser;
@@ -25,5 +26,8 @@ public interface FundraiserStrategyRepository extends AbstractRepository {
 
 	@Query("select t from Tactic t where t.strategy.id = :strategyId")
 	Collection<Tactic> findTacticsByStrategyId(int strategyId);
+
+	@Query("select distinct m.project from Member m where m.project.draftMode = true and m.projectMember.userAccount.id = :accountId")
+	Collection<Project> findDraftProjectsByAccountId(int accountId);
 
 }

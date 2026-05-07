@@ -16,3 +16,5 @@ fundraiser.strategy.list.button.create = Crear una estrategia
 
 fundraiser.strategy.list.title = Estrategias
 fundraiser.strategy.form.title = Estrategia
+fundraiser.strategy.form.label.project = Proyecto
+fundraiser.strategy.form.button.assign-project = Asignar proyecto

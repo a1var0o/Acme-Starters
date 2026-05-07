@@ -61,7 +61,7 @@ public class AuditorAuditReportAttachProjectService extends AbstractService<Audi
 				interval = startMoment != null && publishMoment != null && MomentHelper.isAfter(startMoment, publishMoment);
 			}
 
-			super.state(interval, "project", "acme.validation.audit-report.project.interval.message");
+			super.state(interval, "project", "acme.validation.attach.project.interval.message");
 		}
 	}
 

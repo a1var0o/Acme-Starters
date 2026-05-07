@@ -35,6 +35,6 @@ public class AnyProjectShowService extends AbstractService<Any, Project> {
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.project, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "draftMode");
+		super.unbindObject(this.project, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "draftMode", "publishMoment");
 	}
 }

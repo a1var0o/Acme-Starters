@@ -23,5 +23,6 @@ public class SpokespersonCampaignController extends AbstractController<Spokesper
 		super.addBasicCommand("update", SpokespersonCampaignUpdateService.class);
 		super.addBasicCommand("delete", SpokespersonCampaignDeleteService.class);
 		super.addCustomCommand("publish", "update", SpokespersonCampaignPublishService.class);
+		super.addCustomCommand("assign-project", "update", SpokespersonCampaignAssignProjectService.class);
 	}
 }

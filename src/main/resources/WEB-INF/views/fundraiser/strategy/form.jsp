@@ -12,10 +12,31 @@
 	<acme:form-url code="fundraiser.strategy.form.label.moreInfo" path="moreInfo"/>
 	
 	<jstl:choose>	 
-		<jstl:when test="${_command == 'show' && draftMode == false}">
-			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>	
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == false && hasProject == false}">
+			<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+			<acme:submit code="fundraiser.strategy.form.button.assign-project" action="/fundraiser/strategy/assign-project"/>
 		</jstl:when>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
+			<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'show|assign-project') && draftMode == true && hasProject == false}">
+			<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+			<acme:submit code="fundraiser.strategy.form.button.assign-project" action="/fundraiser/strategy/assign-project"/>
+			<acme:submit code="fundraiser.strategy.form.button.update" action="/fundraiser/strategy/update"/>
+			<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>
+			<acme:submit code="fundraiser.strategy.form.button.publish" action="/fundraiser/strategy/publish"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == true && hasProject == true}">
+			<acme:form-select code="fundraiser.strategy.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
+			<acme:submit code="fundraiser.strategy.form.button.update" action="/fundraiser/strategy/update"/>
+			<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>
+			<acme:submit code="fundraiser.strategy.form.button.publish" action="/fundraiser/strategy/publish"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(_command, 'update|delete|publish') && draftMode == true}">
 			<acme:button code="fundraiser.strategy.form.button.tactics" action="/fundraiser/tactic/list?strategyId=${id}"/>
 			<acme:submit code="fundraiser.strategy.form.button.update" action="/fundraiser/strategy/update"/>
 			<acme:submit code="fundraiser.strategy.form.button.delete" action="/fundraiser/strategy/delete"/>

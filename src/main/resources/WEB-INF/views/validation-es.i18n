@@ -32,3 +32,5 @@ acme.validation.audit-report.no-future-interval.message = El intervalo debe de e
 acme.validation.project.no-inventions-and-published.message = Un proyecto publicado debe de tener una invención como mínimo
 acme.validation.project.correct-interval.message = Si el proyecto está publicado, el momento de inicio debe ser anterior al momento de finalización
 acme.validation.attach.project.interval.message = Para vincular un proyecto, selecciona uno cuya fecha de publicación sea posterior a la fecha de inicio
+acme.validation.assign.project.draft.message = El proyecto debe estar en modo borrador para poder ser asignado
+acme.validation.audit-report.project.interval.message = Para vincular un proyecto, selecciona uno cuya fecha de publicación sea posterior a la fecha de inicio
