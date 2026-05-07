@@ -16,3 +16,5 @@ spokesperson.campaign.form.button.publish = Publicar campaña
 spokesperson.campaign.form.button.create = Crear campaña
 
 spokesperson.campaign.list.button.create = Crear campaña
+spokesperson.campaign.form.label.project = Proyecto
+spokesperson.campaign.form.button.assign-project = Asignar proyecto

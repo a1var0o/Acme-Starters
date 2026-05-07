@@ -17,8 +17,6 @@ public class ProjectMemberInventionController extends AbstractController<Project
 		super.setMediaType(MediaType.TEXT_HTML);
 
 		super.addBasicCommand("list", ProjectMemberInventionListService.class);
-		super.addCustomCommand("list-available", "list", ProjectMemberInventionListAvailableService.class);
 		super.addBasicCommand("show", ProjectMemberInventionShowService.class);
-		super.addCustomCommand("assign", "update", ProjectMemberInventionAssignService.class);
 	}
 }

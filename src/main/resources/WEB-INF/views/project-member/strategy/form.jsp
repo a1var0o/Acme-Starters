@@ -10,14 +10,5 @@
 				<acme:form-moment code="project-member.strategy.form.label.startMoment" path="startMoment" />
 				<acme:form-moment code="project-member.strategy.form.label.endMoment" path="endMoment" />
 				<acme:form-url code="project-member.strategy.form.label.moreInfo" path="moreInfo" />
-				<jstl:if test="${!hasProject}">
-					<input type="hidden" name="projectId" value="${projectId}" />
-					<acme:submit code="project-member.strategy.list.button.assign"
-						action="/project-member/strategy/assign?id=${id}&amp;projectId=${projectId}" />
-				</jstl:if>
 
-				<jstl:if test="${hasProject}">
-					<acme:button code="project-member.strategy.form.button.return"
-						action="/project-member/strategy/list?projectId=${projectId}" />
-				</jstl:if>
 			</acme:form>

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import acme.client.services.AbstractService;
 import acme.entities.Project;
 import acme.entities.Strategy;
-import acme.realms.Fundraiser;
 import acme.realms.ProjectMember;
 
 @Service
@@ -42,8 +41,5 @@ public class ProjectMemberStrategyListService extends AbstractService<ProjectMem
 		super.unbindObjects(this.strategies, "ticker", "name", "description", "startMoment", "endMoment");
 		super.unbindGlobal("projectId", this.project.getId());
 		super.unbindGlobal("projectDraftMode", this.project.getDraftMode());
-		
-		boolean canAdd = super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class);
-		super.unbindGlobal("canAdd", canAdd);
 	}
 }
