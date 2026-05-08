@@ -6,4 +6,4 @@ manager.dashboard.form.label.number-of-projects-deviation = Number of projects d
 manager.dashboard.form.label.min-effort = Minimum effort
 manager.dashboard.form.label.max-effort = Maximum effort
 manager.dashboard.form.label.avg-effort = Average effort
-manager.dashboard.form.label.std-effort = Standard deviation effort
+manager.dashboard.form.label.std-effort = Muestral standard deviation effort

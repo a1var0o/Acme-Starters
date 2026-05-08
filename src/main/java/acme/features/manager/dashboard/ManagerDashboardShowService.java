@@ -36,6 +36,7 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 		Double minEffort;
 		Double maxEffort;
 		Double avgEffort;
+		Double effortSD;
 
 		Map<Integer, Integer> activeDaysOfInventionsByProjectId = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> activeDaysOfCampaignsByProjectId = new HashMap<Integer, Integer>();
@@ -77,10 +78,12 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 			minEffort = 0.;
 			maxEffort = 0.;
 			avgEffort = 0.;
+			effortSD = 0.;
 		} else {
 			minEffort = Collections.min(efforts.values());
 			maxEffort = Collections.max(efforts.values());
 			avgEffort = efforts.values().stream().reduce(Double::sum).orElse(0.) / numberOfProjects;
+			effortSD = Math.sqrt(efforts.values().stream().map(e -> Math.pow(e - avgEffort, 2)).collect(Collectors.summingDouble(Double::doubleValue)) / (efforts.size() - 1));
 		}
 
 		this.dashboard = super.newObject(Dashboard.class);
@@ -89,9 +92,7 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 		this.dashboard.setMinEffort(minEffort);
 		this.dashboard.setMaxEffort(maxEffort);
 		this.dashboard.setAvgEffort(avgEffort);
-
-		// TODO: add SD
-		//		this.dashboard.setEffortSD(effortSD);
+		this.dashboard.setEffortSD(effortSD);
 	}
 
 	@Override
@@ -104,12 +105,11 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 	}
 
 	@Override
-	// TODO: add SD
 	public void unbind() {
 		super.unbindObject(this.dashboard, //
 			"numberOfProjects", "numberOfProjectsDeviation", // 
 			"minEffort", "maxEffort", //
-			"avgEffort");
+			"avgEffort", "effortSD");
 	}
 
 }

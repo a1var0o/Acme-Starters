@@ -6,4 +6,4 @@ manager.dashboard.form.label.number-of-projects-deviation = Desviación del núm
 manager.dashboard.form.label.min-effort = Esfuerzo mínimo
 manager.dashboard.form.label.max-effort = Esfuerzo máximo
 manager.dashboard.form.label.avg-effort = Esfuerzo medio
-manager.dashboard.form.label.std-effort = Desviación estándar de esfuerzo
+manager.dashboard.form.label.std-effort = Desviación estándar muestral de esfuerzo

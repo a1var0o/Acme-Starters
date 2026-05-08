@@ -49,4 +49,12 @@
 			<acme:print value="${avgEffort}"/>
 		</td>
 	</tr>	
+	<tr>	
+		<th scope="row">
+			<acme:print code="manager.dashboard.form.label.std-effort"/>
+		</th>
+		<td>
+			<acme:print value="${effortSD}"/>
+		</td>
+	</tr>	
 </table>
