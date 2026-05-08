@@ -18,6 +18,7 @@ master.menu.inventor.list-inventions = Inventions
 
 master.menu.manager = Manager
 master.menu.manager.list-projects = Projects
+master.menu.manager.show-dashboard = Dashboard
 
 master.menu.spokesperson = Spokesperson
 master.menu.spokesperson.list-campaigns = Campaigns

@@ -18,7 +18,7 @@ master.menu.inventor.list-inventions = Invenciones
 
 master.menu.manager = Gestor
 master.menu.manager.list-projects = Proyectos
-master.menu.manager.show-dashboard = Dashboard
+master.menu.manager.show-dashboard = Panel de control
 
 master.menu.spokesperson = Portavoz
 master.menu.spokesperson.list-campaigns = Campañas
