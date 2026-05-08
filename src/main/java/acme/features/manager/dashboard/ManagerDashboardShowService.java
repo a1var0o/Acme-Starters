@@ -83,7 +83,10 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 			minEffort = Collections.min(efforts.values());
 			maxEffort = Collections.max(efforts.values());
 			avgEffort = efforts.values().stream().reduce(Double::sum).orElse(0.) / numberOfProjects;
-			effortSD = Math.sqrt(efforts.values().stream().map(e -> Math.pow(e - avgEffort, 2)).collect(Collectors.summingDouble(Double::doubleValue)) / (efforts.size() - 1));
+			if (efforts.size() > 1)
+				effortSD = Math.sqrt(efforts.values().stream().map(e -> Math.pow(e - avgEffort, 2)).collect(Collectors.summingDouble(Double::doubleValue)) / (efforts.size() - 1));
+			else
+				effortSD = 0.;
 		}
 
 		this.dashboard = super.newObject(Dashboard.class);
