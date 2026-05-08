@@ -1,0 +1,8 @@
+key,slogan,targetUrl,pictureUrl
+# Test slogan
+ad-banner-01,,http://lorem.com/ipsum,http://lorem.com/ipsum
+ad-banner-02,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tem",http://lorem.com/ipsum,http://lorem.com/ipsum
+# Test URLs
+ad-banner-03,Lorem ipsum dolor sit amet,ftp://,http://lorem.com/ipsum
+ad-banner-04,Lorem ipsum dolor sit amet,http://lorem.com/ipsum,http://a
+ad-banner-05,Lorem ipsum dolor sit amet,ftp://,http://lorem.com/ipsum
