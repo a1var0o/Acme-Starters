@@ -38,13 +38,13 @@ public class AuditorAuditSectionShowService extends AbstractService<Auditor, Aud
 	@Override
 	public void unbind() {
 		Tuple tuple;
-		SelectChoices SectionKinds;
+		SelectChoices sectionKinds;
 
-		SectionKinds = SelectChoices.from(SectionKind.class, this.auditSection.getKind());
+		sectionKinds = SelectChoices.from(SectionKind.class, this.auditSection.getKind());
 
 		tuple = super.unbindObject(this.auditSection, "name", "notes", "hours", "kind", "auditReport");
 		tuple.put("auditReportId", this.auditSection.getAuditReport().getId());
 		tuple.put("draftMode", this.auditSection.getAuditReport().getDraftMode());
-		tuple.put("SectionKinds", SectionKinds);
+		tuple.put("SectionKinds", sectionKinds);
 	}
 }

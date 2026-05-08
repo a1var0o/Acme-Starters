@@ -1,3 +1,4 @@
+
 package acme.features.inventor.invention;
 
 import java.util.Collection;
@@ -20,6 +21,7 @@ public class InventorInventionAssignProjectService extends AbstractService<Inven
 
 	private Invention					invention;
 	private Collection<Project>			projects;
+
 
 	@Override
 	public void load() {
@@ -47,7 +49,7 @@ public class InventorInventionAssignProjectService extends AbstractService<Inven
 	public void validate() {
 		{
 			boolean isDraft;
-			isDraft = this.invention.getProject() != null && this.invention.getProject().getDraftMode() == true;
+			isDraft = this.invention.getProject() != null && this.invention.getProject().getDraftMode();
 			super.state(isDraft, "project", "acme.validation.assign.project.draft.message");
 		}
 	}
@@ -63,7 +65,7 @@ public class InventorInventionAssignProjectService extends AbstractService<Inven
 		SelectChoices availableProjects;
 		boolean hasProject = this.invention.getProject() != null;
 		availableProjects = SelectChoices.from(this.projects, "title", this.invention.getProject());
-		
+
 		tuple = super.unbindObject(this.invention, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "project");
 		tuple.put("projects", availableProjects);
 		tuple.put("hasProject", hasProject);

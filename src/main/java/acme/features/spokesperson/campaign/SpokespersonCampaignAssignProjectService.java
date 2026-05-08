@@ -1,3 +1,4 @@
+
 package acme.features.spokesperson.campaign;
 
 import java.util.Collection;
@@ -19,7 +20,8 @@ public class SpokespersonCampaignAssignProjectService extends AbstractService<Sp
 	private SpokespersonCampaignRepository	repository;
 
 	private Campaign						campaign;
-	private Collection<Project>			projects;
+	private Collection<Project>				projects;
+
 
 	@Override
 	public void load() {
@@ -34,7 +36,8 @@ public class SpokespersonCampaignAssignProjectService extends AbstractService<Sp
 	public void authorise() {
 		boolean status;
 
-		status = this.campaign != null && this.campaign.getProject() == null && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class) && this.campaign.getSpokesperson().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		status = this.campaign != null && this.campaign.getProject() == null && super.getRequest().getPrincipal().hasRealmOfType(Spokesperson.class)
+			&& this.campaign.getSpokesperson().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
 		super.setAuthorised(status);
 	}
 
@@ -47,7 +50,7 @@ public class SpokespersonCampaignAssignProjectService extends AbstractService<Sp
 	public void validate() {
 		{
 			boolean isDraft;
-			isDraft = this.campaign.getProject() != null && this.campaign.getProject().getDraftMode() == true;
+			isDraft = this.campaign.getProject() != null && this.campaign.getProject().getDraftMode();
 			super.state(isDraft, "project", "acme.validation.assign.project.draft.message");
 		}
 	}
@@ -63,7 +66,7 @@ public class SpokespersonCampaignAssignProjectService extends AbstractService<Sp
 		SelectChoices availableProjects;
 		boolean hasProject = this.campaign.getProject() != null;
 		availableProjects = SelectChoices.from(this.projects, "title", this.campaign.getProject());
-		
+
 		tuple = super.unbindObject(this.campaign, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "project");
 		tuple.put("projects", availableProjects);
 		tuple.put("hasProject", hasProject);
