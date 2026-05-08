@@ -14,7 +14,7 @@ public class Dashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Double						numberOfProjects;
+	Integer						numberOfProjects;
 	Double						numberOfProjectsDeviation;
 	Double						minEffort;
 	Double						maxEffort;
