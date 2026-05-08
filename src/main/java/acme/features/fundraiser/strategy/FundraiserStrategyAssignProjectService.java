@@ -1,3 +1,4 @@
+
 package acme.features.fundraiser.strategy;
 
 import java.util.Collection;
@@ -19,7 +20,8 @@ public class FundraiserStrategyAssignProjectService extends AbstractService<Fund
 	private FundraiserStrategyRepository	repository;
 
 	private Strategy						strategy;
-	private Collection<Project>			projects;
+	private Collection<Project>				projects;
+
 
 	@Override
 	public void load() {
@@ -34,7 +36,8 @@ public class FundraiserStrategyAssignProjectService extends AbstractService<Fund
 	public void authorise() {
 		boolean status;
 
-		status = this.strategy != null && this.strategy.getProject() == null && super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class) && this.strategy.getFundraiser().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
+		status = this.strategy != null && this.strategy.getProject() == null && super.getRequest().getPrincipal().hasRealmOfType(Fundraiser.class)
+			&& this.strategy.getFundraiser().getUserAccount().getId() == super.getRequest().getPrincipal().getAccountId();
 		super.setAuthorised(status);
 	}
 
@@ -47,7 +50,7 @@ public class FundraiserStrategyAssignProjectService extends AbstractService<Fund
 	public void validate() {
 		{
 			boolean isDraft;
-			isDraft = this.strategy.getProject() != null && this.strategy.getProject().getDraftMode() == true;
+			isDraft = this.strategy.getProject() != null && this.strategy.getProject().getDraftMode();
 			super.state(isDraft, "project", "acme.validation.assign.project.draft.message");
 		}
 	}
@@ -63,7 +66,7 @@ public class FundraiserStrategyAssignProjectService extends AbstractService<Fund
 		SelectChoices availableProjects;
 		boolean hasProject = this.strategy.getProject() != null;
 		availableProjects = SelectChoices.from(this.projects, "title", this.strategy.getProject());
-		
+
 		tuple = super.unbindObject(this.strategy, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "project");
 		tuple.put("projects", availableProjects);
 		tuple.put("hasProject", hasProject);
