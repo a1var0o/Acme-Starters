@@ -1,0 +1,19 @@
+project-member.project.list.title = My Projects
+project-member.project.list.label.title = Title
+project-member.project.list.label.keywords = Keywords
+project-member.project.list.label.kickOffMoment = Kick off moment
+project-member.project.list.label.closeOutMoment = Close out moment
+project-member.project.list.button.show = Show
+project-member.project.list.label.draftMode = Draft mode
+
+project-member.project.form.title = Project Details
+project-member.project.form.label.title = Title
+project-member.project.form.label.keywords = Keywords
+project-member.project.form.label.description = Description
+project-member.project.form.label.kickOffMoment = Kick off moment
+project-member.project.form.label.closeOutMoment = Close out moment
+
+project-member.project.form.button.inventions = Inventions
+project-member.project.form.button.campaigns = Campaigns
+project-member.project.form.button.strategies = Strategies
+project-member.project.form.button.return = Return

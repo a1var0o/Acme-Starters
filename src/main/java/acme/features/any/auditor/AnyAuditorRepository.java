@@ -10,7 +10,7 @@ import acme.entities.AuditReport;
 @Repository
 public interface AnyAuditorRepository extends AbstractRepository {
 
-	@Query("SELECT c from AuditReport c where c.id = :AuditReportId")
-	AuditReport findAuditReport(int AuditReportId);
+	@Query("SELECT c from AuditReport c where c.id = :auditReportId")
+	AuditReport findAuditReport(int auditReportId);
 
 }

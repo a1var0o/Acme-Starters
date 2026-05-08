@@ -8,6 +8,7 @@ import acme.client.components.principals.Authenticated;
 import acme.client.components.principals.UserAccount;
 import acme.client.helpers.PrincipalHelper;
 import acme.client.services.AbstractService;
+import acme.realms.ProjectMember;
 import acme.realms.Spokesperson;
 
 @Service
@@ -18,6 +19,8 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 
 	private Spokesperson						spokesperson;
 
+	private ProjectMember						projectMember;
+
 
 	@Override
 	public void load() {
@@ -26,6 +29,12 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
 		userAccount = this.repository.findUserAccountById(userAccountId);
+
+		this.projectMember = this.repository.findProjectMemberByUserAccountId(userAccountId);
+		if (this.projectMember == null) {
+			this.projectMember = super.newObject(ProjectMember.class);
+			this.projectMember.setUserAccount(userAccount);
+		}
 
 		this.spokesperson = this.newObject(Spokesperson.class);
 		this.spokesperson.setUserAccount(userAccount);
@@ -52,6 +61,7 @@ public class AuthenticatedSpokespersonCreateService extends AbstractService<Auth
 	@Override
 	public void execute() {
 		this.repository.save(this.spokesperson);
+		this.repository.save(this.projectMember);
 	}
 
 	@Override

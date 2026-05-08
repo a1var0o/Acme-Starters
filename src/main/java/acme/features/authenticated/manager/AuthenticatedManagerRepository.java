@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.components.principals.UserAccount;
 import acme.client.repositories.AbstractRepository;
 import acme.realms.Manager;
+import acme.realms.ProjectMember;
 
 @Repository
 public interface AuthenticatedManagerRepository extends AbstractRepository {
@@ -16,4 +17,7 @@ public interface AuthenticatedManagerRepository extends AbstractRepository {
 
 	@Query("select s from Manager s where s.userAccount.id = :id")
 	Manager findManagerByUserAccountId(int id);
+
+	@Query("select pm from ProjectMember pm where pm.userAccount.id = :userAccountId")
+	ProjectMember findProjectMemberByUserAccountId(int userAccountId);
 }

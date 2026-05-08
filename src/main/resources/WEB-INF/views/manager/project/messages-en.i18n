@@ -13,3 +13,15 @@ manager.project.form.label.description = Description
 manager.project.form.label.kickOffMoment = Kick off moment
 manager.project.form.label.closeOutMoment = Close out moment
 manager.project.form.button.create = Create
+manager.project.form.button.delete = Delete
+manager.project.form.button.update = Update
+manager.project.form.button.publish = Publish
+manager.project.form.button.addMember = Add member
+
+acme.validation.project.dates.message = The close out moment must be after the kick off moment
+acme.validation.project.kickOffMoment.message = The kick off moment must be before the start moment of all its components
+acme.validation.project.closeOutMoment.message = The close out moment must be after the end moment of all its components
+acme.validation.project.inventions.message = A published project must contain a minimum of one invention
+acme.validation.project.no-future-interval.message = All associated inventions, campaigns, and strategies must have a future start moment
+acme.validation.project.invalid-interval.message = All associated inventions, campaigns, and strategies must have a start moment before their end moment
+acme.validation.project.items-without-children.message = All associated inventions, campaigns, and strategies must have at least one part, milestone, or tactic respectively

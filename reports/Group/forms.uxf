@@ -1,0 +1,17 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>190</x><y>280</y><w>260</w><h>140</h></coordinates><panel_attributes>&lt;&lt;form&gt;&gt;
+Dashboard
+--
++ numberOfProjects: Integer
++ numberOfProjectsDeviation: Double
++ minEffort :Double
++ maxEffort: Double
++ avgEffort: Double
++ effortSD: Double
+bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>470</x><y>300</y><w>240</w><h>110</h></coordinates><panel_attributes>Additional constrainst
+--
+- The numberOfProjectsDeviation is the
+deviation of the projects with respect to
+the average number of projects
+managed by other managers.
+- The effortSD is the muestral deviation.
+bg=red</panel_attributes><additional_attributes></additional_attributes></element></diagram>

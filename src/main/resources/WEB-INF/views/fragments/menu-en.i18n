@@ -1,38 +1,21 @@
-# menu-en.i18n
-#
-# Copyright (C) 2012-2026 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
-
-# master.menu.administrator ###################################################
+master.menu.any = Any
+master.menu.any.list-inventions = Inventions
+master.menu.any.list-projects = Projects
+master.menu.any.list-campaigns = Campaigns
+master.menu.any.list-strategies = Strategies
+master.menu.any.list-sponsorships = Sponsorships
+master.menu.any.list-audit-reports = Audit reports
 
 master.menu.administrator = Administrator
-master.menu.administrator.list-user-accounts = List user accounts
-master.menu.administrator.list-ad-banners = List ad banners
+master.menu.administrator.list-user-accounts = User accounts
+master.menu.administrator.list-ad-banners = Ad banners
 master.menu.administrator.populate-db-initial = Populate DB (initial)
-master.menu.administrator.populate-db-sample = Populate DB (samples)
+master.menu.administrator.populate-db-sample = Populate DB (sample)
 master.menu.administrator.shut-system-down = Shut system down
 
-# master.menu.auditor ##########################################################
-
-master.menu.auditor  = Auditor
-master.menu.auditor.list-audit-reports = List my audit reports
-
-# master.menu.fundraiser ##########################################################
-
-master.menu.fundraiser = Fundraiser
-master.menu.fundraiser.list-strategies = List my strategies
-
-# master.menu.inventor #############################################################
-
 master.menu.inventor = Inventor
-master.menu.inventor.list-inventions = List my inventions
+master.menu.inventor.list-inventions = Inventions
 
-# master.menu.manager ###########################################################
 
 master.menu.manager = Manager
 master.menu.manager.list-projects = List my projects
@@ -40,36 +23,31 @@ master.menu.manager.show-dashboard = Show dashboard
 
 # master.menu.spokesperson ##########################################################
 
-master.menu.spokesperson  = Spokesperson
-master.menu.spokesperson.list-campaigns = List my campaigns
+master.menu.spokesperson = Spokesperson
+master.menu.spokesperson.list-campaigns = Campaigns
 
-# master.menu.sponsor #############################################################
+master.menu.fundraiser = Fundraiser
+master.menu.fundraiser.list-strategies = Strategies
 
 master.menu.sponsor = Sponsor
-master.menu.sponsor.list-sponsorships = List my sponsorships
+master.menu.sponsor.list-sponsorships = Sponsorships
 
-# master.menu.user-account ####################################################
+master.menu.auditor = Auditor
+master.menu.auditor.list-audit-reports = Audit reports
 
-master.menu.user-account = Account
-master.menu.user-account.general-profile = General profile
-master.menu.user-account.become-sponsor = Become a sponsor
-master.menu.user-account.sponsor-profile = Sponsor profile
-master.menu.user-account.become-inventor = Become an inventor
+master.menu.projectmember = Project Member
+master.menu.projectmember.list-projects = My Projects
+
+master.menu.user-account = User account
+master.menu.user-account.become-inventor = Become inventor
 master.menu.user-account.inventor-profile = Inventor profile
-master.menu.user-account.become-fundraiser = Become a fundraiser
-master.menu.user-account.fundraiser-profile = Fundraiser profile
-master.menu.user-account.become-spokesperson= Become a spokesperson
+master.menu.user-account.become-spokesperson = Become spokesperson
 master.menu.user-account.spokesperson-profile = Spokesperson profile
-master.menu.user-account.become-auditor= Become an auditor
+master.menu.user-account.become-fundraiser = Become fundraiser
+master.menu.user-account.fundraiser-profile = Fundraiser profile
+master.menu.user-account.become-sponsor = Become sponsor
+master.menu.user-account.sponsor-profile = Sponsor profile
+master.menu.user-account.become-auditor = Become auditor
 master.menu.user-account.auditor-profile = Auditor profile
-master.menu.user-account.become-manager= Become a manager
+master.menu.user-account.become-manager = Become manager
 master.menu.user-account.manager-profile = Manager profile
-
-# master.menu.any ##########################################################
-
-master.menu.any = Any
-master.menu.any.list-strategies = List strategies
-master.menu.any.list-campaigns = List campaigns
-master.menu.any.list-inventions = List inventions
-master.menu.any.list-sponsorships = List sponsorships
-master.menu.any.list-audit-reports = List audit reports

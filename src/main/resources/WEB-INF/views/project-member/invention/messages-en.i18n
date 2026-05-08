@@ -1,0 +1,22 @@
+project-member.invention.list.title = Project Inventions
+project-member.invention.list-available.title = My Available Inventions
+project-member.invention.list.label.ticker = Ticker
+project-member.invention.list.label.name = Name
+project-member.invention.list.label.startMoment = Start moment
+project-member.invention.list.label.endMoment = End moment
+project-member.invention.list.button.show = Show
+project-member.invention.list.button.add = Add Invention
+project-member.invention.list.button.assign = Assign
+project-member.invention.list.button.return = Return
+
+project-member.invention.form.title = Invention Details
+project-member.invention.assign.title = Assign Invention
+project-member.invention.form.label.ticker = Ticker
+project-member.invention.form.label.name = Name
+project-member.invention.form.label.description = Description
+project-member.invention.form.label.startMoment = Start moment
+project-member.invention.form.label.endMoment = End moment
+project-member.invention.form.label.moreInfo = More info
+
+project-member.invention.form.button.assign = Confirm Assignment
+project-member.invention.form.button.return = Return

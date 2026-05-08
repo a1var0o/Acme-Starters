@@ -14,10 +14,9 @@ import acme.realms.Manager;
 public class ManagerProjectListService extends AbstractService<Manager, Project> {
 
 	@Autowired
-	private ManagerProjectRepository	repository;
+	private ManagerProjectRepository repository;
 
-	private Collection<Project>			projects;
-
+	private Collection<Project> projects;
 
 	@Override
 	public void load() {
