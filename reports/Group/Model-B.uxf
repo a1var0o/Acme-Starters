@@ -1,0 +1,115 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>90</x><y>324</y><w>396</w><h>162</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Project
+--
++ title: String {Mandatory, ValidHeader, Column}
++ keywords: String {Mandatory, ValidHeader, Column}
++ description: String {Mandatory, ValidText, Column}
++ kickOffMoment: Date {Mandatory, ValidMoment, Temporal(Timestamp)}
++ closeOutMoment: Date {Mandatory, ValidMoment, Temporal(Timestamp)}
++ draftMode: boolean {Mandatory, Valid, Column}
++ publishMoment: Date {Mandatory, ValidMoment, Temporal(Timestamp)}
+--
++ / effort: Double {Mandatory, ValidNumber, Transient}
+
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>297</x><y>117</y><w>297</w><h>90</h></coordinates><panel_attributes>&lt;&lt;role&gt;&gt;
+Manager
+--
++ position: String {Mandatory, ValidHeader, Column
++ skills: String {Mandatory, ValidText, Column}
++ executive: boolean {Mandatory, Valid, Column}
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>198</y><w>99</w><h>144</h></coordinates><panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+managed by ^</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>513</x><y>558</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Invention
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>450</y><w>171</w><h>126</h></coordinates><panel_attributes>lt=&lt;-x
+m1=0..1
+m2=*
+assigned to ^
+</panel_attributes><additional_attributes>10;10;90;10;90;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>684</x><y>369</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Campaign
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>378</y><w>225</w><h>45</h></coordinates><panel_attributes>lt=&lt;-x
+m1=0..1
+m2=*
+&lt; assigned to
+</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>288</x><y>558</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Member
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>477</y><w>90</w><h>99</h></coordinates><panel_attributes>lt=&lt;-x
+m1=1
+m2=*
+belongs to ^</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>648</x><y>477</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Strategy
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>405</y><w>234</w><h>90</h></coordinates><panel_attributes>lt=&lt;-x
+m1=0..1
+m2=*
+&lt; assigned to
+</panel_attributes><additional_attributes>10;20;230;20;230;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>639</x><y>306</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+AuditReport
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>342</y><w>216</w><h>63</h></coordinates><panel_attributes>lt=&lt;-x
+m1=0..1
+m2=*
+&lt; attached to
+</panel_attributes><additional_attributes>10;40;210;40;210;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>243</y><w>189</w><h>45</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+Sponsorships
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>252</y><w>171</w><h>126</h></coordinates><panel_attributes>lt=&lt;-x
+m1=0..1
+m2=*
+
+attached to v</panel_attributes><additional_attributes>10;110;90;110;90;10;160;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>288</x><y>666</y><w>189</w><h>99</h></coordinates><panel_attributes>&lt;&lt;Squad&gt;&gt;
+ProjectMember
+--
++ Manager
++ Inventor
++ Spokesperson
++ Fundraiser
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>369</x><y>594</y><w>99</w><h>90</h></coordinates><panel_attributes>lt=x-&gt;
+m1=*
+m2=1
+has member v
+</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLNote</id><coordinates><x>882</x><y>117</y><w>216</w><h>459</h></coordinates><panel_attributes>Additional constrainst
+--
+- The effort is calculated as the sum of
+active months of its components divided
+by the number of people involved.
+
+- A published project must contain a
+minimum of one invention.
+
+- The closeOutMoment must be after the
+kickOffMoment for any published
+moment.
+
+- The kickOffMoment must be before the
+startMoment of every of their
+corresponding inventions, campaigns
+and strategies for any published project.
+
+- The closeOutMoment must be after the
+finishMoment of every of their
+corresponding inventions, campaigns
+and strategies for any published project.
+
+- Sponsorships and AuditReports must
+be attached to a published project.
+
+-The startMoment of Sponsorships and
+AuditReports attached must be after
+the publishMoment.
+
+- Members of a project can see the
+inventions, campaigns and strategies
+assigned to the project, even if they
+are not published.
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>531</x><y>648</y><w>279</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Entity&gt;&gt;
+AdBanner
+--
++ slogan: String {Mandatory, ValidHeader, Column}
++ targetUrl: String {Mandatory, ValidUrl, Column}
++ pictureUrl: String {Mandatory, ValidUrl, Column}
+bg=green</panel_attributes><additional_attributes></additional_attributes></element></diagram>

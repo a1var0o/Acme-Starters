@@ -1,0 +1,2 @@
+key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:fundraiser,key:project
+strategy-test,AA11-TEST_ss,Test Publish Strategy,Description,2027/02/01 00:00,2027/11/30 23:59,null,true,fundraiser-01,project-test

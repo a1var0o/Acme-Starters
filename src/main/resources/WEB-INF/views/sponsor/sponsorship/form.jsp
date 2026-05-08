@@ -12,7 +12,18 @@
 	<acme:form-textarea code="sponsor.sponsorship.form.label.description" path="description"/>
 
 	<jstl:choose>
-		<jstl:when test="${_command == 'show' && draftMode == false}">
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == false}">
+			<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>
+			<acme:submit code="sponsor.sponsorship.form.button.attach" action="/sponsor/sponsorship/attach"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'attach' && draftMode == false}">
+			<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
+			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>
+			<acme:submit code="sponsor.sponsorship.form.button.attach" action="/sponsor/sponsorship/attach"/>
+		</jstl:when>
+		<jstl:when test="${_command == 'show' && draftMode == false && hasProject == true}">
+			<acme:form-select code="sponsor.sponsorship.form.label.project" path="project" choices="${projects}"/>
 			<acme:button code="sponsor.sponsorship.form.button.donations" action="/sponsor/donation/list?sponsorshipId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

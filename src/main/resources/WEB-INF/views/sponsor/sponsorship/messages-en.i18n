@@ -18,3 +18,5 @@ sponsor.sponsorship.list.label.description = Description
 sponsor.sponsorship.list.label.startMoment = Start date
 sponsor.sponsorship.list.label.endMoment = Finish date
 sponsor.sponsorship.list.button.create = Create
+sponsor.sponsorship.form.label.project = Project
+sponsor.sponsorship.form.button.attach = Attach project

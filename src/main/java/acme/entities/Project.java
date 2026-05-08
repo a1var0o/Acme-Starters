@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidHeader;
 import acme.constraints.ValidProject;
@@ -52,10 +54,12 @@ public class Project extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				kickOffMoment;
 
 	@Mandatory
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				closeOutMoment;
 
@@ -68,6 +72,11 @@ public class Project extends AbstractEntity {
 	@Valid
 	@ManyToOne
 	private Manager				manager;
+
+	@Optional
+	@ValidMoment
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				publishMoment;
 
 	@Autowired
 	@Transient

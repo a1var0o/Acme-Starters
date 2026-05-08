@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.services.AbstractService;
+import acme.entities.Member;
 import acme.entities.Project;
 import acme.realms.Manager;
+import acme.realms.ProjectMember;
 
 @Service
 public class ManagerProjectCreateService extends AbstractService<Manager, Project> {
@@ -16,15 +18,23 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 
 	private Project						project;
 	private Manager						manager;
+	private ProjectMember				projectMember;
+
+	private Member						member;
 
 
 	@Override
 	public void load() {
 		this.manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+		this.projectMember = this.repository.findProjectMemberByUserAccountId(super.getRequest().getPrincipal().getAccountId());
 
 		this.project = super.newObject(Project.class);
 		this.project.setDraftMode(true);
 		this.project.setManager(this.manager);
+
+		this.member = super.newObject(Member.class);
+		this.member.setProject(this.project);
+		this.member.setProjectMember(this.projectMember);
 	}
 
 	@Override
@@ -49,6 +59,7 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 	@Override
 	public void execute() {
 		this.repository.save(this.project);
+		this.repository.save(this.member);
 	}
 
 	@Override

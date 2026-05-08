@@ -6,6 +6,7 @@ auditor.audit-report.list.label.endMoment = End Moment
 auditor.audit-report.list.label.draftMode = Draft Mode
 auditor.audit-report.form.button.audit-sections = Audit Sections
 auditor.audit-report.form.label.moreInfo = More info
+auditor.audit-section.form.label.project = Project
 
 auditor.audit-report.list.title = My audit reports
 auditor.audit-report.form.title = Audit Report
@@ -14,5 +15,6 @@ auditor.audit-report.form.button.update = Update audit report
 auditor.audit-report.form.button.delete = Delete audit report
 auditor.audit-report.form.button.publish = Publish audit report
 auditor.audit-report.form.button.create = Create audit report
+auditor.audit-report.form.button.attachProject = Attach project
 
 auditor.audit-report.list.button.create = Create audit report

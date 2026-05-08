@@ -15,6 +15,6 @@ spokesperson.campaign.form.button.delete = Delete campaign
 spokesperson.campaign.form.button.publish = Publish campaign
 spokesperson.campaign.form.button.create = Create campaign
 
-
-
 spokesperson.campaign.list.button.create = Create campaign
+spokesperson.campaign.form.label.project = Project
+spokesperson.campaign.form.button.assign-project = Assign project

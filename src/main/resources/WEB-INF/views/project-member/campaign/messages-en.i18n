@@ -1,0 +1,20 @@
+project-member.campaign.list.title = Project Campaigns
+project-member.campaign.list-available.title = My Available Campaigns
+project-member.campaign.list.label.ticker = Ticker
+project-member.campaign.list.label.name = Name
+project-member.campaign.list.label.startMoment = Start moment
+project-member.campaign.list.label.endMoment = End moment
+project-member.campaign.list.button.show = Show
+project-member.campaign.list.button.add = Add Campaign
+project-member.campaign.list.button.assign = Assign
+project-member.campaign.list.button.return = Return
+
+project-member.campaign.form.title = Campaign Details
+project-member.campaign.assign.title = Assign Campaign
+project-member.campaign.form.label.ticker = Ticker
+project-member.campaign.form.label.name = Name
+project-member.campaign.form.label.description = Description
+project-member.campaign.form.label.startMoment = Start moment
+project-member.campaign.form.label.endMoment = End moment
+project-member.campaign.form.label.moreInfo = More info
+project-member.campaign.form.button.return = Return
