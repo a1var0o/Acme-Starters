@@ -1,0 +1,4 @@
+key,ticker,name,description,start-moment,end-moment,more-info,draft-mode,key:inventor,key:project
+invention-54,AA00-123458_aBa,"Lorem ipsum dolor sit amet, consectetu","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:02,2039/12/31 23:59,null,false,inventor-01,null
+invention-55,BB00-123458_aBb,My Test Invention,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2025/01/01 00:02,2039/12/31 23:59,null,true,inventor-01,null
+invention-56,BB00-123458_aBC,My Test Invention,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2020/01/01 00:02,2021/12/31 23:59,null,false,inventor-02,project-24
