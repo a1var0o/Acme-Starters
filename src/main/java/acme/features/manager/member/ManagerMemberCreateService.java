@@ -50,7 +50,7 @@ public class ManagerMemberCreateService extends AbstractService<Manager, Member>
 
 	@Override
 	public void validate() {
-		;
+		super.validateObject(this.member);
 	}
 
 	@Override
