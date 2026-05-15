@@ -25,4 +25,7 @@ public interface AuditorAuditReportRepository extends AbstractRepository {
 
 	@Query("SELECT m from AuditSection m where m.auditReport.id = :auditReportId")
 	Collection<AuditSection> findAuditSectionsByAuditReportId(int auditReportId);
+
+	@Query("SELECT c from AuditReport c where c.auditor.userAccount.id = :accountId and c.draftMode = false and c.project = null")
+	Collection<AuditReport> findPublishedAndNotAttachedReports(int accountId);
 }

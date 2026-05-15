@@ -13,3 +13,6 @@ any.project.form.label.description = Descripción
 any.project.form.label.kickOffMoment = Momento de inicio
 any.project.form.label.closeOutMoment = Momento de cierre
 any.project.form.label.publishMoment = Momento de publicación
+
+any.project.form.button.attachSponsorships = Vincular patrocinio
+any.project.form.button.attachSponsorships = Vincular reporte de auditoría

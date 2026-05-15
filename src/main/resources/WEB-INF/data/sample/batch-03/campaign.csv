@@ -1,4 +1,0 @@
-key,ticker,name,description,startMoment,endMoment,moreInfo,draftMode,key:spokesperson,key:project
-campaign-57,AA11-A1234_aB,Test,Test,2025/01/01 00:02,2039/12/31 23:59,http://test.com,false,spokesperson-01,null
-campaign-58,AA11-A1234_aBb,Test,Test,2025/01/01 00:02,2039/12/31 23:59,http://test.com,true,spokesperson-01,null
-campaign-59,AA11-A1234_aBJ,Test,Test,2025/01/01 00:02,2039/12/31 23:59,http://test.com,true,spokesperson-02,null

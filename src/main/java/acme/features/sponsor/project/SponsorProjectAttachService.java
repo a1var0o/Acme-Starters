@@ -1,5 +1,5 @@
 
-package acme.features.sponsor.sponsorship;
+package acme.features.sponsor.project;
 
 import java.util.Collection;
 import java.util.Date;
@@ -7,15 +7,17 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.Project;
 import acme.entities.Sponsorship;
+import acme.features.sponsor.sponsorship.SponsorSponsorshipRepository;
 import acme.realms.Sponsor;
 
 @Service
-public class SponsorSponsorshipAttachProjectService extends AbstractService<Sponsor, Sponsorship> {
+public class SponsorProjectAttachService extends AbstractService<Sponsor, Project> {
 
 	@Autowired
 	private SponsorSponsorshipRepository	sponsorshipRepository;
@@ -29,9 +31,9 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 	@Override
 	public void load() {
 		int projectId;
-		projectId = super.getRequest().getData("projectId", int.class);
+		projectId = super.getRequest().getData("id", int.class);
 		int sponsorId = super.getRequest().getPrincipal().getAccountId();
-		this.sponsorships = this.sponsorshipRepository.findPublishSponsorships(sponsorId);
+		this.sponsorships = this.sponsorshipRepository.findPublishAndNotAttachedSponsorships(sponsorId);
 		this.project = this.projectRepository.findProjectById(projectId);
 	}
 
@@ -45,8 +47,8 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 
 	@Override
 	public void bind() {
-		super.bindObject(this.sponsorship, "sponsorship");
-		super.unbindGlobal("id", this.sponsorship.getId());
+		int sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
+		this.sponsorship = this.sponsorshipRepository.findSponsorshipById(sponsorshipId);
 	}
 
 	@Override
@@ -56,10 +58,10 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 			boolean interval;
 			Date startMoment;
 			Date publishMoment;
-			interval = this.sponsorship.getProject() != null;
+			interval = this.sponsorship != null;
 			if (interval) {
 				startMoment = this.sponsorship.getStartMoment();
-				publishMoment = this.sponsorship.getProject().getPublishMoment();
+				publishMoment = this.project.getPublishMoment();
 				interval = startMoment != null && publishMoment != null && MomentHelper.isAfter(startMoment, publishMoment);
 			}
 
@@ -75,12 +77,11 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 
 	@Override
 	public void unbind() {
+		Tuple tuple;
 		SelectChoices availableSponsorships;
 		availableSponsorships = SelectChoices.from(this.sponsorships, "ticker", this.sponsorship);
-		super.unbindGlobal("sponsorship", this.sponsorship);
-		super.unbindGlobal("project", this.project.getTitle());
-		super.unbindGlobal("sponsorships", availableSponsorships);
-		super.unbindGlobal("projectId", this.project.getId());
+		tuple = super.unbindObject(this.project, "title");
+		tuple.put("sponsorships", availableSponsorships);
 
 	}
 }
