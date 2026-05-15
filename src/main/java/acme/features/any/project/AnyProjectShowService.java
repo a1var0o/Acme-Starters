@@ -4,9 +4,12 @@ package acme.features.any.project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.components.models.Tuple;
 import acme.client.components.principals.Any;
 import acme.client.services.AbstractService;
 import acme.entities.Project;
+import acme.realms.Auditor;
+import acme.realms.Sponsor;
 
 @Service
 public class AnyProjectShowService extends AbstractService<Any, Project> {
@@ -35,6 +38,13 @@ public class AnyProjectShowService extends AbstractService<Any, Project> {
 
 	@Override
 	public void unbind() {
-		super.unbindObject(this.project, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "draftMode", "publishMoment");
+		Tuple tuple;
+		boolean isSponsor;
+		boolean isAuditor;
+		isSponsor = super.getRequest().getPrincipal().hasRealmOfType(Sponsor.class);
+		isAuditor = super.getRequest().getPrincipal().hasRealmOfType(Auditor.class);
+		tuple = super.unbindObject(this.project, "title", "keywords", "description", "kickOffMoment", "closeOutMoment", "draftMode", "publishMoment");
+		tuple.put("isSponsor", isSponsor);
+		tuple.put("isAuditor", isAuditor);
 	}
 }

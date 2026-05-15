@@ -1,0 +1,3 @@
+key,key:auditor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
+audit-report-57,auditor-01,AA11-A1234_abx,TestCase,Testing,2025/01/01 00:01,2040/01/01 00:00,http://test.com,false
+audit-report-58,auditor-02,AA11-A1234_abxO,TestCase,Testing,2025/01/01 00:01,2040/01/01 00:00,http://test.com,true

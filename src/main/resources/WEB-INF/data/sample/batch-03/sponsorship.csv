@@ -1,0 +1,3 @@
+key,key:sponsor,ticker,name,description,startMoment,endMoment,moreInfo,draftMode
+sponsorship-41,sponsor-01,AA00-12345_abx,Sponsorship,Sponsoring change for a better world.,2025/01/01 00:01,2040/01/01 00:00,null,false
+sponsorship-42,sponsor-02,AA00-12345_abxL,Sponsorship,Sponsoring change for a better world.,2025/01/01 00:01,2040/01/01 00:00,null,true

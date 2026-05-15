@@ -7,7 +7,6 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.components.models.Tuple;
 import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -20,31 +19,34 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 
 	@Autowired
 	private SponsorSponsorshipRepository	sponsorshipRepository;
-	private Sponsorship						sponsorship;
+	private Collection<Sponsorship>			sponsorships;
 	@Autowired
 	private SponsorProjectRepository		projectRepository;
-	private Collection<Project>				projects;
+	private Project							project;
+	private Sponsorship						sponsorship;
 
 
 	@Override
 	public void load() {
-		int id;
-		id = super.getRequest().getData("id", int.class);
-		this.sponsorship = this.sponsorshipRepository.findSponsorshipById(id);
-		this.projects = this.projectRepository.findPublishedProjects();
+		int projectId;
+		projectId = super.getRequest().getData("projectId", int.class);
+		int sponsorId = super.getRequest().getPrincipal().getAccountId();
+		this.sponsorships = this.sponsorshipRepository.findPublishSponsorships(sponsorId);
+		this.project = this.projectRepository.findProjectById(projectId);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
 
-		status = this.sponsorship != null && !this.sponsorship.getDraftMode() && this.sponsorship.getSponsor().isPrincipal() && this.sponsorship.getProject() == null;
+		status = this.project != null && !this.project.getDraftMode();
 		super.setAuthorised(status);
 	}
 
 	@Override
 	public void bind() {
-		super.bindObject(this.sponsorship, "project");
+		super.bindObject(this.sponsorship, "sponsorship");
+		super.unbindGlobal("id", this.sponsorship.getId());
 	}
 
 	@Override
@@ -61,23 +63,24 @@ public class SponsorSponsorshipAttachProjectService extends AbstractService<Spon
 				interval = startMoment != null && publishMoment != null && MomentHelper.isAfter(startMoment, publishMoment);
 			}
 
-			super.state(interval, "project", "acme.validation.attach.project.interval.message");
+			super.state(interval, "*", "acme.validation.attach.project.interval.message");
 		}
 	}
 
 	@Override
 	public void execute() {
+		this.sponsorship.setProject(this.project);
 		this.sponsorshipRepository.save(this.sponsorship);
 	}
 
 	@Override
 	public void unbind() {
-		Tuple tuple;
-		SelectChoices availableProjects;
-		boolean hasProject = this.sponsorship.getProject() != null;
-		availableProjects = SelectChoices.from(this.projects, "title", this.sponsorship.getProject());
-		tuple = super.unbindObject(this.sponsorship, "ticker", "name", "description", "startMoment", "endMoment", "moreInfo", "draftMode", "sponsor", "project");
-		tuple.put("projects", availableProjects);
-		tuple.put("hasProject", hasProject);
+		SelectChoices availableSponsorships;
+		availableSponsorships = SelectChoices.from(this.sponsorships, "ticker", this.sponsorship);
+		super.unbindGlobal("sponsorship", this.sponsorship);
+		super.unbindGlobal("project", this.project.getTitle());
+		super.unbindGlobal("sponsorships", availableSponsorships);
+		super.unbindGlobal("projectId", this.project.getId());
+
 	}
 }

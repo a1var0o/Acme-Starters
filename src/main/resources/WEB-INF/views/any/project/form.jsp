@@ -10,4 +10,8 @@
 	<acme:form-moment code="manager.project.form.label.kickOffMoment" path="kickOffMoment"/>
 	<acme:form-moment code="manager.project.form.label.closeOutMoment" path="closeOutMoment"/>
 	<acme:form-moment code="any.project.form.label.publishMoment" path="publishMoment"/>
+	<jstl:if test="${isSponsor }">
+		<acme:button code="any.project.form.button.assignSponsorships" action="/sponsor/sponsorship/attach?projectId=${id}"/>
+	</jstl:if>
+	
 </acme:form>
