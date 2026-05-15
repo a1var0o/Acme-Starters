@@ -2,3 +2,6 @@ manager.member.form.title = Nuevo miembro
 manager.member.form.label.project = Proyecto
 manager.member.form.label.project-member = Miembro
 manager.member.form.button.add = Añadir
+
+manager.member.list.title = Miembros del proyecto
+manager.member.list.label.username = Nombre de usuario

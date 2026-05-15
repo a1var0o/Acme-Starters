@@ -18,5 +18,6 @@ public class ManagerMemberController extends AbstractController<Manager, Member>
 		super.setMediaType(MediaType.TEXT_HTML);
 
 		super.addBasicCommand("create", ManagerMemberCreateService.class);
+		super.addBasicCommand("list", ManagerMemberListService.class);
 	}
 }

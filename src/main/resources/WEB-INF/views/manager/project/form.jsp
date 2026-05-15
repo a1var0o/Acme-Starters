@@ -19,6 +19,7 @@
       		<acme:submit code="manager.project.form.button.delete" action="/manager/project/delete"/>
 			<acme:submit code="manager.project.form.button.publish" action="/manager/project/publish"/>
 			<acme:button code="manager.project.form.button.addMember" action="/manager/member/create?projectId=${id}"/>
+			<acme:button code="manager.project.form.button.members" action="/manager/member/list?projectId=${id}"/>
 		</jstl:when>
 	</jstl:choose>
 </acme:form>
