@@ -2,7 +2,7 @@ manager.dashboard.form.title = Projects dashboard
 
 manager.dashboard.form.title.general-indicators = General indicators
 manager.dashboard.form.label.number-of-projects = Number of projects
-manager.dashboard.form.label.number-of-projects-deviation = Number of projects deviation
+manager.dashboard.form.label.number-of-projects-deviation = Average number of projects deviation
 manager.dashboard.form.label.min-effort = Minimum effort
 manager.dashboard.form.label.max-effort = Maximum effort
 manager.dashboard.form.label.avg-effort = Average effort
