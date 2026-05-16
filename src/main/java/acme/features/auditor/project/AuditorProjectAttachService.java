@@ -13,19 +13,16 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.AuditReport;
 import acme.entities.Project;
-import acme.features.auditor.auditreport.AuditorAuditReportRepository;
 import acme.realms.Auditor;
 
 @Service
 public class AuditorProjectAttachService extends AbstractService<Auditor, Project> {
 
+	private Collection<AuditReport>		auditReports;
 	@Autowired
-	private AuditorAuditReportRepository	auditReportRepository;
-	private Collection<AuditReport>			auditReports;
-	@Autowired
-	private AuditorProjectRepository		projectRepository;
-	private Project							project;
-	private AuditReport						auditReport;
+	private AuditorProjectRepository	repository;
+	private Project						project;
+	private AuditReport					auditReport;
 
 
 	@Override
@@ -33,8 +30,8 @@ public class AuditorProjectAttachService extends AbstractService<Auditor, Projec
 		int projectId;
 		projectId = super.getRequest().getData("id", int.class);
 		int auditorId = super.getRequest().getPrincipal().getAccountId();
-		this.auditReports = this.auditReportRepository.findPublishedAndNotAttachedReports(auditorId);
-		this.project = this.projectRepository.findProjectById(projectId);
+		this.auditReports = this.repository.findPublishedAndNotAttachedReports(auditorId);
+		this.project = this.repository.findProjectById(projectId);
 	}
 
 	@Override
@@ -48,7 +45,7 @@ public class AuditorProjectAttachService extends AbstractService<Auditor, Projec
 	@Override
 	public void bind() {
 		int auditReportId = super.getRequest().getData("reportId", int.class);
-		this.auditReport = this.auditReportRepository.findAuditReportById(auditReportId);
+		this.auditReport = this.repository.findAuditReportById(auditReportId);
 	}
 
 	@Override
@@ -72,7 +69,7 @@ public class AuditorProjectAttachService extends AbstractService<Auditor, Projec
 	@Override
 	public void execute() {
 		this.auditReport.setProject(this.project);
-		this.auditReportRepository.save(this.auditReport);
+		this.repository.save(this.auditReport);
 	}
 
 	@Override

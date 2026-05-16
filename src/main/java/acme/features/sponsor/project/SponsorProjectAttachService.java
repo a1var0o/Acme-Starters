@@ -13,19 +13,16 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.Project;
 import acme.entities.Sponsorship;
-import acme.features.sponsor.sponsorship.SponsorSponsorshipRepository;
 import acme.realms.Sponsor;
 
 @Service
 public class SponsorProjectAttachService extends AbstractService<Sponsor, Project> {
 
+	private Collection<Sponsorship>		sponsorships;
 	@Autowired
-	private SponsorSponsorshipRepository	sponsorshipRepository;
-	private Collection<Sponsorship>			sponsorships;
-	@Autowired
-	private SponsorProjectRepository		projectRepository;
-	private Project							project;
-	private Sponsorship						sponsorship;
+	private SponsorProjectRepository	repository;
+	private Project						project;
+	private Sponsorship					sponsorship;
 
 
 	@Override
@@ -33,8 +30,8 @@ public class SponsorProjectAttachService extends AbstractService<Sponsor, Projec
 		int projectId;
 		projectId = super.getRequest().getData("id", int.class);
 		int sponsorId = super.getRequest().getPrincipal().getAccountId();
-		this.sponsorships = this.sponsorshipRepository.findPublishAndNotAttachedSponsorships(sponsorId);
-		this.project = this.projectRepository.findProjectById(projectId);
+		this.sponsorships = this.repository.findPublishAndNotAttachedSponsorships(sponsorId);
+		this.project = this.repository.findProjectById(projectId);
 	}
 
 	@Override
@@ -48,7 +45,7 @@ public class SponsorProjectAttachService extends AbstractService<Sponsor, Projec
 	@Override
 	public void bind() {
 		int sponsorshipId = super.getRequest().getData("sponsorshipId", int.class);
-		this.sponsorship = this.sponsorshipRepository.findSponsorshipById(sponsorshipId);
+		this.sponsorship = this.repository.findSponsorshipById(sponsorshipId);
 	}
 
 	@Override
@@ -72,7 +69,7 @@ public class SponsorProjectAttachService extends AbstractService<Sponsor, Projec
 	@Override
 	public void execute() {
 		this.sponsorship.setProject(this.project);
-		this.sponsorshipRepository.save(this.sponsorship);
+		this.repository.save(this.sponsorship);
 	}
 
 	@Override
