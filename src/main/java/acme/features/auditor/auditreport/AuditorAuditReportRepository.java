@@ -25,4 +25,5 @@ public interface AuditorAuditReportRepository extends AbstractRepository {
 
 	@Query("SELECT m from AuditSection m where m.auditReport.id = :auditReportId")
 	Collection<AuditSection> findAuditSectionsByAuditReportId(int auditReportId);
+
 }

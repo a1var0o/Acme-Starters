@@ -1,0 +1,6 @@
+auditor.project.form.title = Attach audit report
+
+auditor.project.form.label.project = Project
+auditor.project.form.label.audit-report = Audit report
+
+auditor.project.form.button.attach = Attach
