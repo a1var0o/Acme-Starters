@@ -75,10 +75,10 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Dashbo
 		}
 
 		if (efforts.isEmpty()) {
-			minEffort = 0.;
-			maxEffort = 0.;
-			avgEffort = 0.;
-			effortSD = 0.;
+			minEffort = Double.NaN;
+			maxEffort = Double.NaN;
+			avgEffort = Double.NaN;
+			effortSD = Double.NaN;
 		} else {
 			minEffort = Collections.min(efforts.values());
 			maxEffort = Collections.max(efforts.values());
